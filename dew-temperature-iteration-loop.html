@@ -97,7 +97,7 @@
       var graph = null;
 
       function calculate() {
-        let Temperature_Dew = [];
+        let temperature_dew = [];
         let T_values_Dew = [];
         let T_new_Dew_Array = [];
         let A_Dew = [];
@@ -107,7 +107,7 @@
         A_Dew.splice(0, A_Dew.length);
         B_Dew.splice(0, B_Dew.length);
         C_Dew.splice(0, C_Dew.length);
-        Temperature_Dew.splice(0, Temperature_Dew.length);
+        temperature_dew.splice(0, temperature_dew.length);
         T_values_Dew.splice(0, T_values_Dew.length);
         T_new_Dew_Array.splice(0, T_new_Dew_Array.length);
 
@@ -149,9 +149,9 @@
           for (var i = 0; i < 2; i++) {
             var T_Dew = B_Dew[i] / (A_Dew[i] - Math.log(Pres_Dew)) - C_Dew[i];
             var total_Dew = total_Dew + T_Dew;
-            Temperature_Dew.push(T_Dew);
+            temperature_dew.push(T_Dew);
           }
-          var sum = Temperature_Dew[0] + Temperature_Dew[1];
+          var sum = temperature_dew[0] + temperature_dew[1];
           var avg_Dew = sum / 2;
 
           while (keep_looping_Dew) {
