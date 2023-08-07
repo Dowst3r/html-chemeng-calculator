@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS" />
+    <title>Bubble Temperature iteration loop</title>
+    <style>
+      .Second-A-Value {
+        padding-top: 50px;
+      }
+
+      em {
+        font-weight: bold;
+      }
+
+      .Bubble-Antoine-Equation {
+        width: 400px;
+        position: absolute;
+        top: 75px;
+        right: 800px;
+      }
+
+      .Bubble-pressure {
+        padding-top: 50px;
+      }
+
+      .Liquid-moles {
+        padding-top: 15px;
+      }
+      .Calulate-Button {
+        padding-top: 15px;
+      }
+
+      .Num-Iterations {
+        padding-top: 15px;
+      }
+
+      #graphContainer {
+        width: 40%;
+        height: 30%;
+      }
+
+      canvas {
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bubble Temperature Iteration Loop Calculator:</h1>
+    <img
+      class="Bubble-Antoine-Equation"
+      src="images/Antoine-Equation-Real.PNG"
+      alt="Image failed to load"
+    />
+    <p>The <em>A</em> value for the <em>first</em> Antoine Equation:</p>
+    <input type="text" id="A1-Bubble" name="textbox" />
+    <p>The <em>B</em> value for the <em>first</em> Antoine Equation:</p>
+    <input type="text" id="B1-Bubble" name="textbox" />
+    <p>the <em>C</em> value for the <em>first</em> Antoine Equation:</p>
+    <input type="text" id="C1-Bubble" name="textbox" />
+    <p class="Second-A-Value">
+      The <em>A</em> value for the <em>second</em> Antoine Equation:
+    </p>
+    <input type="text" id="A2-Bubble" name="textbox" />
+    <p>The <em>B</em> value for the <em>second</em> Antoine Equation:</p>
+    <input type="text" id="B2-Bubble" name="textbox" />
+    <p>the <em>C</em> value for the <em>second</em> Antoine Equation:</p>
+    <input type="text" id="C2-Bubble" name="textbox" />
+    <p class="Bubble-pressure">The <em>pressure</em> of the system:</p>
+    <input type="text" id="Pressure-Bubble-System" name="textbox" />
+    <p class="Liquid-moles">
+      The <em>mole fractions</em> in the <em>liquid</em> phase <em>(x1)</em>:
+    </p>
+    <input type="text" id="Liquid-Bubble-Moles" name="textbox" />
+    <p class="Num-Iterations">
+      The <em>Maximum</em> amount of <em>Iterations</em> to go through:
+    </p>
+    <input type="text" id="Max-Iterations_Bubble" name="textbox" />
+    <p>
+      the <em>Unit</em> of the Temperature (don't need to type degrees, just the
+      letter unit):
+    </p>
+    <input type="text" id="Unit-Bubble" name="textbox" />
+    <p class="Calculate-Button"></p>
+    <button type="button" onclick="calculate()">Calculate</button>
+    <div class="Result-Container">
+      <p id="Result_Bubble"></p>
+    </div>
+    <div id="graphContainer">
+      <canvas id="Graph_Bubble"></canvas>
+    </div>
+    <script>
+      function calculate() {
+        var A1_Bubble = parseFloat(document.getElementById("A1-Bubble").value);
+        var B1_Bubble = parseFloat(document.getElementById("B1-Bubble").value);
+        var C1_Bubble = parseFloat(document.getElementById("C1-Bubble").value);
+        var A2_Bubble = parseFloat(document.getElementById("A2-Bubble").value);
+        var B2_Bubble = parseFloat(document.getElementById("B2-Bubble").value);
+        var C2_Bubble = parseFloat(document.getElementById("C2-Bubble").value);
+        let Unit_Bubble = document.getElementById("Unit-Bubble").value;
+        var Pres_Bubble = parseFloat(document.getElementById("Pressure-Bubble-System").value);
+        var x1_Bubble = parseFloat(document.getElementById("Liquid-Bubble-Moles").value);
+        var Max_Iterations_Bubble = parseFloat(document.getElementById("Max-Iterations").value);
+        A_Bubble = [A1_Bubble, A2_Bubble];
+        B_Bubble = [B1_Bubble, B2_Bubble];
+        C_Bubble = [C1_Bubble, C2_Bubble];
+        Temperature_Bubble = [];
+        T_values_Bubble = [];
+        T_new_Bubble_Array = [];
+        var iteration_Bubble = 0;
+        keep_looping_Bubble = true;
+        var total_Bubble = 0;
+
+        if (
+          isNaN(A1_Bubble) ||
+          isNaN(A2_Bubble) ||
+          isNaN(B1_Bubble) ||
+          isNaN(B2_Bubble) ||
+          isNaN(C1_Bubble) ||
+          isNaN(C2_Bubble) ||
+          isNaN(Pres_Bubble) ||
+          isNaN(x1_Bubble) ||
+          isNaN(Max_Iterations_Bubble)
+        ) {
+          document.getElementById("Result_Bubble").innerHTML =
+            "Please enter valid numbers";
+        } else {
+          var x2 = 1 - x1;
+          for (var i = 0; i < 2; i++) {
+            var T_Bubble = B_Bubble[i] / (A_Bubble[i] - Math.log(P_Bubble[i])) - C_Bubble[i];
+            total_Bubble = total_Bubble + T_Bubble;
+            Temperature_Bubble.push(T_Bubble);
+          }
+          var avg_Bubble = total_Bubble / 2;
+
+          while (keep_looping_Bubble) {
+            var p1_Bubble = Math.exp(A_Bubble[0] - B_Bubble[0] / (avg_Bubble + C_Bubble[0]));
+            var p2_Bubble = Math.exp(A_Bubble[1] - B_Bubble[1] / (avg_Bubble + C_Bubble[1]));
+            var alpha_Bubble = p1_Bubble / p2_Bubble;
+            var p2_new_Bubble = P_Bubble[0] / (x1 * alpha_Bubble + x2);
+            var p2_Bubble = p2_new_Bubble;
+            var T_new_Bubble = B_Bubble[1] / (A_Bubble[1] - Math.log(p2_new_Bubble)) - C_Bubble[1];
+            Temperature_new_Bubble.push(T_new_Bubble);
+            avg_Bubble = T_new_Bubble;
+
+            if (iteration_Bubble < Max_Iterations) {
+              iteration_Bubble++;
+              T_values_Bubble.push(T_new_Bubble);
+            } else {
+              keep_looping_Bubble = false;
+            }
+          }
+
+          var y1_Bubble = (p1_Bubble * x_1_Bubble) / P_Bubble[0];
+          var y2_Bubble = 1 - y1_Bubble;
+
+          var output =
+            "The graph converges to a temperature of " + 
+            T_values_Bubble[T_values_Bubble.length - 1] + " degrees " +
+            Unit_Bubble +
+            " after " +
+            iteration_Bubble +
+            " loops\n" +
+            "The difference between the 2 final temperature values: " +
+            Math.abs(
+              T_values_Bubble[T_values_Bubble.length - 2] -
+                T_values_Bubble[T_values_Bubble.length - 1]
+            ) + " degrees " + Unit_Bubble + 
+            "\nthe vapour phase composition: y1 = " +
+            y1_Bubble +
+            " and y2 = " +
+            y2_Bubble;
+
+            const x_axis = Array.from(
+            { length: T_values_Dew.length },
+            (_, i) => i + 1
+          );
+          const ctx = document.getElementById("Graph_Bubble").getContext("2d");
+          const myChart = new Chart(ctx, {
+            type: "line",
+            data: { labels: x_axis, datasets: [{ data: T_values_Bubble, borderColor: "#FFC0CB" }] },
+            options: {
+              plugins: {
+                title: {
+                  display: true,
+                  text: "Temperature values through the iteration loops",
+                },
+              },
+            },
+            legend: {
+              display: false,
+              position: "bottom",
+              name: "Temperatures",
+              text: "Temperature Chart",
+            },
+          });
+
+          document.getElementById("Result_Bubble").innerHTML = output;
+        }
+      }
+    </script>
+  </body>
+</html>

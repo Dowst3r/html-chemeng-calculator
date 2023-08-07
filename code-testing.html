@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Graph Example</title>
+    <!-- Include the Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      /* Add CSS styles for the container and the canvas element */
+      #graphContainer {
+        width: 40%;
+        height: 30%;
+      }
+
+      canvas {
+        width: 300px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>Text above the graph goes here.</p>
+    </div>
+    <!-- Create a canvas element to render the graph -->
+    <div id="graphContainer">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- Add a "Calculate" button -->
+    <button id="calculateButton">Calculate</button>
+
+    <script>
+      document
+        .getElementById("calculateButton")
+        .addEventListener("click", function () {
+          // Sample data for the Temperatures array (Replace this with your actual data array)
+          const Temperatures = [10, 20, 15, 30, 25];
+
+          // Generate X-axis labels starting from 1 to the number of data points
+          const labels = Array.from(
+            { length: Temperatures.length },
+            (_, i) => i + 1
+          );
+
+          // Get a reference to the canvas element
+          const ctx = document.getElementById("myChart").getContext("2d");
+
+          // Create the chart
+          const myChart = new Chart(ctx, {
+            type: "line",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  data: Temperatures,
+                },
+              ],
+            },
+            options: {
+              plugins: {
+                title: {
+                  display: true,
+                  text: "Temperature values through the iteration loops", // Add a title to the chart
+                },
+              },
+            },
+            legend: {
+              display: false,
+              position: "bottom",
+              name: "Temperatues",
+              text: "Temperature Chart",
+            },
+          });
+        });
+    </script>
+    var logger = new Log4js.getLogger("Dew-Temperature-Iteration-Loop.html");
+    <script src="stritti-log4js-c159e73/log4js/src/main/js/log4js.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device_width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta
+      name="description"
+      content="The all-in-one Chemical Engineer Calculator!"
+    />
+    <title>Chemical Engineer Calculator</title>
+    <style>
+      .profile-photo {
+        width: 150px;
+        border-radius: 75px;
+        float: left;
+        margin-right: 10px;
+      }
+
+      .username {
+        font-weight: bold;
+      }
+
+      .bubble-temperature-iteration-loop {
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+      }
+
+      .dew-temperature-iteration-loop {
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+      }
+
+      .linear-interpretation {
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+      }
+
+      .code-testing {
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Intro to me and the calculator:</h1>
+    <!-- This goes from 1 to 6, chose based on their importance, size can be changed with CSS! -->
+    <img
+      src="images/Grogu.png"
+      alt="profile photo failed to load"
+      class="profile-photo"
+    />
+    <!-- you use class to define something specific, as calling p, would result in all paragraph based things being called and so need specific names for bits to make sure they are called correctly -->
+    <a class="username" href="https://uk.linkedin.com/in/aidan-dowie-a126831a0"
+      >My LinkedIn</a
+    >
+    <p>
+      Welcome to my website! This website can be used to calculate things that
+      are commonly required in Chemcial Engineering that run the risk of human
+      error. I made this website to allow people to check if their answers are
+      correct <em class="who-for">(mostly for students!)</em>, but also for
+      anyone who has a calulcation they need to perform. Happy calculating!
+    </p>
+    <!-- can bring up the command pallet (ctrl shift P) and use the wrap with Abbreviation command to use "em" to wrap a bit of text in em so you dont run into the risk of messing up -->
+    <h1 class="Calculator-title">Calculators:</h1>
+    <a
+      class="bubble-temperature-iteration-loop"
+      href="bubble-temperature-iteration-loop.html"
+      >Bubble Temperature Iteration Loop</a
+    >
+    <a
+      class="dew-temperature-iteration-loop"
+      href="dew-temperature-iteration-loop.html"
+      >Dew Temperature Iteration Loop</a
+    >
+    <a class="linear-interpretation" href="linear-interpolation.html"
+      >Linear Interpolation</a
+    >
+    <a class="code-testing" href="code-testing.html">Code Testing Page</a>
+  </body>
+</html>
+
+<!-- to add special characters in text so that text is formated properly what you do is: for a less-than symbol you use: &lt; and for a greater-than symbol you use &gt; for a copyright symbol you use: &copy; or go to the website dev.w3.org -->
+<!-- to prevent line-breaking for some words you type &nbsp; before the word begins you want to keep on the same line -->
