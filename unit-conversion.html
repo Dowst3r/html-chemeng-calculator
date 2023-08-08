@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        .enter {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .exit {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .initial {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .output {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Unit Converter</h1>
+    <p>this is a unit converter in which you select your current units and then choose the units you want it changed into:</p>
+    <form>
+        <!-- Select 1-->
+        <label class="enter">From:</label>
+        <select name="converts" id="Selection">
+
+          <option>Chose Option</option>
+          <option value="tons1">Tons</option>
+          <option value="kilograms1">Kilograms</option>
+          <option value="grams1">Grams</option>
+          <option value="miligrams1">Miligrams</option>
+        </select>
+    
+        <!-- Select 2-->
+        <label class="exit">To:</label>
+        <select name="converts2" id="Selection2">
+
+          <option>Chose Option</option>
+          <option value="tons2">Tons</option>
+          <option value="kilograms2">Kilograms</option>
+          <option value="grams2">Grams</option>
+          <option value="miligrams2">Miligrams</option>
+        </select>
+    
+    
+        <!--INPUT-->
+        <br>
+        <br class="initial">
+        <br class="initial">Value
+        <input type="number" id="value" placeholder="Insert value">
+    
+        <!--RESULT -->
+        <br class="output">Conversion
+        <input type="text" id="convertedOutput">
+    
+        <br>
+        <br>
+        <input type="Button" onclick="Conversion()" value="convert">
+      </form>
+</body>
+</html>
