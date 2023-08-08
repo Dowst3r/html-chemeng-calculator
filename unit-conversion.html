@@ -61,17 +61,40 @@
     
         <!--INPUT-->
         <br>
-        <br class="initial">
-        <br class="initial">Value
+        <br>
+        <br>Value
         <input type="number" id="value" placeholder="Insert value">
     
         <!--RESULT -->
-        <br class="output">Conversion
+        <br>Conversion
         <input type="text" id="convertedOutput">
     
         <br>
         <br>
         <input type="Button" onclick="Conversion()" value="convert">
       </form>
+      <script>
+        function conversion() {
+            var input = parseFloat(document.getElementById("value"));
+            var convertedOutput = document.getElementById("convertedOutput");
+            var selectFrom = document.getElementById("Selection");
+            var selectTo = document.getElementById("Selection2");
+            var madeSelection_1 = selectFrom[selectFrom.selectedIndex].value;
+            var madeSelection_2 = selectTo[selectTo.selectedIndex].value;
+            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "kilograms2") {
+                var result = val * 1;
+                convertedOutput.value = result;
+            }
+            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "Tons2") {
+                var result = val / 1000
+            }
+            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "grams2") {
+                var result = val * 1000
+            }
+            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "miligrams2") {
+                var result = val * 1000000s
+            }
+        }
+      </script>
 </body>
 </html>
