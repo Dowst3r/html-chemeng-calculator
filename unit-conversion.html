@@ -5,57 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter</title>
     <style>
-        .enter {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 10px;
-        }
-
-        .exit {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 10px;
-        }
-
-        .initial {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-right: 10px;
-            padding-left: 10px;
-        }
-
-        .output {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-right: 10px;
-            padding-left: 10px;
+        .Conversion {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            font-size: large;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <h1>Unit Converter</h1>
-    <p>this is a unit converter in which you select your current units and then choose the units you want it changed into:</p>
+    <p>This is a unit converter in which you select your current units and then choose the units you want it changed into:</p>
     <form>
         <!-- Select 1-->
         <label class="enter">From:</label>
         <select name="converts" id="Selection">
 
-          <option>Chose Option</option>
+          <option>Choose Option</option>
           <option value="tons1">Tons</option>
           <option value="kilograms1">Kilograms</option>
           <option value="grams1">Grams</option>
-          <option value="miligrams1">Miligrams</option>
+          <option value="milligrams1">Milligrams</option>
         </select>
     
         <!-- Select 2-->
         <label class="exit">To:</label>
         <select name="converts2" id="Selection2">
 
-          <option>Chose Option</option>
+          <option>Choose Option</option>
           <option value="tons2">Tons</option>
           <option value="kilograms2">Kilograms</option>
           <option value="grams2">Grams</option>
-          <option value="miligrams2">Miligrams</option>
+          <option value="milligrams2">Milligrams</option>
         </select>
     
     
@@ -64,37 +45,132 @@
         <br>
         <br>Value
         <input type="number" id="value" placeholder="Insert value">
+        <br>
     
         <!--RESULT -->
-        <br>Conversion
-        <input type="text" id="convertedOutput">
+        <br><p class="Conversion">Conversion:</p>
+        <div class="result_container">
+            <p id="text_output"></p>
+        </div>
     
         <br>
         <br>
-        <input type="Button" onclick="Conversion()" value="convert">
+        <button type="button" onclick="Conversion()" value="convert">Convert</button>
       </form>
+
       <script>
         function Conversion() {
-            var input = parseFloat(document.getElementById("value"));
-            var convertedOutput = document.getElementById("convertedOutput");
+            var val = parseFloat(document.getElementById("value").value);
             var selectFrom = document.getElementById("Selection");
             var selectTo = document.getElementById("Selection2");
+
             var madeSelection_1 = selectFrom[selectFrom.selectedIndex].value;
             var madeSelection_2 = selectTo[selectTo.selectedIndex].value;
-            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "kilograms2") {
-                var result = val * 1;
-                convertedOutput.value = result;
+
+            if(madeSelection_1 == "tons1" && madeSelection_2 == "tons2") {
+                const calculation = val * 1;
+                var result = calculation.toLocaleString() + " tons";
+                document.getElementById("text_output").innerHTML = result;
             }
+
+            if(madeSelection_1 == "tons1" && madeSelection_2 == "kilograms2") {
+                const calculation = val * 1000;
+                var result = calculation.toLocaleString() + "kg";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+            if(madeSelection_1 == "tons1" && madeSelection_2 == "grams2") {
+                const calculation = val * 1000000;
+                var result = calculation.toLocaleString() + "g";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+            if(madeSelection_1 == "tons1" && madeSelection_2 == "milligrams2") {
+                const calculation = val * 1000000000;
+                var result = calculation.toLocaleString() + " milligrams";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+
+
             if (madeSelection_1 == "kilograms1" && madeSelection_2 == "tons2") {
-                var result = val / 1000
+                const calculation = val / 1000;
+                var result = calculation.toLocaleString() + " tons";
+                document.getElementById("text_output").innerHTML = result;
             }
+
+            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "kilograms2") {
+                const calculation = val * 1;
+                var result = calculation.toLocaleString() + "kg";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
             if (madeSelection_1 == "kilograms1" && madeSelection_2 == "grams2") {
-                var result = val * 1000
+                const calculation = val * 1000;
+                var result = calculation.toLocaleString() + "g";
+                document.getElementById("text_output").innerHTML = result;
             }
-            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "miligrams2") {
-                var result = val * 1000000
+
+            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "milligrams2") {
+                const calculation = val * 1000000;
+                var result = calculation.toLocaleString() + " milligrams";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+
+
+            if (madeSelection_1 == "grams1" && madeSelection_2 == "tons2") {
+                const calculation = val / 1000000;
+                var result = calculation.toLocaleString() + " tons";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+            if (madeSelection_1 == "grams1" && madeSelection_2 == "kilograms2") {
+                const calculation = val / 1000;
+                var result = calculation.toLocaleString() + "kg";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+            if (madeSelection_1 == "grams1" && madeSelection_2 == "grams2") {
+                const calculation = val * 1;
+                var result = calculation.toLocaleString() + "g";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+            if (madeSelection_1 == "grams1" && madeSelection_2 == "milligrams2") {
+                const calculation = val * 1000;
+                var result = calculation.toLocaleString() + " milligrams";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+
+
+            if (madeSelection_1 == "milligrams1" && madeSelection_2 == "tons2") {
+                const calculation = val / 1000000000;
+                var result = calculation.toLocaleString() + " tons";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+            if (madeSelection_1 == "milligrams1" && madeSelection_2 == "kilograms2") {
+                const calculation = val / 1000000;
+                var result = calculation.toLocaleString() + "kg";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+            if (madeSelection_1 == "milligrams1" && madeSelection_2 == "grams2") {
+                const calculation = val / 1000;
+                var result = calculation.toLocaleString() + "g";
+                document.getElementById("text_output").innerHTML = result;
+            }
+
+            if (madeSelection_1 == "milligrams1" && madeSelection_2 == "milligrams2") {
+                const calculation = val * 1;
+                var result = calculation.toLocaleString() + " milligrams";
+                document.getElementById("text_output").innerHTML = result;
             }
         }
       </script>
 </body>
 </html>
+
+<!--need to fix output size for GRAMS TO TONS, MILLIGRAMS TO TONS AND MILLIGRAMS TO KG-->
