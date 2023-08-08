@@ -70,10 +70,10 @@
 
             if(madeSelection_1 == "tons1" && madeSelection_2 == "tons2") {
                 const calculation = val * 1;
-                const formattedCalculation = calculation.toFixed(9);
+                const formattedCalculation = calculation.toFixed(30);
                 const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
                     minimumFractionDigits: 0,
-                    maximumFractionDigits: 9
+                    maximumFractionDigits: 30
                 });
                 var result = formattedcalculation.toLocaleString() + " tons";
                 document.getElementById("text_output").innerHTML = result;
@@ -81,22 +81,34 @@
 
             if(madeSelection_1 == "tons1" && madeSelection_2 == "kilograms2") {
                 const calculation = val * 1000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + "kg";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + "kg";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if(madeSelection_1 == "tons1" && madeSelection_2 == "grams2") {
                 const calculation = val * 1000000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + "g";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + "g";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if(madeSelection_1 == "tons1" && madeSelection_2 == "milligrams2") {
                 const calculation = val * 1000000000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + " milligrams";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + " milligrams";
                 document.getElementById("text_output").innerHTML = result;
             }
 
@@ -104,29 +116,45 @@
 
             if (madeSelection_1 == "kilograms1" && madeSelection_2 == "tons2") {
                 const calculation = val / 1000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + " tons";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + " tons";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if (madeSelection_1 == "kilograms1" && madeSelection_2 == "kilograms2") {
                 const calculation = val * 1;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + "kg";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + "kg";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if (madeSelection_1 == "kilograms1" && madeSelection_2 == "grams2") {
                 const calculation = val * 1000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + "g";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + "g";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if (madeSelection_1 == "kilograms1" && madeSelection_2 == "milligrams2") {
                 const calculation = val * 1000000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + " milligrams";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + " milligrams";
                 document.getElementById("text_output").innerHTML = result;
             }
 
@@ -134,29 +162,45 @@
 
             if (madeSelection_1 == "grams1" && madeSelection_2 == "tons2") {
                 const calculation = val / 1000000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + " tons";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + " tons";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if (madeSelection_1 == "grams1" && madeSelection_2 == "kilograms2") {
                 const calculation = val / 1000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + "kg";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + "kg";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if (madeSelection_1 == "grams1" && madeSelection_2 == "grams2") {
                 const calculation = val * 1;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + "g";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + "g";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if (madeSelection_1 == "grams1" && madeSelection_2 == "milligrams2") {
                 const calculation = val * 1000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + " milligrams";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + " milligrams";
                 document.getElementById("text_output").innerHTML = result;
             }
 
@@ -164,29 +208,45 @@
 
             if (madeSelection_1 == "milligrams1" && madeSelection_2 == "tons2") {
                 const calculation = val / 1000000000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + " tons";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + " tons";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if (madeSelection_1 == "milligrams1" && madeSelection_2 == "kilograms2") {
                 const calculation = val / 1000000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + "kg";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + "kg";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if (madeSelection_1 == "milligrams1" && madeSelection_2 == "grams2") {
                 const calculation = val / 1000;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + "g";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + "g";
                 document.getElementById("text_output").innerHTML = result;
             }
 
             if (madeSelection_1 == "milligrams1" && madeSelection_2 == "milligrams2") {
                 const calculation = val * 1;
-                return calculation.toFixed(9);
-                var result = calculation.toLocaleString() + " milligrams";
+                const formattedCalculation = calculation.toFixed(30);
+                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 30
+                });
+                var result = formattedcalculation.toLocaleString() + " milligrams";
                 document.getElementById("text_output").innerHTML = result;
             }
         }
