@@ -1,79 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Graph Example</title>
-    <!-- Include the Chart.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-      /* Add CSS styles for the container and the canvas element */
-      #graphContainer {
-        width: 40%;
-        height: 30%;
-      }
-
-      canvas {
-        width: 300px;
-        height: 200px;
-      }
-    </style>
-  </head>
-  <body>
-    <div>
-      <p>Text above the graph goes here.</p>
-    </div>
-    <!-- Create a canvas element to render the graph -->
-    <div id="graphContainer">
-      <canvas id="myChart"></canvas>
-    </div>
-
-    <!-- Add a "Calculate" button -->
-    <button id="calculateButton">Calculate</button>
-
+<head>
+    <title>Dynamic Dropdown Example</title>
+    <!-- Include your CSS and JavaScript files here -->
+</head>
+<body>
+    <button id="lengths-menu">Lengths</button>
+    <button id="weights-menu">Weights</button>
+    <select id="dropdown">
+        <!--Default dropdown2 options-->
+        <option value="otheroption1">kilometers</option>
+        <option value="otheroption2">miles</option>
+    </select>
+    <div id="result"></div>
     <script>
-      document
-        .getElementById("calculateButton")
-        .addEventListener("click", function () {
-          // Sample data for the Temperatures array (Replace this with your actual data array)
-          const Temperatures = [10, 20, 15, 30, 25];
+        // Get references to the button, dropdown, and result elements
+        const lengths_menu = document.getElementById('lengths-menu');
+        const weights_menu = document.getElementById('weights-menu');
+        const dropdown = document.getElementById('dropdown');
+        const result = document.getElementById('result');
 
-          // Generate X-axis labels starting from 1 to the number of data points
-          const labels = Array.from(
-            { length: Temperatures.length },
-            (_, i) => i + 1
-          );
+        // Add click event listener to the button
+        lengths_menu.addEventListener('click', () => {
+        // Clear previous result content
+        result.textContent = '';
 
-          // Get a reference to the canvas element
-          const ctx = document.getElementById("myChart").getContext("2d");
+        // Determine the new options and functionality
+        const newOptions = ['kilometers', 'miles'];
+        const newFunctionality = () => {
+            result.textContent = 'New functionality executed!';
+        };
 
-          // Create the chart
-          const myChart = new Chart(ctx, {
-            type: "line",
-            data: {
-              labels: labels,
-              datasets: [
-                {
-                  data: Temperatures,
-                },
-              ],
-            },
-            options: {
-              plugins: {
-                title: {
-                  display: true,
-                  text: "Temperature values through the iteration loops", // Add a title to the chart
-                },
-              },
-            },
-            legend: {
-              display: false,
-              position: "bottom",
-              name: "Temperatues",
-              text: "Temperature Chart",
-            },
-          });
+        // Clear existing dropdown options
+        dropdown.innerHTML = '';
+
+        // Add new options to the dropdown
+        newOptions.forEach((optionText) => {
+            const option = document.createElement('option');
+            option.value = optionText.toLowerCase().replace(' ', '_');
+            option.textContent = optionText;
+            dropdown.appendChild(option);
         });
+
+        // Add new functionality to the button
+        lengths_menu.removeEventListener('click', () => {});
+        lengths_menu.addEventListener('click', newFunctionality);
+    });
+
+        weights_menu.addEventListener('click', () => {
+            result.textContent = '';
+
+            const newOptions2 = ['kilograms', 'grams'];
+            const newFunctionality2 = () => {
+                result.textContent = 'New functionality executed!';
+            };
+
+            dropdown.innerHTML = '';
+
+            newOptions.forEach((optionText) => {
+                const option = document.createElement('option');
+                option.value = optionText.toLowerCase().replace(' ', '_');
+                option.textContent = optionText;
+                dropdown.appendChild(option);
+        });
+    });
     </script>
-    var logger = new Log4js.getLogger("Dew-Temperature-Iteration-Loop.html");
-    <script src="stritti-log4js-c159e73/log4js/src/main/js/log4js.js"></script>
-  </body>
+</body>
 </html>
