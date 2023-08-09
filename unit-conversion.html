@@ -107,10 +107,10 @@
         function convert(opt1, opt2, val, factor, factor2, factor3, factor4, unitStr) {
             if((madeSelection_1 == opt1) && (madeSelection_2 == opt2)) {
                 const calculation = val * factor + factor2 * factor3 + factor4;
-                const formattedCalculation = calculation.toFixed(15);
+                const formattedCalculation = calculation.toFixed(20);
                 const formattedCalculationStr = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 15
+                    minimumFractionDigits: -20,
+                    maximumFractionDigits: 20
                 });
                 const formattedCalculationScie = parseFloat(formattedCalculationStr).toExponential();
                 var result = formattedCalculationStr.toLocaleString() + unitStr + ",    " + formattedCalculationScie + unitStr;
@@ -295,3 +295,5 @@
       </script>
 </body>
 </html>
+
+<!-- find a fix for parsec, probs cause it is just such a large thing, may need to remove...-->
