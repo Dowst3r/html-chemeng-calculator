@@ -8,8 +8,12 @@
         .Conversion {
             padding-top: 1px;
             padding-bottom: 1px;
-            font-size: large;
+            font-size: larger;
             font-weight: bold;
+        }
+
+        .output {
+            font-size: large;
         }
     </style>
 </head>
@@ -25,10 +29,25 @@
         <select name="converts" id="Selection">
 
           <option>Choose Option</option>
-          <option value="tons1">Tons</option>
+          <option value="tonnes1">Tonnes</option>
           <option value="kilograms1">Kilograms</option>
           <option value="grams1">Grams</option>
           <option value="milligrams1">Milligrams</option>
+          <option value="ounces1">Ounces</option>
+          <option value="pounds1">Pounds</option>
+          <option value="stone1">Stone</option>
+          <option value="ton1">Ton</option>
+
+          <option value="celsius1">Celsius</option>
+          <option value="fahrenheit1">Fahrenheit</option>
+          <option value="kelvin1">Kelvin</option>
+
+          <option value="kilometers1">Kilometers</option>
+          <option value="meters1">Meters</option>
+          <option value="centimeters">Centimeters</option>
+          <option value="mile1">Mile</option>
+          <option value="feet1">Feet</option>
+          <option value="inches1">Inches</option>
         </select>
     
         <!-- Select 2-->
@@ -36,10 +55,25 @@
         <select name="converts2" id="Selection2">
 
           <option>Choose Option</option>
-          <option value="tons2">Tons</option>
+          <option value="tonnes2">Tonnes</option>
           <option value="kilograms2">Kilograms</option>
           <option value="grams2">Grams</option>
           <option value="milligrams2">Milligrams</option>
+          <option value="ounces2">Ounces</option>
+          <option value="pounds2">Pounds</option>
+          <option value="stone2">Stone</option>
+          <option value="ton2">Ton</option>
+
+          <option value="celsius2">Celsius</option>
+          <option value="fahrenheit2">Fahrenheit</option>
+          <option value="kelvin2">Kelvin</option>
+          
+          <option value="kilometers2"></option>
+          <option value="meters2">Meters</option>
+          <option value="centimeters2">Centimeters</option>
+          <option value="mile2">Mile</option>
+          <option value="feet2">Feet</option>
+          <option value="inches2">Inches</option>
         </select>
     
     
@@ -53,7 +87,7 @@
         <!--RESULT -->
         <br><p class="Conversion">Conversion:</p>
         <div class="result_container">
-            <p id="text_output"></p>
+            <p class="output" id="text_output"></p>
         </div>
     
         <br>
@@ -66,15 +100,16 @@
         var madeSelection_1;
         var madeSelection_2;
     
-        function convert(opt1, opt2, val, factor, unitStr) {
+        function convert(opt1, opt2, val, factor, factor2, factor3, factor4, unitStr) {
             if((madeSelection_1 == opt1) && (madeSelection_2 == opt2)) {
-                const calculation = val * factor;
+                const calculation = val * factor + factor2 * factor3 + factor4;
                 const formattedCalculation = calculation.toFixed(15);
                 const formattedCalculationStr = (+formattedCalculation).toLocaleString('en-US', {
                     minimumFractionDigits: 0,
                     maximumFractionDigits: 15
                 });
-                var result = formattedCalculationStr.toLocaleString() + unitStr;
+                const formattedCalculationScie = parseFloat(formattedCalculationStr).toExponential();
+                var result = formattedCalculationStr.toLocaleString() + unitStr + ",    " + formattedCalculationScie + unitStr;
                 document.getElementById("text_output").innerHTML = result;
             }
         }
@@ -87,22 +122,82 @@
             madeSelection_1 = selectFrom[selectFrom.selectedIndex].value;
             madeSelection_2 = selectTo[selectTo.selectedIndex].value;
 
-            convert("tons1",      "tons2",        val,              1,       "tons");
-            convert("tons1",      "kilograms2",   val,           1000,  "kilograms");
-            convert("tons1",      "grams2",       val,        1000000,      "grams");
-            convert("tons1",      "milligrams2",  val,     1000000000, "milligrams");
-            convert("kilograms1", "tons2",        val,       1 / 1000,       "tons");
-            convert("kilograms1", "kilograms2",   val,              1,  "kilograms");
-            convert("kilograms1", "grams2",       val,           1000,      "grams");
-            convert("kilograms1", "milligrams2",  val,        1000000, "milligrams");
-            convert("grams1",     "tons2",        val,    1 / 1000000,       "tons");
-            convert("grams1",     "kilograms2",   val,       1 / 1000,  "kilograms");
-            convert("grams1",     "grams2",       val,              1,      "grams");
-            convert("grams1",     "milligrams2",  val,           1000, "milligrams");
-            convert("milligrams1", "tons2",       val, 1 / 1000000000,       "tons");
-            convert("milligrams1", "kilograms2",  val,    1 / 1000000,  "kilograms");
-            convert("milligrams1", "grams2",      val,       1 / 1000,      "grams");
-            convert("milligrams1", "milligrams2", val,              1, "milligrams");
+            convert("tonnes1",         "tonnes2",     val,              1,     0,    1,  0,     " tonnes");
+            convert("tonnes1",      "kilograms2",     val,           1000,     0,    1,  0,          "kg");
+            convert("tonnes1",          "grams2",     val,        1000000,     0,    1,  0,           "g");
+            convert("tonnes1",     "milligrams2",     val,     1000000000,     0,    1,  0, " milligrams");
+            convert("tonnes1",         "ounces2",     val,      35273.962,     0,    1,  0,          "oz");
+            convert("tonnes1",         "pounds2",     val,     2204.62262,     0,    1,  0,          "lb");
+            convert("tonnes1",          "stone2",     val,     157.473045,     0,    1,  0,          "st");
+            convert("tonnes1",            "ton2",     val, 1 / 1.01604691,     0,    1,  0,        " ton");
+            convert("kilograms1",      "tonnes2",     val,       1 / 1000,     0,    1,  0,     " tonnes");
+            convert("kilograms1",   "kilograms2",     val,              1,     0,    1,  0,          "kg");
+            convert("kilograms1",       "grams2",     val,           1000,     0,    1,  0,           "g");
+            convert("kilograms1",  "milligrams2",     val,        1000000,     0,    1,  0, " milligrams");
+            convert("kilograms1",      "ounces2",     val,      35.273962,     0,    1,  0,          "oz");
+            convert("kilograms1",      "pounds2",     val,     2.20462262,     0,    1,  0,          "lb");
+            convert("kilograms1",       "stone2",     val, 1 / 6.35029317,     0,    1,  0,          "st");
+            convert("kilograms1",         "ton2",     val, 1 / 1016.04691,     0,    1,  0,        " ton");
+            convert("grams1",          "tonnes2",     val,    1 / 1000000,     0,    1,  0,     " tonnes");
+            convert("grams1",       "kilograms2",     val,       1 / 1000,     0,    1,  0,          "kg");
+            convert("grams1",           "grams2",     val,              1,     0,    1,  0,           "g");
+            convert("grams1",      "milligrams2",     val,           1000,     0,    1,  0, " milligrams");
+            convert("grams1",          "ounces2",     val, 1 / 28.3495231,     0,    1,  0,          "oz");
+            convert("grams1",          "pounds2",     val,  1 / 453.59237,     0,    1,  0,          "lb");
+            convert("grams1",           "stone2",     val, 1 / 6350.29317,     0,    1,  0,          "st");
+            convert("grams1",             "ton2",     val,  1 / 1.0160E+6,     0,    1,  0,        " ton");
+            convert("milligrams1",     "tonnes2",     val, 1 / 1000000000,     0,    1,  0,     " tonnes");
+            convert("milligrams1",  "kilograms2",     val,    1 / 1000000,     0,    1,  0,          "kg");
+            convert("milligrams1",      "grams2",     val,       1 / 1000,     0,    1,  0,           "g");
+            convert("milligrams1", "milligrams2",     val,              1,     0,    1,  0, " milligrams");
+            convert("milligrams1",     "ounces2",     val, 1 / 28349.5231,     0,    1,  0,          "oz");
+            convert("milligrams1",     "pounds2",     val,  1 / 453592.37,     0,    1,  0,          "lb");
+            convert("milligrams1",      "stone2",     val,  1 / 6.3503E+6,     0,    1,  0,          "st");
+            convert("milligrams1",        "ton2",     val,  1 / 1.0160E+9,     0,    1,  0,        " ton");
+            convert("ounces1",         "tonnes2",     val,               ,     0,    1,  0,     " tonnes");
+            convert("ounces1");
+            convert("ounces1");
+            convert("ounces1");
+            convert("ounces1");
+            convert("ounces1");
+            convert("ounces1");
+            convert("ounces1");
+            convert("pounds1");
+            convert("pounds1");
+            convert("pounds1");
+            convert("pounds1");
+            convert("pounds1");
+            convert("pounds1");
+            convert("pounds1");
+            convert("pounds1");
+            convert("stone1");
+            convert("stone1");
+            convert("stone1");
+            convert("stone1");
+            convert("stone1");
+            convert("stone1");
+            convert("stone1");
+            convert("stone1");
+            convert("ton1");
+            convert("ton1");
+            convert("ton1");
+            convert("ton1");
+            convert("ton1");
+            convert("ton1");
+            convert("ton1");
+            convert("ton1");
+
+            convert("celsius1",         "celsius2",   val,     1,         0,        1,       0,    "°C");
+            convert("celsius1",      "fahrenheit2",   val,   1.8,        32,        1,       0,    "°F");
+            convert("celsius1",          "kelvin2",   val,     1,    273.15,        1,       0,    "°K");
+            convert("fahrenheit1",      "celsius2",   val,     1,       -32,    5 / 9,       0,    "°C");
+            convert("fahrenheit1",   "fahrenheit2",   val,     1,       -32,     5 /9,  273.15,    "°F");
+            convert("fahrenheit1",       "kelvin2",   val,     1,    273.15,        1,       0,    "°K");
+            convert("kelvin1",          "celsius2",   val,     1,   -273.15,        1,       0,    "°C");
+            convert("kelvin1",       "fahrenheit2",   val,   1.8,   -459.67,        1,       0,    "°F");
+            convert("kelvin1",           "kelvin2",   val,     1,         0,        1,       0,    "°K");
+
+            convert()
         }
       </script>
 </body>
