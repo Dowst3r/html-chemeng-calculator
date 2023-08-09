@@ -46,8 +46,10 @@
           <option value="meters1">Meters</option>
           <option value="centimeters">Centimeters</option>
           <option value="mile1">Mile</option>
+          <option value="yard1">Yard</option>
           <option value="feet1">Feet</option>
           <option value="inches1">Inches</option>
+          <option value="parsec1">Parsec</option>
         </select>
     
         <!-- Select 2-->
@@ -72,8 +74,10 @@
           <option value="meters2">Meters</option>
           <option value="centimeters2">Centimeters</option>
           <option value="mile2">Mile</option>
+          <option value="yard2">Yard</option>
           <option value="feet2">Feet</option>
           <option value="inches2">Inches</option>
+          <option value="parsec2">Parsec</option>
         </select>
     
     
@@ -127,77 +131,166 @@
             convert("tonnes1",          "grams2",     val,        1000000,     0,    1,  0,           "g");
             convert("tonnes1",     "milligrams2",     val,     1000000000,     0,    1,  0, " milligrams");
             convert("tonnes1",         "ounces2",     val,      35273.962,     0,    1,  0,          "oz");
-            convert("tonnes1",         "pounds2",     val,     2204.62262,     0,    1,  0,          "lb");
+            convert("tonnes1",         "pounds2",     val,     2204.62262,     0,    1,  0,         "lbs");
             convert("tonnes1",          "stone2",     val,     157.473045,     0,    1,  0,          "st");
-            convert("tonnes1",            "ton2",     val, 1 / 1.01604691,     0,    1,  0,        " ton");
+            convert("tonnes1",            "ton2",     val, 1 / 1.01604691,     0,    1,  0,       " tons");
+
             convert("kilograms1",      "tonnes2",     val,       1 / 1000,     0,    1,  0,     " tonnes");
             convert("kilograms1",   "kilograms2",     val,              1,     0,    1,  0,          "kg");
             convert("kilograms1",       "grams2",     val,           1000,     0,    1,  0,           "g");
             convert("kilograms1",  "milligrams2",     val,        1000000,     0,    1,  0, " milligrams");
             convert("kilograms1",      "ounces2",     val,      35.273962,     0,    1,  0,          "oz");
-            convert("kilograms1",      "pounds2",     val,     2.20462262,     0,    1,  0,          "lb");
+            convert("kilograms1",      "pounds2",     val,     2.20462262,     0,    1,  0,         "lbs");
             convert("kilograms1",       "stone2",     val, 1 / 6.35029317,     0,    1,  0,          "st");
-            convert("kilograms1",         "ton2",     val, 1 / 1016.04691,     0,    1,  0,        " ton");
+            convert("kilograms1",         "ton2",     val, 1 / 1016.04691,     0,    1,  0,       " tons");
+
             convert("grams1",          "tonnes2",     val,    1 / 1000000,     0,    1,  0,     " tonnes");
             convert("grams1",       "kilograms2",     val,       1 / 1000,     0,    1,  0,          "kg");
             convert("grams1",           "grams2",     val,              1,     0,    1,  0,           "g");
             convert("grams1",      "milligrams2",     val,           1000,     0,    1,  0, " milligrams");
             convert("grams1",          "ounces2",     val, 1 / 28.3495231,     0,    1,  0,          "oz");
-            convert("grams1",          "pounds2",     val,  1 / 453.59237,     0,    1,  0,          "lb");
+            convert("grams1",          "pounds2",     val,  1 / 453.59237,     0,    1,  0,         "lbs");
             convert("grams1",           "stone2",     val, 1 / 6350.29317,     0,    1,  0,          "st");
-            convert("grams1",             "ton2",     val,  1 / 1.0160E+6,     0,    1,  0,        " ton");
+            convert("grams1",             "ton2",     val,  1 / 1.0160E+6,     0,    1,  0,       " tons");
+
             convert("milligrams1",     "tonnes2",     val, 1 / 1000000000,     0,    1,  0,     " tonnes");
             convert("milligrams1",  "kilograms2",     val,    1 / 1000000,     0,    1,  0,          "kg");
             convert("milligrams1",      "grams2",     val,       1 / 1000,     0,    1,  0,           "g");
             convert("milligrams1", "milligrams2",     val,              1,     0,    1,  0, " milligrams");
             convert("milligrams1",     "ounces2",     val, 1 / 28349.5231,     0,    1,  0,          "oz");
-            convert("milligrams1",     "pounds2",     val,  1 / 453592.37,     0,    1,  0,          "lb");
+            convert("milligrams1",     "pounds2",     val,  1 / 453592.37,     0,    1,  0,         "lbs");
             convert("milligrams1",      "stone2",     val,  1 / 6.3503E+6,     0,    1,  0,          "st");
-            convert("milligrams1",        "ton2",     val,  1 / 1.0160E+9,     0,    1,  0,        " ton");
-            convert("ounces1",         "tonnes2",     val,               ,     0,    1,  0,     " tonnes");
-            convert("ounces1");
-            convert("ounces1");
-            convert("ounces1");
-            convert("ounces1");
-            convert("ounces1");
-            convert("ounces1");
-            convert("ounces1");
-            convert("pounds1");
-            convert("pounds1");
-            convert("pounds1");
-            convert("pounds1");
-            convert("pounds1");
-            convert("pounds1");
-            convert("pounds1");
-            convert("pounds1");
-            convert("stone1");
-            convert("stone1");
-            convert("stone1");
-            convert("stone1");
-            convert("stone1");
-            convert("stone1");
-            convert("stone1");
-            convert("stone1");
-            convert("ton1");
-            convert("ton1");
-            convert("ton1");
-            convert("ton1");
-            convert("ton1");
-            convert("ton1");
-            convert("ton1");
-            convert("ton1");
+            convert("milligrams1",        "ton2",     val,  1 / 1.0160E+9,     0,    1,  0,       " tons");
+
+            convert("ounces1",         "tonnes2",     val,  1 / 35273.962,     0,    1,  0,     " tonnes");
+            convert("ounces1",      "kilograms2",     val,  1 / 35.273962,     0,    1,  0,          "kg");
+            convert("ounces1",          "grams2",     val,     28.3495231,     0,    1,  0,           "g");
+            convert("ounces1",     "milligrams2",     val,     28349.5231,     0,    1,  0, " milligrams");
+            convert("ounces1",         "ounces2",     val,              1,     0,    1,  0,          "oz");
+            convert("ounces1",         "pounds2",     val,         1 / 16,     0,    1,  0,         "lbs");
+            convert("ounces1",          "stone2",     val,            224,     0,    1,  0,          "st");
+            convert("ounces1",            "ton2",     val,          35840,     0,    1,  0,       " tons");
+
+            convert("pounds1",         "tonnes2",     val, 1 / 2204.62262,     0,    1,  0,     " tonnes");
+            convert("pounds1",      "kilograms2",     val, 1 / 2.20462262,     0,    1,  0,          "kg");
+            convert("pounds1",          "grams2",     val,      453.59237,     0,    1,  0,           "g");
+            convert("pounds1",     "milligrams2",     val,      453592.37,     0,    1,  0, " milligrams");
+            convert("pounds1",         "ounces2",     val,             16,     0,    1,  0,          "oz");
+            convert("pounds1",         "pounds2",     val,              1,     0,    1,  0,         "lbs");
+            convert("pounds1",          "stone2",     val,         1 / 14,     0,    1,  0,          "st");
+            convert("pounds1",            "ton2",     val,       1 / 2240,     0,    1,  0,       " tons");
+
+            convert("stone1",          "tonnes2",     val, 1 / 157.473045,     0,    1,  0,     " tonnes");
+            convert("stone1",       "kilograms2",     val,     6.35029317,     0,    1,  0,          "kg");
+            convert("stone1",           "grams2",     val,     6350.29317,     0,    1,  0,           "g");
+            convert("stone1",      "milligrams2",     val,      6.3503E+6,     0,    1,  0, " milligrams");
+            convert("stone1",          "ounces2",     val,            224,     0,    1,  0,          "oz");
+            convert("stone1",          "pounds2",     val,             14,     0,    1,  0,         "lbs");
+            convert("stone1",           "stone2",     val,              1,     0,    1,  0,          "st");
+            convert("stone1",             "ton2",     val,        1 / 160,     0,    1,  0,       " tons");
+
+            convert("ton1",            "tonnes2",     val,     1.01604691,     0,    1,  0,     " tonnes");
+            convert("ton1",         "kilograms2",     val,     1016.04691,     0,    1,  0,          "kg");
+            convert("ton1",             "grams2",     val,      1.0160E+6,     0,    1,  0,           "g");
+            convert("ton1",        "milligrams2",     val,      1.0160E+9,     0,    1,  0, " milligrams");
+            convert("ton1",            "ounces2",     val,          35840,     0,    1,  0,          "oz");
+            convert("ton1",            "pounds2",     val,           2240,     0,    1,  0,         "lbs");
+            convert("ton1",             "stone2",     val,            160,     0,    1,  0,          "st");
+            convert("ton1",               "ton2",     val,              1,     0,    1,  0,       " tons");
+
+
+
+
+
 
             convert("celsius1",         "celsius2",   val,     1,         0,        1,       0,    "°C");
             convert("celsius1",      "fahrenheit2",   val,   1.8,        32,        1,       0,    "°F");
             convert("celsius1",          "kelvin2",   val,     1,    273.15,        1,       0,    "°K");
+
             convert("fahrenheit1",      "celsius2",   val,     1,       -32,    5 / 9,       0,    "°C");
             convert("fahrenheit1",   "fahrenheit2",   val,     1,       -32,     5 /9,  273.15,    "°F");
             convert("fahrenheit1",       "kelvin2",   val,     1,    273.15,        1,       0,    "°K");
+
             convert("kelvin1",          "celsius2",   val,     1,   -273.15,        1,       0,    "°C");
             convert("kelvin1",       "fahrenheit2",   val,   1.8,   -459.67,        1,       0,    "°F");
             convert("kelvin1",           "kelvin2",   val,     1,         0,        1,       0,    "°K");
 
-            convert()
+
+
+
+            
+
+            convert("kilometers1",   "kilometers2",    val,            1,    0,    1,    0,          "km");
+            convert("kilometers1",       "meters2",    val,         1000,    0,    1,    0,           "m");
+            convert("kilometers1",  "centimeters2",    val,       100000,    0,    1,    0,          "cm");
+            convert("kilometers1",         "mile2",    val,    1 / 1.609,    0,    1,    0,      " miles");
+            convert("kilometers1",         "yard2",    val,    1093.6133,    0,    1,    0,      " yards");
+            convert("kilometers1",         "feet2",    val,    3280.8399,    0,    1,    0,          "ft");
+            convert("kilometers1",       "inches2",    val,   39370.0787,    0,    1,    0,     " inches");
+            convert("kilometers1",       "parsec2",    val1 / 3.0857E+13,    0,    1,    0,    " parsecs");
+
+            convert("meters1",   "kilometers2",    val,       1 / 1000,    0,    1,    0,          "km");
+            convert("meters1",       "meters2",    val,              1,    0,    1,    0,           "m");
+            convert("meters1",  "centimeters2",    val,            100,    0,    1,    0,          "cm");
+            convert("meters1",         "mile2",    val,           1609,    0,    1,    0,      " miles");
+            convert("meters1",         "yard2",    val,      1.0936133,    0,    1,    0,      " yards");
+            convert("meters1",         "feet2",    val,      3.2808399,    0,    1,    0,          "ft");
+            convert("meters1",       "inches2",    val,     39.3700787,    0,    1,    0,     " inches");
+            convert("meters1",       "parsec2",    val, 1 / 3.0857E+16,    0,    1,    0,    " parsecs");
+
+            convert("centimeters1",   "kilometers2",    val,     1 / 100000,    0,    1,    0,          "km");
+            convert("centimeters1",       "meters2",    val,            100,    0,    1,    0,           "m");
+            convert("centimeters1",  "centimeters2",    val,              1,    0,    1,    0,          "cm");
+            convert("centimeters1",         "mile2",    val,   1 / 160934.4,    0,    1,    0,      " miles");
+            convert("centimeters1",         "yard2",    val,      1 / 91.44,    0,    1,    0,      " yards");
+            convert("centimeters1",         "feet2",    val,      1 / 30.48,    0,    1,    0,          "ft");
+            convert("centimeters1",       "inches2",    val,       1 / 2.54,    0,    1,    0,     " inches");
+            convert("centimeters1",       "parsec2",    val, 1 / 3.0857E+18,    0,    1,    0,    " parsecs");
+
+            convert("mile1",   "kilometers2",    val,         1.609344,    0,    1,    0,          "km");
+            convert("mile1",       "meters2",    val,         1609.344,    0,    1,    0,           "m");
+            convert("mile1",  "centimeters2",    val,         160934.4,    0,    1,    0,          "cm");
+            convert("mile1",         "mile2",    val,                1,    0,    1,    0,      " miles");
+            convert("mile1",         "yard2",    val,             1760,    0,    1,    0,      " yards");
+            convert("mile1",         "feet2",    val,             5280,    0,    1,    0,          "ft");
+            convert("mile1",       "inches2",    val,            63360,    0,    1,    0,     " inches");
+            convert("mile1",       "parsec2",    val,   1 / 1.9174E+13,    0,    1,    0,    " parsecs");
+
+            convert("yard1",   "kilometers2",    val,    1 / 1093.6133,    0,    1,    0,          "km");
+            convert("yard1",       "meters2",    val,    1 / 1.0936133,    0,    1,    0,           "m");
+            convert("yard1",  "centimeters2",    val,            91.44,    0,    1,    0,          "cm");
+            convert("yard1",         "mile2",    val,         1 / 1760,    0,    1,    0,      " miles");
+            convert("yard1",         "yard2",    val,                1,    0,    1,    0,      " yards");
+            convert("yard1",         "feet2",    val,                3,    0,    1,    0,          "ft");
+            convert("yard1",       "inches2",    val,               36,    0,    1,    0,     " inches");
+            convert("yard1",       "parsec2",    val,   1 / 3.3745E+16,    0,    1,    0,    " parsecs");
+
+            convert("feet1",   "kilometers2",    val,    1 / 3280.8399,    0,    1,    0,          "km");
+            convert("feet1",       "meters2",    val,    1 / 3.2808399,    0,    1,    0,           "m");
+            convert("feet1",  "centimeters2",    val,            30.48,    0,    1,    0,          "cm");
+            convert("feet1",         "mile2",    val,         1 / 5280,    0,    1,    0,      " miles");
+            convert("feet1",         "yard2",    val,            1 / 3,    0,    1,    0,      " yards");
+            convert("feet1",         "feet2",    val,                1,    0,    1,    0,          "ft");
+            convert("feet1",       "inches2",    val,               12,    0,    1,    0,     " inches");
+            convert("feet1",       "parsec2",    val,   1 / 1.0124E+17,    0,    1,    0,    " parsecs");
+
+            convert("inches1",   "kilometers2",    val,   1 / 39370.0787,    0,    1,    0,          "km");
+            convert("inches1",       "meters2",    val,   1 / 39.3700787,    0,    1,    0,           "m");
+            convert("inches1",  "centimeters2",    val,             2.54,    0,    1,    0,          "cm");
+            convert("inches1",         "mile2",    val,        1 / 63360,    0,    1,    0,      " miles");
+            convert("inches1",         "yard2",    val,               36,    0,    1,    0,      " yards");
+            convert("inches1",         "feet2",    val,               12,    0,    1,    0,          "ft");
+            convert("inches1",       "inches2",    val,                1,    0,    1,    0,     " inches");
+            convert("inches1",       "parsec2",    val,   1 / 1.2148E+18,    0,    1,    0,    " parsecs");
+
+            convert("parsec1",   "kilometers2",    val,     3.0857E+13,    0,    1,    0,          "km");
+            convert("parsec1",       "meters2",    val,     3.0857E+16,    0,    1,    0,           "m");
+            convert("parsec1",  "centimeters2",    val,     3.0857E+18,    0,    1,    0,          "cm");
+            convert("parsec1",         "mile2",    val,     1.9174E+13,    0,    1,    0,      " miles");
+            convert("parsec1",         "yard2",    val,     3.3745E+16,    0,    1,    0,      " yards");
+            convert("parsec1",         "feet2",    val,     1.0124E+17,    0,    1,    0,          "ft");
+            convert("parsec1",       "inches2",    val,     1.2148E+18,    0,    1,    0,     " inches");
+            convert("parsec1",       "parsec2",    val,              1,    0,    1,    0,    " parsecs");
         }
       </script>
 </body>
