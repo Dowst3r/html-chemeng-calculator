@@ -46,7 +46,7 @@
         <!--INPUT-->
         <br>
         <br>
-        <br>Value
+        <br>Value:
         <input type="number" id="value" placeholder="Insert value">
         <br>
     
@@ -62,199 +62,48 @@
       </form>
 
       <script>
+        var val;
+        var madeSelection_1;
+        var madeSelection_2;
+    
+        function convert(opt1, opt2, val, factor, unitStr) {
+            if((madeSelection_1 == opt1) && (madeSelection_2 == opt2)) {
+                const calculation = val * factor;
+                const formattedCalculation = calculation.toFixed(15);
+                const formattedCalculationStr = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 15
+                });
+                var result = formattedCalculationStr.toLocaleString() + unitStr;
+                document.getElementById("text_output").innerHTML = result;
+            }
+        }
+
         function Conversion() {
-            var val = parseFloat(document.getElementById("value").value);
+            val = parseFloat(document.getElementById("value").value);
             var selectFrom = document.getElementById("Selection");
             var selectTo = document.getElementById("Selection2");
 
-            var madeSelection_1 = selectFrom[selectFrom.selectedIndex].value;
-            var madeSelection_2 = selectTo[selectTo.selectedIndex].value;
+            madeSelection_1 = selectFrom[selectFrom.selectedIndex].value;
+            madeSelection_2 = selectTo[selectTo.selectedIndex].value;
 
-
-            if(madeSelection_1 == "tons1" && madeSelection_2 == "tons2") {
-                const calculation = val * 1;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + " tons";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if(madeSelection_1 == "tons1" && madeSelection_2 == "kilograms2") {
-                const calculation = val * 1000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + "kg";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if(madeSelection_1 == "tons1" && madeSelection_2 == "grams2") {
-                const calculation = val * 1000000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + "g";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if(madeSelection_1 == "tons1" && madeSelection_2 == "milligrams2") {
-                const calculation = val * 1000000000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + " milligrams";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-
-
-            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "tons2") {
-                const calculation = val / 1000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + " tons";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "kilograms2") {
-                const calculation = val * 1;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + "kg";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "grams2") {
-                const calculation = val * 1000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + "g";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if (madeSelection_1 == "kilograms1" && madeSelection_2 == "milligrams2") {
-                const calculation = val * 1000000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + " milligrams";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-
-
-            if (madeSelection_1 == "grams1" && madeSelection_2 == "tons2") {
-                const calculation = val / 1000000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + " tons";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if (madeSelection_1 == "grams1" && madeSelection_2 == "kilograms2") {
-                const calculation = val / 1000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + "kg";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if (madeSelection_1 == "grams1" && madeSelection_2 == "grams2") {
-                const calculation = val * 1;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + "g";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if (madeSelection_1 == "grams1" && madeSelection_2 == "milligrams2") {
-                const calculation = val * 1000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + " milligrams";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-
-
-            if (madeSelection_1 == "milligrams1" && madeSelection_2 == "tons2") {
-                const calculation = val / 1000000000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + " tons";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if (madeSelection_1 == "milligrams1" && madeSelection_2 == "kilograms2") {
-                const calculation = val / 1000000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + "kg";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if (madeSelection_1 == "milligrams1" && madeSelection_2 == "grams2") {
-                const calculation = val / 1000;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + "g";
-                document.getElementById("text_output").innerHTML = result;
-            }
-
-            if (madeSelection_1 == "milligrams1" && madeSelection_2 == "milligrams2") {
-                const calculation = val * 1;
-                const formattedCalculation = calculation.toFixed(30);
-                const formattedcalculation = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 30
-                });
-                var result = formattedcalculation.toLocaleString() + " milligrams";
-                document.getElementById("text_output").innerHTML = result;
-            }
+            convert("tons1",      "tons2",        val,              1,       "tons");
+            convert("tons1",      "kilograms2",   val,           1000,  "kilograms");
+            convert("tons1",      "grams2",       val,        1000000,      "grams");
+            convert("tons1",      "milligrams2",  val,     1000000000, "milligrams");
+            convert("kilograms1", "tons2",        val,       1 / 1000,       "tons");
+            convert("kilograms1", "kilograms2",   val,              1,  "kilograms");
+            convert("kilograms1", "grams2",       val,           1000,      "grams");
+            convert("kilograms1", "milligrams2",  val,        1000000, "milligrams");
+            convert("grams1",     "tons2",        val,    1 / 1000000,       "tons");
+            convert("grams1",     "kilograms2",   val,       1 / 1000,  "kilograms");
+            convert("grams1",     "grams2",       val,              1,      "grams");
+            convert("grams1",     "milligrams2",  val,           1000, "milligrams");
+            convert("milligrams1", "tons2",       val, 1 / 1000000000,       "tons");
+            convert("milligrams1", "kilograms2",  val,    1 / 1000000,  "kilograms");
+            convert("milligrams1", "grams2",      val,       1 / 1000,      "grams");
+            convert("milligrams1", "milligrams2", val,              1, "milligrams");
         }
       </script>
 </body>
 </html>
-
-<!--need to fix output size for GRAMS TO TONS, MILLIGRAMS TO TONS AND MILLIGRAMS TO KG-->

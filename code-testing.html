@@ -26,7 +26,7 @@
         result.textContent = '';
 
         // Determine the new options and functionality
-        const newOptions = ['kilometers', 'miles'];
+        const weights_menu= ['kilometers', 'miles'];
         const newFunctionality = () => {
             result.textContent = 'New functionality executed!';
         };
@@ -35,7 +35,7 @@
         dropdown.innerHTML = '';
 
         // Add new options to the dropdown
-        newOptions.forEach((optionText) => {
+        weights_menu.forEach((optionText) => {
             const option = document.createElement('option');
             option.value = optionText.toLowerCase().replace(' ', '_');
             option.textContent = optionText;
@@ -57,7 +57,7 @@
 
             dropdown.innerHTML = '';
 
-            newOptions.forEach((optionText) => {
+            weights_menu.forEach((optionText) => {
                 const option = document.createElement('option');
                 option.value = optionText.toLowerCase().replace(' ', '_');
                 option.textContent = optionText;
