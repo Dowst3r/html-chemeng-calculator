@@ -106,14 +106,14 @@
     
         function convert(opt1, opt2, val, factor, factor2, factor3, factor4, unitStr) {
             if((madeSelection_1 == opt1) && (madeSelection_2 == opt2)) {
-                const calculation = val * factor + factor2 * factor3 + factor4;
+                const calculation = (val * factor) + (factor2 * factor3) + factor4;
                 const formattedCalculation = calculation.toFixed(20);
-                const formattedCalculationStr = (+formattedCalculation).toLocaleString('en-US', {
-                    minimumFractionDigits: -20,
+                const CalculationStr = (+formattedCalculation).toLocaleString('en-US', {
+                    minimumFractionDigits: 0,
                     maximumFractionDigits: 20
                 });
-                const formattedCalculationScie = parseFloat(formattedCalculationStr).toExponential();
-                var result = formattedCalculationStr.toLocaleString() + unitStr + ",    " + formattedCalculationScie + unitStr;
+                const formattedCalculationScie = parseFloat(calculation).toExponential(4);
+                var result = CalculationStr.toLocaleString() + unitStr + ", " + formattedCalculationScie + unitStr;
                 document.getElementById("text_output").innerHTML = result;
             }
         }
@@ -220,14 +220,14 @@
 
             
 
-            convert("kilometers1",   "kilometers2",    val,            1,    0,    1,    0,          "km");
-            convert("kilometers1",       "meters2",    val,         1000,    0,    1,    0,           "m");
-            convert("kilometers1",  "centimeters2",    val,       100000,    0,    1,    0,          "cm");
-            convert("kilometers1",         "mile2",    val,    1 / 1.609,    0,    1,    0,      " miles");
-            convert("kilometers1",         "yard2",    val,    1093.6133,    0,    1,    0,      " yards");
-            convert("kilometers1",         "feet2",    val,    3280.8399,    0,    1,    0,          "ft");
-            convert("kilometers1",       "inches2",    val,   39370.0787,    0,    1,    0,     " inches");
-            convert("kilometers1",       "parsec2",    val1 / 3.0857E+13,    0,    1,    0,    " parsecs");
+            convert("kilometers1",   "kilometers2",    val,               1,    0,    1,    0,          "km");
+            convert("kilometers1",       "meters2",    val,            1000,    0,    1,    0,           "m");
+            convert("kilometers1",  "centimeters2",    val,          100000,    0,    1,    0,          "cm");
+            convert("kilometers1",         "mile2",    val,       1 / 1.609,    0,    1,    0,      " miles");
+            convert("kilometers1",         "yard2",    val,       1093.6133,    0,    1,    0,      " yards");
+            convert("kilometers1",         "feet2",    val,       3280.8399,    0,    1,    0,          "ft");
+            convert("kilometers1",       "inches2",    val,      39370.0787,    0,    1,    0,     " inches");
+            convert("kilometers1",       "parsec2",    val,  1 / 3.0857E+13,    0,    1,    0,    " parsecs");
 
             convert("meters1",   "kilometers2",    val,       1 / 1000,    0,    1,    0,          "km");
             convert("meters1",       "meters2",    val,              1,    0,    1,    0,           "m");
