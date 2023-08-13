@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dynamic Dropdown Example</title>
-    <!-- Include your CSS and JavaScript files here -->
+    <title>Dropdown Button Example</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <button id="lengths-menu">Lengths</button>
-    <button id="weights-menu">Weights</button>
-    <select id="dropdown">
-        <!--Default dropdown2 options-->
-        <option value="otheroption1">kilometers</option>
-        <option value="otheroption2">miles</option>
+    <button id="changeToOriginalButton">Change to Original Options</button>
+    <button id="changeToNewButton">Change to New Options</button>
+    <button id="changeToThirdButton">Change to Third Options</button>
+    <br>
+    <br>
+    <br>
+    <select id="dropdownMenu">
+        <option value="option1">meters</option>
+        <option value="option2">kilometers</option>
+        <option value="option3">yards</option>
+        <option value="option4">miles</option>
+
     </select>
-    <div id="result"></div>
     <script>
-        // Get references to the button, dropdown, and result elements
-        const lengths_menu = document.getElementById('lengths-menu');
-        const weights_menu = document.getElementById('weights-menu');
-        const dropdown = document.getElementById('dropdown');
-        const result = document.getElementById('result');
+        const changeToOriginalButton = document.getElementById("changeToOriginalButton");
+        const changeToNewButton = document.getElementById("changeToNewButton");
+        const changeToThirdButton = document.getElementById("changeToThirdButton");
+        const dropdownMenu = document.getElementById("dropdownMenu");
 
-        // Add click event listener to the button
-        lengths_menu.addEventListener('click', () => {
-        // Clear previous result content
-        result.textContent = '';
+        const originalOptions = [
+            { value: "option1", text: "meters" },
+            { value: "option2", text: "kilometers" },
+            { value: "option3", text: "yards" },
+            { value: "option4", text: "miles" }
+        ];
 
-        // Determine the new options and functionality
-        const weights_menu= ['kilometers', 'miles'];
-        const newFunctionality = () => {
-            result.textContent = 'New functionality executed!';
-        };
+        const newOptions = [
+            { value: "newOption1", text: "kilograms" },
+            { value: "newOption2", text: "tonnes" },
+            { value: "newOption3", text: "pounds" }
+        ];
 
-        // Clear existing dropdown options
-        dropdown.innerHTML = '';
+        const thirdOptions = [
+            { value: "thirdOption1", text: "Celsius" },
+            { value: "thirdOption2", text: "Fahrenheit" },
+            { value: "thirdOption3", text: "Kelvin" }
+        ];
 
-        // Add new options to the dropdown
-        weights_menu.forEach((optionText) => {
-            const option = document.createElement('option');
-            option.value = optionText.toLowerCase().replace(' ', '_');
-            option.textContent = optionText;
-            dropdown.appendChild(option);
+        function setOptions(options) {
+            dropdownMenu.innerHTML = "";
+            options.forEach(option => {
+                const newOption = document.createElement("option");
+                newOption.value = option.value;
+                newOption.text = option.text;
+                dropdownMenu.appendChild(newOption);
+            });
+        }
+
+        changeToOriginalButton.addEventListener("click", () => {
+            setOptions(originalOptions);
         });
 
-        // Add new functionality to the button
-        lengths_menu.removeEventListener('click', () => {});
-        lengths_menu.addEventListener('click', newFunctionality);
-    });
-
-        weights_menu.addEventListener('click', () => {
-            result.textContent = '';
-
-            const newOptions2 = ['kilograms', 'grams'];
-            const newFunctionality2 = () => {
-                result.textContent = 'New functionality executed!';
-            };
-
-            dropdown.innerHTML = '';
-
-            weights_menu.forEach((optionText) => {
-                const option = document.createElement('option');
-                option.value = optionText.toLowerCase().replace(' ', '_');
-                option.textContent = optionText;
-                dropdown.appendChild(option);
+        changeToNewButton.addEventListener("click", () => {
+            setOptions(newOptions);
         });
-    });
+
+        changeToThirdButton.addEventListener("click", () => {
+            setOptions(thirdOptions);
+        });
     </script>
 </body>
 </html>
