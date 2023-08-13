@@ -20,16 +20,15 @@
 <body>
     <h1>Unit Converter</h1>
     <p>This is a unit converter in which you select your current units and then choose the units you want it changed into:</p>
-    <button id="mass" onclick="setDropdownOptions([Dropdown1, Dropdown2], [massOptions1, massOptions2])">Masses</button>
-    <button id="length" onclick="setDropdownOptions([Dropdown1, Dropdown2], [lengthOptions1, lengthOptions2])">Lengths</button>
-    <button id="temperature" onclick="setDropdownOptions([Dropdown1, Dropdown2], [temperatureOptions1, temperatureOptions2])">Temperatures</button>
+    <button onclick="setDropdownOptions(massOptions1, massOptions2)">Mass</button>
+    <button onclick="setDropdownOptions(lengthOptions1, lengthOptions2)">Length</button>
+    <button onclick="setDropdownOptions(temperatureOptions1, temperatureOptions2)">Temperature</button>
     <br>
     <br>
     <form>
         <!-- Select 1-->
         <label class="enter">From:</label>
         <select name="converts" id="Selection">
-
           <option>Choose Option</option>
           <option value="tonnes1">Tonnes</option>
           <option value="kilograms1">Kilograms</option>
@@ -39,25 +38,11 @@
           <option value="pounds1">Pounds</option>
           <option value="stone1">Stone</option>
           <option value="ton1">Ton</option>
-
-          <option value="celsius1">Celsius</option>
-          <option value="fahrenheit1">Fahrenheit</option>
-          <option value="kelvin1">Kelvin</option>
-
-          <option value="kilometers1">Kilometers</option>
-          <option value="meters1">Meters</option>
-          <option value="centimeters">Centimeters</option>
-          <option value="mile1">Mile</option>
-          <option value="yard1">Yard</option>
-          <option value="feet1">Feet</option>
-          <option value="inches1">Inches</option>
-          <option value="parsec1">Parsec</option>
         </select>
     
         <!-- Select 2-->
         <label class="exit">To:</label>
         <select name="converts2" id="Selection2">
-
           <option>Choose Option</option>
           <option value="tonnes2">Tonnes</option>
           <option value="kilograms2">Kilograms</option>
@@ -67,19 +52,6 @@
           <option value="pounds2">Pounds</option>
           <option value="stone2">Stone</option>
           <option value="ton2">Ton</option>
-
-          <option value="celsius2">Celsius</option>
-          <option value="fahrenheit2">Fahrenheit</option>
-          <option value="kelvin2">Kelvin</option>
-          
-          <option value="kilometers2">Kilometers</option>
-          <option value="meters2">Meters</option>
-          <option value="centimeters2">Centimeters</option>
-          <option value="mile2">Mile</option>
-          <option value="yard2">Yard</option>
-          <option value="feet2">Feet</option>
-          <option value="inches2">Inches</option>
-          <option value="parsec2">Parsec</option>
         </select>
     
     
@@ -106,75 +78,86 @@
         const Dropdown2 = document.getElementById("Selection2");
 
         const massOptions1 = [
-            { value: "tonnes1", text: "Tonnes"},
-            { value: "kilograms1", text: "Kilograms"},
-            { value: "grams1", text: "Grams"},
-            { value: "milligrams1", text: "Milligrams"},
-            { value: "ounces1", text: "Ounces"},
-            { value: "pounds1", text: "Pounds"},
-            { value: "stone1", text: "Stone"},
-            { value: "ton1", text: "Tons"},
-        ]
-
+            [value = "tonnes1", text = "Tonnes"],
+            [value = "kilograms1", text = "Kilograms"],
+            [value = "grams1", text = "Grams"],
+            [value = "milligrams1", text = "Milligrams"],
+            [value = "ounces1", text = "Ounces"],
+            [value = "pounds1", text = "Pounds"],
+            [value = "stone1", text = "Stone"],
+            [value = "ton1", text = "Tons"] 
+        ];
         const massOptions2 = [
-            { value: "tonnes2", text: "Tonnes"},
-            { value: "kilograms2", text: "Kilograms"},
-            { value: "grams2", text: "Grams"},
-            { value: "milligrams2", text: "Milligrams"},
-            { value: "ounces2", text: "Ounces"},
-            { value: "pounds2", text: "Pounds"},
-            { value: "stone2", text: "Stone"},
-            { value: "ton2", text: "Tons"},
-        ]
+            [value = "tonnes2", text = "Tonnes"],
+            [value = "kilograms2", text = "Kilograms"],
+            [value = "grams2", text = "Grams"],
+            [value = "milligrams2", text = "Milligrams"],
+            [value = "ounces2", text = "Ounces"],
+            [value = "pounds2", text = "Pounds"],
+            [value = "stone2", text = "Stone"],
+            [value = "ton2", text = "Tons"]
+        ];
 
         const lengthOptions1 = [
-            { value: "kilometers1", text: "Kilometers"},
-            { value: "meters1", text: "Meters"},
-            { value: "centimeters1", text: "Centimeters"},
-            { value: "mile1", text: "Miles"},
-            { value: "yards1", text: "Yards"},
-            { value: "feet1", text: "Feet"},
-            { value: "inches1", text: "Inches"},
-            { value: "parsec1", text: "Parsec"},
-        ]
-
+            [value = "kilometers1", text = "Kilometers"],
+            [value = "meters1", text = "Meters"],
+            [value = "centimeters1", text = "Centimeters"],
+            [value = "mile1", text = "Miles"],
+            [value = "yards1", text = "Yards"],
+            [value = "feet1", text = "Feet"],
+            [value = "inches1", text = "Inches"],
+            [value = "parsec1", text = "Parsec"]
+        ];
         const lengthOptions2 = [
-            { value: "kilometers2", text: "Kilometers"},
-            { value: "meters2", text: "Meters"},
-            { value: "centimeters2", text: "Centimeters"},
-            { value: "mile2", text: "Miles"},
-            { value: "yards2", text: "Yards"},
-            { value: "feet2", text: "Feet"},
-            { value: "inches2", text: "Inches"},
-            { value: "parsec2", text: "Parsec"},
-        ]
+            [value = "kilometers2", text = "Kilometers"],
+            [value = "meters2", text = "Meters"],
+            [value = "centimeters2", text = "Centimeters"],
+            [value = "mile2", text = "Miles"],
+            [value = "yards2", text = "Yards"],
+            [value = "feet2", text = "Feet"],
+            [value = "inches2", text = "Inches"],
+            [value = "parsec2", text = "Parsec"]
+        ];
 
         const temperatureOptions1 = [
-            { value: "celsius1", text: "Celsius"},
-            { value: "fahrenheit1", text: "Fahrenheit"},
-            { value: "kelvin1", text: "Kelvin"},
-        ]
-
+            [value = "celsius1", text = "Celsius"],
+            [value = "fahrenheit1", text = "Fahrenheit"],
+            [value = "kelvin1", text = "Kelvin"]
+        ];
         const temperatureOptions2 = [
-            { value: "celsius2", text: "Celsius"},
-            { value: "fahrenheit2", text: "Fahrenheit"},
-            { value: "kelvin2", text: "Kelvin"},
-        ]
+            [value = "celsius2", text = "Celsius"],
+            [value = "fahrenheit2", text = "Fahrenheit"],
+            [value = "kelvin2", text = "Kelvin"]
+        ];
 
-        function setDropdownOptions(dropdownIds, options) {
-            dropdownIds.forEach(dropdownId => {
-                const dropdown = document.getElementById(dropdownId);
-                dropdown.innerHTML = "";
-                options.forEach(option => {
-                    const newOption = document.createElement("option");
-                    newOption.value = option.value;
-                    newOption.text = option.text;
-                    dropdown.appendChild(newOption);
+
+
+        function setDropdownOptions(options1, options2) {
+            dropdownIds.forEach((dropdownId) => {
+                const dropdown1 = document.getElementById("Selection");
+                const dropdown2 = document.getElementById("Selection2");
+                dropdown1.innerHTML = "";
+                dropdown2.innerHTML = "";
+
+                options1.forEach((option) => {
+                    const newOption1 = document.createElement("option");
+                    newOption1.value = option.value;
+                    newOption1.text = option.text;
+                    dropdown1.appendChild(newOption1);
+                });
+
+                options2.forEach((option) => {
+                    const newOption2 = document.createElement("option");
+                    newOption2.value = option.value;
+                    newOption2.text = option.text;
+                    dropdown2.appendChild(newOption2);
                 });
             });
         }
 
-        setDropdownOptions([Dropdown1, Dropdown2], [massOptions1, massOptions2]);
+
+
+
 
 
         var val;
