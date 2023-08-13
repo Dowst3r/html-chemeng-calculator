@@ -113,8 +113,9 @@
                     maximumFractionDigits: 20
                 });
                 const formattedCalculationScie = parseFloat(calculation).toExponential(4);
-                var result = CalculationStr.toLocaleString() + unitStr + ", " + formattedCalculationScie + unitStr;
-                document.getElementById("text_output").innerHTML = result;
+                var result = CalculationStr.toLocaleString() + unitStr;
+                var result_sci = formattedCalculationScie + unitStr;
+                document.getElementById("text_output").innerHTML = result + "<br>" + "<br>" + result_sci
             }
         }
 
