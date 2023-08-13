@@ -1,69 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dropdown Button Example</title>
+    <title>Unit Converter</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <button id="changeToOriginalButton">Change to Original Options</button>
-    <button id="changeToNewButton">Change to New Options</button>
-    <button id="changeToThirdButton">Change to Third Options</button>
-    <br>
-    <br>
-    <br>
-    <select id="dropdownMenu">
-        <option value="option1">meters</option>
-        <option value="option2">kilometers</option>
-        <option value="option3">yards</option>
-        <option value="option4">miles</option>
-
+    <select id="Dropdown1">
+        <!-- Initial options are mass units -->
+        <option value="kg">Kilogram</option>
+        <option value="lb">Pound</option>
+        <option value="g">Gram</option>
     </select>
+
+    <select id="Dropdown2">
+        <!-- Initial options are the same as mass units -->
+        <option value="kg">Kilogram</option>
+        <option value="lb">Pound</option>
+        <option value="g">Gram</option>
+    </select>
+
+    <button id="switchToMassUnits" onclick="setDropdownOptions([Dropdown1, Dropdown2], massUnits)">Switch to Mass Units</button>
+    <button id="switchToLengthUnits" onclick="setDropdownOptions([Dropdown1, Dropdown2], lengthUnits)">Switch to Length Units</button>
+
     <script>
-        const changeToOriginalButton = document.getElementById("changeToOriginalButton");
-        const changeToNewButton = document.getElementById("changeToNewButton");
-        const changeToThirdButton = document.getElementById("changeToThirdButton");
-        const dropdownMenu = document.getElementById("dropdownMenu");
+        const Dropdown1 = document.getElementById("Dropdown1");
+        const Dropdown2 = document.getElementById("Dropdown2");
 
-        const originalOptions = [
-            { value: "option1", text: "meters" },
-            { value: "option2", text: "kilometers" },
-            { value: "option3", text: "yards" },
-            { value: "option4", text: "miles" }
+        const massUnits = [
+            { value: "kg", text: "Kilogram" },
+            { value: "lb", text: "Pound" },
+            { value: "g", text: "Gram" }
         ];
 
-        const newOptions = [
-            { value: "newOption1", text: "kilograms" },
-            { value: "newOption2", text: "tonnes" },
-            { value: "newOption3", text: "pounds" }
+        const lengthUnits = [
+            { value: "m", text: "Meter" },
+            { value: "ft", text: "Foot" },
+            { value: "cm", text: "Centimeter" }
         ];
 
-        const thirdOptions = [
-            { value: "thirdOption1", text: "Celsius" },
-            { value: "thirdOption2", text: "Fahrenheit" },
-            { value: "thirdOption3", text: "Kelvin" }
-        ];
-
-        function setOptions(options) {
-            dropdownMenu.innerHTML = "";
-            options.forEach(option => {
-                const newOption = document.createElement("option");
-                newOption.value = option.value;
-                newOption.text = option.text;
-                dropdownMenu.appendChild(newOption);
+        function setDropdownOptions(dropdownIds, options) {
+            dropdownIds.forEach(dropdownId => {
+                const dropdown = document.getElementById(dropdownId);
+                dropdown.innerHTML = "";
+                options.forEach(option => {
+                    const newOption = document.createElement("option");
+                    newOption.value = option.value;
+                    newOption.text = option.text;
+                    dropdown.appendChild(newOption);
+                });
             });
         }
 
-        changeToOriginalButton.addEventListener("click", () => {
-            setOptions(originalOptions);
-        });
-
-        changeToNewButton.addEventListener("click", () => {
-            setOptions(newOptions);
-        });
-
-        changeToThirdButton.addEventListener("click", () => {
-            setOptions(thirdOptions);
-        });
+        // Initial options are mass units
+        setDropdownOptions([Dropdown1, Dropdown2], massUnits);
     </script>
 </body>
 </html>
