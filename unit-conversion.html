@@ -20,9 +20,9 @@
 <body>
     <h1>Unit Converter</h1>
     <p>This is a unit converter in which you select your current units and then choose the units you want it changed into:</p>
-    <button onclick="setDropdownOptions(massOptions1, massOptions2)">Mass</button>
-    <button onclick="setDropdownOptions(lengthOptions1, lengthOptions2)">Length</button>
-    <button onclick="setDropdownOptions(temperatureOptions1, temperatureOptions2)">Temperature</button>
+    <button onclick="MassOptions()">Mass</button>
+    <button onclick="LengthOptions()">Length</button>
+    <button onclick="TemperatureOptions()">Temperature</button>
     <br>
     <br>
     <form>
@@ -130,33 +130,26 @@
             [value = "kelvin2", text = "Kelvin"]
         ];
 
+        function MassOptions() {
+            Dropdown1.appendChild("");
+            Dropdown1.appendChild(massOptions1);
+            Dropdown2.appendChild("");
+            Dropdown2.appendChild(massOptions2);
+        };
 
+        function LengthOptions() {
+            Dropdown1.appendChild("");
+            Dropdown1.appendChild(lengthOptions1);
+            Dropdown2.appendChild("");
+            Dropdown2.appendChild(lengthOptions2);
+        };
 
-        function setDropdownOptions(options1, options2) {
-            dropdownIds.forEach((dropdownId) => {
-                const dropdown1 = document.getElementById("Selection");
-                const dropdown2 = document.getElementById("Selection2");
-                dropdown1.innerHTML = "";
-                dropdown2.innerHTML = "";
-
-                options1.forEach((option) => {
-                    const newOption1 = document.createElement("option");
-                    newOption1.value = option.value;
-                    newOption1.text = option.text;
-                    dropdown1.appendChild(newOption1);
-                });
-
-                options2.forEach((option) => {
-                    const newOption2 = document.createElement("option");
-                    newOption2.value = option.value;
-                    newOption2.text = option.text;
-                    dropdown2.appendChild(newOption2);
-                });
-            });
-        }
-
-
-
+        function TemperatureOptions() {
+            Dropdown1.appendChild("");
+            Dropdown1.appendChild(temperatureOptions1);
+            Dropdown2.appendChild("");
+            Dropdown2.appendChild(temperatureOptions2);
+        };
 
 
 
