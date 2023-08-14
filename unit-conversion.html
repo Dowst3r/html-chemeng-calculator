@@ -74,82 +74,125 @@
       </form>
 
       <script>
-        const Dropdown1 = document.getElementById("Selection");
-        const Dropdown2 = document.getElementById("Selection2");
-
-        const massOptions1 = [
-            [value = "tonnes1", text = "Tonnes"],
-            [value = "kilograms1", text = "Kilograms"],
-            [value = "grams1", text = "Grams"],
-            [value = "milligrams1", text = "Milligrams"],
-            [value = "ounces1", text = "Ounces"],
-            [value = "pounds1", text = "Pounds"],
-            [value = "stone1", text = "Stone"],
-            [value = "ton1", text = "Tons"] 
-        ];
-        const massOptions2 = [
-            [value = "tonnes2", text = "Tonnes"],
-            [value = "kilograms2", text = "Kilograms"],
-            [value = "grams2", text = "Grams"],
-            [value = "milligrams2", text = "Milligrams"],
-            [value = "ounces2", text = "Ounces"],
-            [value = "pounds2", text = "Pounds"],
-            [value = "stone2", text = "Stone"],
-            [value = "ton2", text = "Tons"]
-        ];
-
-        const lengthOptions1 = [
-            [value = "kilometers1", text = "Kilometers"],
-            [value = "meters1", text = "Meters"],
-            [value = "centimeters1", text = "Centimeters"],
-            [value = "mile1", text = "Miles"],
-            [value = "yards1", text = "Yards"],
-            [value = "feet1", text = "Feet"],
-            [value = "inches1", text = "Inches"],
-            [value = "parsec1", text = "Parsec"]
-        ];
-        const lengthOptions2 = [
-            [value = "kilometers2", text = "Kilometers"],
-            [value = "meters2", text = "Meters"],
-            [value = "centimeters2", text = "Centimeters"],
-            [value = "mile2", text = "Miles"],
-            [value = "yards2", text = "Yards"],
-            [value = "feet2", text = "Feet"],
-            [value = "inches2", text = "Inches"],
-            [value = "parsec2", text = "Parsec"]
-        ];
-
-        const temperatureOptions1 = [
-            [value = "celsius1", text = "Celsius"],
-            [value = "fahrenheit1", text = "Fahrenheit"],
-            [value = "kelvin1", text = "Kelvin"]
-        ];
-        const temperatureOptions2 = [
-            [value = "celsius2", text = "Celsius"],
-            [value = "fahrenheit2", text = "Fahrenheit"],
-            [value = "kelvin2", text = "Kelvin"]
-        ];
-
         function MassOptions() {
-            Dropdown1.appendChild("");
-            Dropdown1.appendChild(massOptions1);
-            Dropdown2.appendChild("");
-            Dropdown2.appendChild(massOptions2);
-        };
+            const Dropdown1 = document.getElementById("Selection");
+            const Dropdown2 = document.getElementById("Selection2");
+
+            Dropdown1.innerHTML = "";
+            Dropdown2.innerHTML = "";
+
+            const massOptions1 = [
+                { value: "tonnes1", text: "Tonnes" },
+                { value: "kilograms1", text: "Kilograms" },
+                { value: "grams1", text: "Grams" },
+                { value: "milligrams1", text: "Milligrams" },
+                { value: "ounces1", text: "Ounces" },
+                { value: "pounds1", text: "Pounds" },
+                { value: "stone1", text: "Stone" },
+                { value: "ton1", text: "Tons" } 
+            ];
+            const massOptions2 = [
+                { value: "tonnes2", text: "Tonnes" },
+                { value: "kilograms2", text: "Kilograms" },
+                { value: "grams2", text: "Grams" },
+                { value: "milligrams2", text: "Milligrams" },
+                { value: "ounces2", text: "Ounces" },
+                { value: "pounds2", text: "Pounds" },
+                { value: "stone2", text: "Stone" },
+                { value: "ton2", text: "Tons" } 
+            ];
+
+            massOptions1.forEach(optionData => {
+                const option1 = document.createElement("option");
+                option1.value = optionData.value;
+                option1.textContent = optionData.text;
+                Dropdown1.appendChild(option1);
+            });
+            massOptions2.forEach(optionData => {
+                const option2 = document.createElement("option");
+                option2.value = optionData.value;
+                option2.textContent = optionData.text;
+                Dropdown2.appendChild(option2);
+            });
+        }
+
+
 
         function LengthOptions() {
-            Dropdown1.appendChild("");
-            Dropdown1.appendChild(lengthOptions1);
-            Dropdown2.appendChild("");
-            Dropdown2.appendChild(lengthOptions2);
-        };
+            const Dropdown1 = document.getElementById("Selection");
+            const Dropdown2 = document.getElementById("Selection2");
+
+            Dropdown1.innerHTML = "";
+            Dropdown2.innerHTML = "";
+
+            const lengthOptions1 = [
+                { value: "kilometers1", text: "Kilometers" },
+                { value: "meters1", text: "Meters" },
+                { value: "centimeters1", text: "Centimeters" },
+                { value: "mile1", text: "Miles" },
+                { value: "yards1", text: "Yards" },
+                { value: "feet1", text: "Feet" },
+                { value: "inches1", text: "Inches" },
+                { value: "parsec1", text: "Parsec" }
+            ];
+            const lengthOptions2 = [
+                { value: "kilometers2", text: "Kilometers" },
+                { value: "meters2", text: "Meters" },
+                { value: "centimeters2", text: "Centimeters" },
+                { value: "mile2", text: "Miles" },
+                { value: "yards2", text: "Yards" },
+                { value: "feet2", text: "Feet" },
+                { value: "inches2", text: "Inches" },
+                { value: "parsec2", text: "Parsec" }
+            ];
+
+            lengthOptions1.forEach(optionData => {
+                const option1 = document.createElement("option");
+                option1.value = optionData.value;
+                option1.textContent = optionData.text;
+                Dropdown1.appendChild(option1);
+            });
+            lengthOptions2.forEach(optionData => {
+                const option2 = document.createElement("option");
+                option2.value = optionData.value;
+                option2.textContent = optionData.text;
+                Dropdown2.appendChild(option2);
+            });
+        }
+
+
+
 
         function TemperatureOptions() {
-            Dropdown1.appendChild("");
-            Dropdown1.appendChild(temperatureOptions1);
-            Dropdown2.appendChild("");
-            Dropdown2.appendChild(temperatureOptions2);
-        };
+            const Dropdown1 = document.getElementById("Selection");
+            const Dropdown2 = document.getElementById("Selection2");
+
+            Dropdown1.innerHTML = "";
+            Dropdown2.innerHTML = "";
+
+            const temperatureOptions1 = [
+                { value: "celsius1", text: "Celsius" },
+                { value: "fahrenheit1", text: "Fahrenheit" },
+                { value: "kelvin1", text: "Kelvin" }
+            ];
+            const temperatureOptions2 = [
+                { value: "celsius2", text: "Celsius" },
+                { value: "fahrenheit2", text: "Fahrenheit" },
+                { value: "kelvin2", text: "Kelvin" }
+            ];
+            temperatureOptions1.forEach(optionData => {
+                const option1 = document.createElement("option");
+                option1.value = optionData.value;
+                option1.textContent = optionData.text;
+                Dropdown1.appendChild(option1);
+            });
+            temperatureOptions2.forEach(optionData => {
+                const option2 = document.createElement("option");
+                option2.value = optionData.value;
+                option2.textContent = optionData.text;
+                Dropdown2.appendChild(option2);
+            });
+        }
 
 
 
