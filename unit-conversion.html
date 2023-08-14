@@ -35,10 +35,13 @@
 </head>
 <body>
     <h1 id="header1">Unit Converter</h1>
-    <p id="first_text">This is a unit converter in which you select your current units and then choose the units you want it changed into:</p>
+    <p id="first_text">This is a unit converter in which you select your current units and then choose the units you want it changed into (the automatic options are masses):</p>
     <button onclick="MassOptions()" class="button">Mass</button>
     <button onclick="LengthOptions()" class="button">Length</button>
     <button onclick="TemperatureOptions()" class="button">Temperature</button>
+    <button onclick="PressureOptions()" class="button">Pressure</button>
+    <button onclick="TimeOptions()" class="button">Time</button>
+    <button onclick="EnergyOptions()" class="button">Energy</button>
     <br>
     <br>
     <form>
@@ -209,6 +212,154 @@
                 Dropdown2.appendChild(option2);
             });
         }
+
+
+
+
+
+
+        function PressureOptions() {
+            const Dropdown1 = document.getElementById("Selection");
+            const Dropdown2 = document.getElementById("Selection2");
+
+            Dropdown1.innerHTML = "";
+            Dropdown2.innerHTML = "";
+
+            const pressureOptions1 = [
+                { value: "pascal1", text: "Pascals" },
+                { value: "torr1", text: "Torr" },
+                { value: "psi1", text: "PSI" },
+                { value: "standard-atmosphere1", text: "Standard atmospheres" },
+                { value: "millibar1", text: "Millibar" },
+                { value: "bar1", text: "Bar" },
+            ];
+            const pressureptions2 = [
+                { value: "pascal2", text: "Pascals" },
+                { value: "torr2", text: "Torr" },
+                { value: "psi2", text: "PSI" },
+                { value: "standard-atmosphere2", text: "Standard atmospheres" },
+                { value: "millibar2", text: "Millibar" },
+                { value: "bar2", text: "Bar" },
+            ];
+
+            pressureOptions1.forEach(optionData => {
+                const option1 = document.createElement("option");
+                option1.value = optionData.value;
+                option1.textContent = optionData.text;
+                Dropdown1.appendChild(option1);
+            });
+            pressureptions2.forEach(optionData => {
+                const option2 = document.createElement("option");
+                option2.value = optionData.value;
+                option2.textContent = optionData.text;
+                Dropdown2.appendChild(option2);
+            });
+        }
+
+
+
+
+
+
+        function TimeOptions() {
+            const Dropdown1 = document.getElementById("Selection");
+            const Dropdown2 = document.getElementById("Selection2");
+
+            Dropdown1.innerHTML = "";
+            Dropdown2.innerHTML = "";
+
+            const timeOptions1 = [
+                { value: "second1", text: "Seconds" },
+                { value: "minute1", text: "Minutes" },
+                { value: "hour1", text: "Hours" },
+                { value: "day1", text: "Days" },
+                { value: "week1", text: "Weeks" },
+                { value: "fortnight1", text: "Fortnights" },
+                { value: "month1", text: "Months" },
+                { value: "year1", text: "Years" },
+                { value: "decade1", text: "Decades" },
+                { value: "century1", text: "Centuries" },
+                { value: "millennium1", text: "Millenniums" } 
+            ];
+            const timeOptions2 = [
+                { value: "second2", text: "Seconds" },
+                { value: "minute2", text: "Minutes" },
+                { value: "hour2", text: "Hours" },
+                { value: "day2", text: "Days" },
+                { value: "week2", text: "Weeks" },
+                { value: "fortnight2", text: "Fortnights" },
+                { value: "month2", text: "Months" },
+                { value: "year2", text: "Years" },
+                { value: "decade2", text: "Decades" },
+                { value: "century2", text: "Centuries" },
+                { value: "millennium2", text: "Millenniums" } 
+            ];
+
+            timeOptions1.forEach(optionData => {
+                const option1 = document.createElement("option");
+                option1.value = optionData.value;
+                option1.textContent = optionData.text;
+                Dropdown1.appendChild(option1);
+            });
+            timeOptions2.forEach(optionData => {
+                const option2 = document.createElement("option");
+                option2.value = optionData.value;
+                option2.textContent = optionData.text;
+                Dropdown2.appendChild(option2);
+            });
+        }
+
+
+
+
+
+
+
+        function EnergyOptions() {
+            const Dropdown1 = document.getElementById("Selection");
+            const Dropdown2 = document.getElementById("Selection2");
+
+            Dropdown1.innerHTML = "";
+            Dropdown2.innerHTML = "";
+
+            const energyOptions1 = [
+                { value: "joule1", text: "Joules" },
+                { value: "kilojoules1", text: "Kilojoules" },
+                { value: "calories1", text: "Calories" },
+                { value: "kilocalories1", text: "Kilocalories" },
+                { value: "kilowatt-hour1", text: "Kilowatt Hours" },
+                { value: "btu1", text: "British Thermal Unit (BTU)" },
+                { value: "footpound1", text: "Foot-Pounds" },
+                { value: "electronvolt1", text: "Electron Volts" } 
+            ];
+            const energyOptions2 = [
+                { value: "joule2", text: "Joules" },
+                { value: "kilojoules2", text: "Kilojoules" },
+                { value: "calories2", text: "Calories" },
+                { value: "kilocalories2", text: "Kilocalories" },
+                { value: "kilowatt-hour2", text: "Kilowatt Hours" },
+                { value: "btu2", text: "British Thermal Unit (BTU)" },
+                { value: "footpound2", text: "Foot-Pounds" },
+                { value: "electronvolt2", text: "Electron Volts" }  
+            ];
+
+            energyOptions1.forEach(optionData => {
+                const option1 = document.createElement("option");
+                option1.value = optionData.value;
+                option1.textContent = optionData.text;
+                Dropdown1.appendChild(option1);
+            });
+            energyOptions2.forEach(optionData => {
+                const option2 = document.createElement("option");
+                option2.value = optionData.value;
+                option2.textContent = optionData.text;
+                Dropdown2.appendChild(option2);
+            });
+        }
+
+
+
+
 
 
 
@@ -404,6 +555,53 @@
             convert("parsec1",         "feet2",    val,     1.0124E+17,    0,    1,    0,          "ft");
             convert("parsec1",       "inches2",    val,     1.2148E+18,    0,    1,    0,     " inches");
             convert("parsec1",       "parsec2",    val,              1,    0,    1,    0,    " parsecs");
+
+
+
+
+            convert("pascal1",                 "pascal2",    val,                  1,    0,    1,    0,                         "Pa");
+            convert("pascal1",                   "torr2",    val,     1 / 133.322368,    0,    1,    0,                      " Torr");
+            convert("pascal1",                    "psi2",    val,     1 / 6894.75729,    0,    1,    0,                        "psi");
+            convert("pascal1",    "standard-atmosphere2",    val,         1 / 101325,    0,    1,    0,      " Standard Atmospheres");
+            convert("pascal1",               "millibar2",    val,            1 / 100,    0,    1,    0,                 " Millibars");
+            convert("pascal1",                    "bar2",    val,         1 / 100000,    0,    1,    0,                       " Bar");
+
+            convert("torr1",                  "pascal2",    val,         133.322368,    0,    1,    0,                      "Pa");
+            convert("torr1",                    "torr2",    val,                  1,    0,    1,    0,                   " Torr");
+            convert("torr1",                     "psi2",    val,     1 / 51.7149327,    0,    1,    0,                     "psi");
+            convert("torr1",     "standard-atmosphere2",    val,     1 / 760.000002,    0,    1,    0,   " Standard Atmospheres");
+            convert("torr1",                "millibar2",    val,         1.33322368,    0,    1,    0,              " Millibars");
+            convert("torr1",                     "bar2",    val,     1 / 750.061685,    0,    1,    0,                    " Bar");
+
+            convert("psi1",                  "pascal2",    val,         6894.75729,    0,    1,    0,                      "Pa");
+            convert("psi1",                    "torr2",    val,         51.7149327,    0,    1,    0,                   " Torr");
+            convert("psi1",                     "psi2",    val,                  1,    0,    1,    0,                     "psi");
+            convert("psi1",     "standard-atmosphere2",    val,     1 / 14.6959488,    0,    1,    0,   " Standard Atmospheres");
+            convert("psi1",                "millibar2",    val,         68.9475729,    0,    1,    0,              " Millibars");
+            convert("psi1",                     "bar2",    val,     1 / 14.5037738,    0,    1,    0,                    " Bar");
+
+            convert("standard-atmosphere1",                  "pascal2",    val,      101325,    0,    1,    0,                      "Pa");
+            convert("standard-atmosphere1",                    "torr2",    val,  760.000002,    0,    1,    0,                   " Torr");
+            convert("standard-atmosphere1",                     "psi2",    val,  14.6959488,    0,    1,    0,                     "psi");
+            convert("standard-atmosphere1",     "standard-atmosphere2",    val,           1,    0,    1,    0,   " Standard Atmospheres");
+            convert("standard-atmosphere1",                "millibar2",    val,     1013.25,    0,    1,    0,              " Millibars");
+            convert("standard-atmosphere1",                     "bar2",    val,     1.01325,    0,    1,    0,                    " Bar");
+
+            convert("millibar1",                  "pascal2",    val,               100,    0,    1,    0,                      "Pa");
+            convert("millibar1",                    "torr2",    val,    1 / 1.33322368,    0,    1,    0,                   " Torr");
+            convert("millibar1",                     "psi2",    val,        68.9475729,    0,    1,    0,                     "psi");
+            convert("millibar1",     "standard-atmosphere2",    val,       1 / 1013.25,    0,    1,    0,   " Standard Atmospheres");
+            convert("millibar1",                "millibar2",    val,                 1,    0,    1,    0,              " Millibars");
+            convert("millibar1",                     "bar2",    val,          1 / 1000,    0,    1,    0,                    " Bar");
+
+            convert("bar1",                  "pascal2",    val,         100000,    0,    1,    0,                      "Pa");
+            convert("bar1",                    "torr2",    val,     750.061685,    0,    1,    0,                   " Torr");
+            convert("bar1",                     "psi2",    val,     14.5037738,    0,    1,    0,                     "psi");
+            convert("bar1",     "standard-atmosphere2",    val,    1 / 1.01325,    0,    1,    0,   " Standard Atmospheres");
+            convert("bar1",                "millibar2",    val,           1000,    0,    1,    0,              " Millibars");
+            convert("bar1",                     "bar2",    val,              1,    0,    1,    0,                    " Bar");
+
+            // time and energy are to be added still, just because it takes ages to fill out the tables :(
         }
       </script>
 </body>
