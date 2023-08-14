@@ -6,29 +6,44 @@
     <link rel="icon" href="images/Units.png" type="image/png">
     <title>Unit Converter</title>
     <style>
-        .Conversion {
+        #header1{
+            font-family: sans-serif;
+        }
+        #first_text{
+            font-family: sans-serif;
+        }
+        #Conversion {
             padding-top: 1px;
             padding-bottom: 1px;
             font-size: larger;
             font-weight: bold;
+            font-family: sans-serif;
         }
-
-        .output {
+        #enter{
+            font-family: sans-serif;
+        }
+        #exit{
+            font-family: sans-serif;
+        }
+        #text_output {
             font-size: large;
+        }
+        .button{
+            font-family: sans-serif;
         }
     </style>
 </head>
 <body>
-    <h1>Unit Converter</h1>
-    <p>This is a unit converter in which you select your current units and then choose the units you want it changed into:</p>
-    <button onclick="MassOptions()">Mass</button>
-    <button onclick="LengthOptions()">Length</button>
-    <button onclick="TemperatureOptions()">Temperature</button>
+    <h1 id="header1">Unit Converter</h1>
+    <p id="first_text">This is a unit converter in which you select your current units and then choose the units you want it changed into:</p>
+    <button onclick="MassOptions()" class="button">Mass</button>
+    <button onclick="LengthOptions()" class="button">Length</button>
+    <button onclick="TemperatureOptions()" class="button">Temperature</button>
     <br>
     <br>
     <form>
         <!-- Select 1-->
-        <label class="enter">From:</label>
+        <label id="enter">From:</label>
         <select name="converts" id="Selection">
           <option>Choose Option</option>
           <option value="tonnes1">Tonnes</option>
@@ -42,7 +57,7 @@
         </select>
     
         <!-- Select 2-->
-        <label class="exit">To:</label>
+        <label id="exit">To:</label>
         <select name="converts2" id="Selection2">
           <option>Choose Option</option>
           <option value="tonnes2">Tonnes</option>
@@ -64,9 +79,9 @@
         <br>
     
         <!--RESULT -->
-        <br><p class="Conversion">Conversion:</p>
+        <br><p id="Conversion">Conversion:</p>
         <div class="result_container">
-            <p class="output" id="text_output"></p>
+            <p id="text_output"></p>
         </div>
     
         <br>
