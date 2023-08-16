@@ -1,0 +1,39 @@
+.Second-A-Value {
+    padding-top: 50px;
+}
+
+em {
+    font-weight: bold;
+}
+
+.Dew-Antoine-Equation {
+    float: right;
+    margin-right: 600px;
+    width: 400px;
+}
+
+.Dew-pressure {
+    padding-top: 50px;
+}
+
+.Vapour-moles {
+    padding-top: 15px;
+}
+
+.Calculate-Button {
+    padding-top: 15px;
+}
+
+.Num-Iterations {
+    padding-top: 15px;
+}
+
+#graphContainer {
+    width: 70%;
+    height: 400px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
