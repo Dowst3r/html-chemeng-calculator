@@ -56,29 +56,29 @@
       alt="Image failed to load"
     />
     <p>The <em>A</em> value for the <em>first</em> Antoine Equation:</p>
-    <input type="text" id="A1-Dew" name="textbox" />
+    <input type="number" id="A1-Dew" name="textbox" />
     <p>The <em>B</em> value for the <em>first</em> Antoine Equation:</p>
-    <input type="text" id="B1-Dew" name="textbox" />
+    <input type="number" id="B1-Dew" name="textbox" />
     <p>the <em>C</em> value for the <em>first</em> Antoine Equation:</p>
-    <input type="text" id="C1-Dew" name="textbox" />
+    <input type="number" id="C1-Dew" name="textbox" />
     <p class="Second-A-Value">
       The <em>A</em> value for the <em>second</em> Antoine Equation:
     </p>
-    <input type="text" id="A2-Dew" name="textbox" />
+    <input type="number" id="A2-Dew" name="textbox" />
     <p>The <em>B</em> value for the <em>second</em> Antoine Equation:</p>
-    <input type="text" id="B2-Dew" name="textbox" />
+    <input type="number" id="B2-Dew" name="textbox" />
     <p>the <em>C</em> value for the <em>second</em> Antoine Equation:</p>
-    <input type="text" id="C2-Dew" name="textbox" />
+    <input type="number" id="C2-Dew" name="textbox" />
     <p class="Dew-pressure">The <em>pressure</em> of the system:</p>
-    <input type="text" id="Pressure-Dew-System" name="textbox" />
+    <input type="number" id="Pressure-Dew-System" name="textbox" />
     <p class="Vapour-moles">
       The <em>mole fractions</em> in the <em>vapour</em> phase <em>(y1)</em>:
     </p>
-    <input type="text" id="Vapour-Dew-Moles" name="textbox" />
+    <input type="number" id="Vapour-Dew-Moles" name="textbox" />
     <p class="Num-Iterations">
       The <em>Maximum</em> amount of <em>Iterations</em> to go through:
     </p>
-    <input type="text" id="Max-Iterations_Dew" name="textbox" />
+    <input type="number" id="Max-Iterations_Dew" name="textbox" />
     <p>
       the <em>Unit</em> of the Temperature (don't need to type degrees, just the
       letter unit):
@@ -130,20 +130,6 @@
         var total_Dew = 0;
         var avg_Dew = 0;
 
-        if (
-          isNaN(A1_Dew) ||
-          isNaN(A2_Dew) ||
-          isNaN(B1_Dew) ||
-          isNaN(B2_Dew) ||
-          isNaN(C1_Dew) ||
-          isNaN(C2_Dew) ||
-          isNaN(Pres_Dew) ||
-          isNaN(y1_Dew) ||
-          isNaN(Max_Iterations_Dew)
-        ) {
-          document.getElementById("Text_Result_Dew").innerHTML =
-            "Please enter valid numbers";
-        } else {
           var y2_Dew = 1 - y1_Dew;
           for (var i = 0; i < 2; i++) {
             var T_Dew = B_Dew[i] / (A_Dew[i] - Math.log(Pres_Dew)) - C_Dew[i];
@@ -227,7 +213,6 @@
           });
           document.getElementById("Text_Result_Dew").innerHTML = output_Dew;
           document.getElementById("Graph_Dew").innerHTML = graph
-        }
       }
     </script>
   </body>

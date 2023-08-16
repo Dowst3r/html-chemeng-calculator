@@ -56,29 +56,29 @@
       alt="Image failed to load"
     />
     <p>The <em>A</em> value for the <em>first</em> Antoine Equation:</p>
-    <input type="text" id="A1-Bubble" name="textbox" />
+    <input type="number" id="A1-Bubble" name="textbox" />
     <p>The <em>B</em> value for the <em>first</em> Antoine Equation:</p>
-    <input type="text" id="B1-Bubble" name="textbox" />
+    <input type="number" id="B1-Bubble" name="textbox" />
     <p>the <em>C</em> value for the <em>first</em> Antoine Equation:</p>
-    <input type="text" id="C1-Bubble" name="textbox" />
+    <input type="number" id="C1-Bubble" name="textbox" />
     <p class="Second-A-Value">
       The <em>A</em> value for the <em>second</em> Antoine Equation:
     </p>
-    <input type="text" id="A2-Bubble" name="textbox" />
+    <input type="number" id="A2-Bubble" name="textbox" />
     <p>The <em>B</em> value for the <em>second</em> Antoine Equation:</p>
-    <input type="text" id="B2-Bubble" name="textbox" />
+    <input type="number" id="B2-Bubble" name="textbox" />
     <p>the <em>C</em> value for the <em>second</em> Antoine Equation:</p>
-    <input type="text" id="C2-Bubble" name="textbox" />
+    <input type="number" id="C2-Bubble" name="textbox" />
     <p class="Bubble-pressure">The <em>pressure</em> of the system:</p>
-    <input type="text" id="Pressure-Bubble-System" name="textbox" />
+    <input type="number" id="Pressure-Bubble-System" name="textbox" />
     <p class="Liquid-moles">
       The <em>mole fractions</em> in the <em>liquid</em> phase <em>(x1)</em>:
     </p>
-    <input type="text" id="Liquid-Bubble-Moles" name="textbox" />
+    <input type="number" id="Liquid-Bubble-Moles" name="textbox" />
     <p class="Num-Iterations">
       The <em>Maximum</em> amount of <em>Iterations</em> to go through:
     </p>
-    <input type="text" id="Max-Iterations_Bubble" name="textbox" />
+    <input type="number" id="Max-Iterations_Bubble" name="textbox" />
     <p>
       the <em>Unit</em> of the Temperature (don't need to type degrees, just the
       letter unit):
@@ -130,20 +130,6 @@
         var total_Bubble = 0;
         var avg_Bubble = 0;
 
-        if (
-          isNaN(A1_Bubble) ||
-          isNaN(A2_Bubble) ||
-          isNaN(B1_Bubble) ||
-          isNaN(B2_Bubble) ||
-          isNaN(C1_Bubble) ||
-          isNaN(C2_Bubble) ||
-          isNaN(Pres_Bubble) ||
-          isNaN(x1_Bubble) ||
-          isNaN(Max_Iterations_Bubble)
-        ) {
-          document.getElementById("Result_Bubble").innerHTML =
-            "Please enter valid numbers";
-        } else {
           var x2 = 1 - x1;
           for (var i = 0; i < 2; i++) {
             var T_Bubble = B_Bubble[i] / (A_Bubble[i] - Math.log(P_Bubble[i])) - C_Bubble[i];
@@ -227,7 +213,6 @@
           });
           document.getElementById("Text_Result_Bubble").innerHTML = output_Bubble;
           document.getElementById("Result_Bubble").innerHTML = output;
-        }
       }
     </script>
   </body>
