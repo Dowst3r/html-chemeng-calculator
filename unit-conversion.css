@@ -1,0 +1,52 @@
+#header1 {
+    font-family: sans-serif;
+}
+
+#first_text {
+    font-family: sans-serif;
+}
+
+#Conversion {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-size: larger;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+#enter {
+    font-family: sans-serif;
+}
+
+#exit {
+    font-family: sans-serif;
+}
+
+#text_output {
+    font-size: large;
+}
+
+.button {
+    font-family: sans-serif;
+}
+
+.button:hover {
+    border-color: aqua;
+}
+
+#Convert-button:hover {
+    border-color: aqua;
+    background-color: aqua;
+}
+
+#Selection:hover {
+    border-color: aqua;
+}
+
+#Selection2:hover {
+    border-color: aqua;
+}
+
+#value:hover {
+    border-color: aqua;
+}
