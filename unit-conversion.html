@@ -286,6 +286,9 @@
 
             const timeOptions1 = [
                 { value: "second1", text: "Seconds" },
+                { value: "millisecond1", text: "Milliseconds" },
+                { value: "microsecond1", text: "Microseconds"},
+                { value: "nanosecond1", text: "Nanoseconds"},
                 { value: "minute1", text: "Minutes" },
                 { value: "hour1", text: "Hours" },
                 { value: "day1", text: "Days" },
@@ -299,6 +302,9 @@
             ];
             const timeOptions2 = [
                 { value: "second2", text: "Seconds" },
+                { value: "millisecond2", text: "Milliseconds" },
+                { value: "microsecond2", text: "Microseconds"},
+                { value: "nanosecond2", text: "Nanoseconds"},
                 { value: "minute2", text: "Minutes" },
                 { value: "hour2", text: "Hours" },
                 { value: "day2", text: "Days" },
@@ -618,6 +624,221 @@
             convert("bar1",     "standard-atmosphere2",    val,    1 / 1.01325,    0,    1,    0,   " Standard Atmospheres");
             convert("bar1",                "millibar2",    val,           1000,    0,    1,    0,              " Millibars");
             convert("bar1",                     "bar2",    val,              1,    0,    1,    0,                    " Bar");
+
+
+
+
+
+            convert("second1", "second2",       val,                1, 0, 1, 0,               "s");
+            convert("second1", "millisecond2",  val,             1000, 0, 1, 0,   " milliseconds");
+            convert("second1", "microsecond2",  val,          1000000, 0, 1, 0,   " microseconds");
+            convert("second1", "nanosecond2",   val,       1000000000, 0, 1, 0,    " nanoseconds");
+            convert("second1", "minute2",       val,           1 / 60, 0, 1, 0,             "min");
+            convert("second1", "hour2",         val,         1 / 3600, 0, 1, 0,              "hr");
+            convert("second1", "day2",          val,        1 / 86400, 0, 1, 0,           " days");
+            convert("second1", "week2",         val,       1 / 604800, 0, 1, 0,          " weeks");
+            convert("second1", "fortnight2",    val,      1 / 1209600, 0, 1, 0,     " fortnights");
+            convert("second1", "month2",        val,      1 / 2628000, 0, 1, 0,         " months");
+            convert("second1", "year2",         val,     1 / 31536000, 0, 1, 0,          " years");
+            convert("second1", "decade2",       val,    1 / 315360000, 0, 1, 0,        " decades");
+            convert("second1", "century2",      val,    1 / 3.1536E+9, 0, 1, 0,      " centuries");
+            convert("second1", "millennium2",   val,   1 / 3.1536E+10, 0, 1, 0,    " millenniums");
+            
+            convert("millisecond1", "second2",       val,         1 / 1000, 0, 1, 0,               "s");
+            convert("millisecond1", "millisecond2",  val,                1, 0, 1, 0,   " milliseconds");
+            convert("millisecond1", "microsecond2",  val,             1000, 0, 1, 0,   " microseconds");
+            convert("millisecond1", "nanosecond2",   val,          1000000, 0, 1, 0,    " nanoseconds");
+            convert("millisecond1", "minute2",       val,        1 / 60000, 0, 1, 0,             "min");
+            convert("millisecond1", "hour2",         val,    1 / 3.6000E+6, 0, 1, 0,              "hr");
+            convert("millisecond1", "day2",          val,     1 / 86400000, 0, 1, 0,           " days");
+            convert("millisecond1", "week2",         val,    1 / 604800000, 0, 1, 0,          " weeks");
+            convert("millisecond1", "fortnight2",    val,    1 / 1.2096E+9, 0, 1, 0,     " fortnights");
+            convert("millisecond1", "month2",        val,    1 / 2.6280E+9, 0, 1, 0,         " months");
+            convert("millisecond1", "year2",         val,   1 / 3.1536E+10, 0, 1, 0,          " years");
+            convert("millisecond1", "decade2",       val,   1 / 3.1536E+11, 0, 1, 0,        " decades");
+            convert("millisecond1", "century2",      val,   1 / 3.1536E+12, 0, 1, 0,      " centuries");
+            convert("millisecond1", "millennium2",   val,   1 / 3.1536E+13, 0, 1, 0,    " millenniums");   
+
+            convert("microsecond1", "second2",       val,     1 / 1000000, 0, 1, 0,               "s");
+            convert("microsecond1", "millisecond2",  val,        1 / 1000, 0, 1, 0,   " milliseconds");
+            convert("microsecond1", "microsecond2",  val,               1, 0, 1, 0,   " microseconds");
+            convert("microsecond1", "nanosecond2",   val,            1000, 0, 1, 0,    " nanoseconds");
+            convert("microsecond1", "minute2",       val,    1 / 60000000, 0, 1, 0,             "min");
+            convert("microsecond1", "hour2",         val,    1 / 3.600E+9, 0, 1, 0,              "hr");
+            convert("microsecond1", "day2",          val,    1 / 8.64E+10, 0, 1, 0,           " days");
+            convert("microsecond1", "week2",         val,   1 / 6.048E+11, 0, 1, 0,          " weeks");
+            convert("microsecond1", "fortnight2",    val,  1 / 1.2096E+12, 0, 1, 0,     " fortnights");
+            convert("microsecond1", "month2",        val,   1 / 2.628E+12, 0, 1, 0,         " months");
+            convert("microsecond1", "year2",         val,  1 / 3.1536E+13, 0, 1, 0,          " years");
+            convert("microsecond1", "decade2",       val,  1 / 3.1536E+14, 0, 1, 0,        " decades");
+            convert("microsecond1", "century2",      val,  1 / 3.1536E+15, 0, 1, 0,      " centuries");
+            convert("microsecond1", "millennium2",   val,  1 / 3.1536E+16, 0, 1, 0,    " millenniums");   
+
+            convert("nanosecond1", "second2",       val,        1 / 1.0000E+9, 0, 1, 0,               "s");
+            convert("nanosecond1", "millisecond2",  val,        1 / 1.0000E+6, 0, 1, 0,   " milliseconds");
+            convert("nanosecond1", "microsecond2",  val,        1 / 1.0000E+3, 0, 1, 0,   " microseconds");
+            convert("nanosecond1", "nanosecond2",   val,                    1, 0, 1, 0,    " nanoseconds");
+            convert("nanosecond1", "minute2",       val,       1 / 6.0000E+10, 0, 1, 0,             "min");
+            convert("nanosecond1", "hour2",         val,       1 / 3.6000E+12, 0, 1, 0,              "hr");
+            convert("nanosecond1", "day2",          val,       1 / 8.6400E+13, 0, 1, 0,           " days");
+            convert("nanosecond1", "week2",         val,       1 / 6.0480E+14, 0, 1, 0,          " weeks");
+            convert("nanosecond1", "fortnight2",    val,       1 / 1.2096E+15, 0, 1, 0,     " fortnights");
+            convert("nanosecond1", "month2",        val,       1 / 2.6280E+15, 0, 1, 0,         " months");
+            convert("nanosecond1", "year2",         val,       1 / 3.1536E+16, 0, 1, 0,          " years");
+            convert("nanosecond1", "decade2",       val,       1 / 3.1536E+17, 0, 1, 0,        " decades");
+            convert("nanosecond1", "century2",      val,       1 / 3.1536E+18, 0, 1, 0,      " centuries");
+            convert("nanosecond1", "millennium2",   val,       1 / 3.1536E+19, 0, 1, 0,    " millenniums");   
+
+            convert("minute1", "second2",       val,                , 0, 1, 0,               "s");
+            convert("minute1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("minute1", "microsecond2",  val,          , 0, 1, 0,   " microseconds");
+            convert("minute1", "nanosecond2",   val,       , 0, 1, 0,    " nanoseconds");
+            convert("minute1", "minute2",       val,       1, 0, 1, 0,             "min");
+            convert("minute1", "hour2",         val,       , 0, 1, 0,              "hr");
+            convert("minute1", "day2",          val,       , 0, 1, 0,           " days");
+            convert("minute1", "week2",         val,       , 0, 1, 0,          " weeks");
+            convert("minute1", "fortnight2",    val,      , 0, 1, 0,     " fortnights");
+            convert("minute1", "month2",        val,      , 0, 1, 0,         " months");
+            convert("minute1", "year2",         val,     , 0, 1, 0,          " years");
+            convert("minute1", "decade2",       val,    , 0, 1, 0,        " decades");
+            convert("minute1", "century2",      val,    , 0, 1, 0,      " centuries");
+            convert("minute1", "millennium2",   val,   , 0, 1, 0,    " millenniums");   
+
+            convert("hour1", "second2",       val,                , 0, 1, 0,               "s");
+            convert("hour1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("hour1", "microsecond2",  val,          , 0, 1, 0,   " microseconds");
+            convert("hour1", "nanosecond2",   val,       , 0, 1, 0,    " nanoseconds");
+            convert("hour1", "minute2",       val,       , 0, 1, 0,             "min");
+            convert("hour1", "hour2",         val,       1, 0, 1, 0,              "hr");
+            convert("hour1", "day2",          val,       , 0, 1, 0,           " days");
+            convert("hour1", "week2",         val,       , 0, 1, 0,          " weeks");
+            convert("hour1", "fortnight2",    val,      , 0, 1, 0,     " fortnights");
+            convert("hour1", "month2",        val,      , 0, 1, 0,         " months");
+            convert("hour1", "year2",         val,     , 0, 1, 0,          " years");
+            convert("hour1", "decade2",       val,     , 0, 1, 0,        " decades");
+            convert("hour1", "century2",      val,    , 0, 1, 0,      " centuries");
+            convert("hour1", "millennium2",   val,   , 0, 1, 0,    " millenniums");   
+
+            convert("day1", "second2",       val,                , 0, 1, 0,               "s");
+            convert("day1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("day1", "microsecond2",  val,          , 0, 1, 0,   " microseconds");
+            convert("day1", "nanosecond2",   val,       , 0, 1, 0,    " nanoseconds");
+            convert("day1", "minute2",       val,       , 0, 1, 0,             "min");
+            convert("day1", "hour2",         val,       , 0, 1, 0,              "hr");
+            convert("day1", "day2",          val,       1, 0, 1, 0,           " days");
+            convert("day1", "week2",         val,       , 0, 1, 0,          " weeks");
+            convert("day1", "fortnight2",    val,      , 0, 1, 0,     " fortnights");
+            convert("day1", "month2",        val,      , 0, 1, 0,         " months");
+            convert("day1", "year2",         val,     , 0, 1, 0,          " years");
+            convert("day1", "decade2",       val,    , 0, 1, 0,        " decades");
+            convert("day1", "century2",      val,    , 0, 1, 0,      " centuries");
+            convert("day1", "millennium2",   val,   , 0, 1, 0,    " millenniums");   
+
+            convert("week1", "second2",       val,                , 0, 1, 0,               "s");
+            convert("week1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("week1", "microsecond2",  val,          , 0, 1, 0,   " microseconds");
+            convert("week1", "nanosecond2",   val,       , 0, 1, 0,    " nanoseconds");
+            convert("week1", "minute2",       val,       , 0, 1, 0,             "min");
+            convert("week1", "hour2",         val,       , 0, 1, 0,              "hr");
+            convert("week1", "day2",          val,       , 0, 1, 0,           " days");
+            convert("week1", "week2",         val,       1, 0, 1, 0,          " weeks");
+            convert("week1", "fortnight2",    val,      , 0, 1, 0,     " fortnights");
+            convert("week1", "month2",        val,      , 0, 1, 0,         " months");
+            convert("week1", "year2",         val,     , 0, 1, 0,          " years");
+            convert("week1", "decade2",       val,    , 0, 1, 0,        " decades");
+            convert("week1", "century2",      val,    , 0, 1, 0,      " centuries");
+            convert("week1", "millennium2",   val,   , 0, 1, 0,    " millenniums");   
+
+            convert("fortnight1", "second2",       val,                , 0, 1, 0,               "s");
+            convert("fortnight1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("fortnight1", "microsecond2",  val,          , 0, 1, 0,   " microseconds");
+            convert("fortnight1", "nanosecond2",   val,       , 0, 1, 0,    " nanoseconds");
+            convert("fortnight1", "minute2",       val,       , 0, 1, 0,             "min");
+            convert("fortnight1", "hour2",         val,       , 0, 1, 0,              "hr");
+            convert("fortnight1", "day2",          val,       , 0, 1, 0,           " days");
+            convert("fortnight1", "week2",         val,       , 0, 1, 0,          " weeks");
+            convert("fortnight1", "fortnight2",    val,      1, 0, 1, 0,     " fortnights");
+            convert("fortnight1", "month2",        val,      , 0, 1, 0,         " months");
+            convert("fortnight1", "year2",         val,     , 0, 1, 0,          " years");
+            convert("fortnight1", "decade2",       val,    , 0, 1, 0,        " decades");
+            convert("fortnight1", "century2",      val,    , 0, 1, 0,      " centuries");
+            convert("fortnight1", "millennium2",   val,   , 0, 1, 0,    " millenniums");   
+
+            convert("month1", "second2",       val,                , 0, 1, 0,               "s");
+            convert("month1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("month1", "microsecond2",  val,          , 0, 1, 0,   " microseconds");
+            convert("month1", "nanosecond2",   val,       , 0, 1, 0,    " nanoseconds");
+            convert("month1", "minute2",       val,       , 0, 1, 0,             "min");
+            convert("month1", "hour2",         val,       , 0, 1, 0,              "hr");
+            convert("month1", "day2",          val,       , 0, 1, 0,           " days");
+            convert("month1", "week2",         val,       , 0, 1, 0,          " weeks");
+            convert("month1", "fortnight2",    val,      , 0, 1, 0,     " fortnights");
+            convert("month1", "month2",        val,      1, 0, 1, 0,         " months");
+            convert("month1", "year2",         val,     , 0, 1, 0,          " years");
+            convert("month1", "decade2",       val,    , 0, 1, 0,        " decades");
+            convert("month1", "century2",      val,    , 0, 1, 0,      " centuries");
+            convert("month1", "millennium2",   val,   , 0, 1, 0,    " millenniums");   
+
+            convert("year1", "second2",       val,                , 0, 1, 0,               "s");
+            convert("year1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("year1", "microsecond2",  val,          , 0, 1, 0,   " microseconds");
+            convert("year1", "nanosecond2",   val,       , 0, 1, 0,    " nanoseconds");
+            convert("year1", "minute2",       val,       , 0, 1, 0,             "min");
+            convert("year1", "hour2",         val,       , 0, 1, 0,              "hr");
+            convert("year1", "day2",          val,       , 0, 1, 0,           " days");
+            convert("year1", "week2",         val,       , 0, 1, 0,          " weeks");
+            convert("year1", "fortnight2",    val,      , 0, 1, 0,     " fortnights");
+            convert("year1", "month2",        val,      , 0, 1, 0,         " months");
+            convert("year1", "year2",         val,     1, 0, 1, 0,          " years");
+            convert("year1", "decade2",       val,    , 0, 1, 0,        " decades");
+            convert("year1", "century2",      val,    , 0, 1, 0,      " centuries");
+            convert("year1", "millennium2",   val,   , 0, 1, 0,    " millenniums");   
+
+            convert("decade1", "second2",       val,              , 0, 1, 0,               "s");
+            convert("decade1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("decade1", "microsecond2",  val,          , 0, 1, 0,   " microseconds");
+            convert("decade1", "nanosecond2",   val,       , 0, 1, 0,    " nanoseconds");
+            convert("decade1", "minute2",       val,       , 0, 1, 0,             "min");
+            convert("decade1", "hour2",         val,       , 0, 1, 0,              "hr");
+            convert("decade1", "day2",          val,       , 0, 1, 0,           " days");
+            convert("decade1", "week2",         val,       , 0, 1, 0,          " weeks");
+            convert("decade1", "fortnight2",    val,      , 0, 1, 0,     " fortnights");
+            convert("decade1", "month2",        val,     , 0, 1, 0,         " months");
+            convert("decade1", "year2",         val,    , 0, 1, 0,          " years");
+            convert("decade1", "decade2",       val,    1, 0, 1, 0,        " decades");
+            convert("decade1", "century2",      val,    , 0, 1, 0,      " centuries");
+            convert("decade1", "millennium2",   val,   , 0, 1, 0,    " millenniums");   
+
+            convert("century1", "second2",       val,             , 0, 1, 0,               "s");
+            convert("century1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("century1", "microsecond2",  val,         , 0, 1, 0,   " microseconds");
+            convert("century1", "nanosecond2",   val,      , 0, 1, 0,    " nanoseconds");
+            convert("century1", "minute2",       val,      , 0, 1, 0,             "min");
+            convert("century1", "hour2",         val,      , 0, 1, 0,              "hr");
+            convert("century1", "day2",          val,      , 0, 1, 0,           " days");
+            convert("century1", "week2",         val,      , 0, 1, 0,          " weeks");
+            convert("century1", "fortnight2",    val,      , 0, 1, 0,     " fortnights");
+            convert("century1", "month2",        val,      , 0, 1, 0,         " months");
+            convert("century1", "year2",         val,     , 0, 1, 0,          " years");
+            convert("century1", "decade2",       val,    , 0, 1, 0,        " decades");
+            convert("century1", "century2",      val,    1, 0, 1, 0,      " centuries");
+            convert("century1", "millennium2",   val,   , 0, 1, 0,    " millenniums");   
+
+            convert("millennium1", "second2",       val,                , 0, 1, 0,               "s");
+            convert("millennium1", "millisecond2",  val,             , 0, 1, 0,   " milliseconds");
+            convert("millennium1", "microsecond2",  val,          , 0, 1, 0,   " microseconds");
+            convert("millennium1", "nanosecond2",   val,       , 0, 1, 0,    " nanoseconds");
+            convert("millennium1", "minute2",       val,       , 0, 1, 0,             "min");
+            convert("millennium1", "hour2",         val,       , 0, 1, 0,              "hr");
+            convert("millennium1", "day2",          val,       , 0, 1, 0,           " days");
+            convert("millennium1", "week2",         val,       , 0, 1, 0,          " weeks");
+            convert("millennium1", "fortnight2",    val,      , 0, 1, 0,     " fortnights");
+            convert("millennium1", "month2",        val,      , 0, 1, 0,         " months");
+            convert("millennium1", "year2",         val,     , 0, 1, 0,          " years");
+            convert("millennium1", "decade2",       val,    , 0, 1, 0,        " decades");
+            convert("millennium1", "century2",      val,    , 0, 1, 0,      " centuries");
+            convert("millennium1", "millennium2",   val,   1, 0, 1, 0,    " millenniums");   
+
 
             // time and energy are to be added still, just because it takes ages to fill out the tables :(
         }
