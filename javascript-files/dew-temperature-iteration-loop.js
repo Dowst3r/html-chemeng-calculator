@@ -66,7 +66,7 @@ function calculate() {
     var output_Dew =
         "The graph converges to a temperature of " +
         T_values_Dew[T_values_Dew.length - 1] +
-        " degrees " +
+        " °" +
         Unit_Dew +
         " after " +
         iteration_Dew +
@@ -75,7 +75,7 @@ function calculate() {
         Math.abs(
             T_values_Dew[T_values_Dew.length - 2] -
             T_values_Dew[T_values_Dew.length - 1]
-        ) + " degrees " + Unit_Dew +
+        ) + " °" + Unit_Dew +
         "\nthe liquid phase composition: x1 = " +
         x1_Dew +
         " and x2 = " +
@@ -95,7 +95,7 @@ function calculate() {
         data: {
             labels: x_axis,
             datasets: [{
-                label: "Temperature in degrees\n" + Unit_Dew,
+                label: "Temperature in °" + Unit_Dew,
                 data: T_values_Dew,
                 backgroundColor: [
                     "rgba(255, 192, 203, 1)"

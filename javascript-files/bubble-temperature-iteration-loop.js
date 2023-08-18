@@ -66,7 +66,7 @@ function calculate() {
 
     var output =
         "The graph converges to a temperature of " +
-        T_values_Bubble[T_values_Bubble.length - 1] + " degrees " +
+        T_values_Bubble[T_values_Bubble.length - 1] + " °" +
         Unit_Bubble +
         " after " +
         iteration_Bubble +
@@ -75,7 +75,7 @@ function calculate() {
         Math.abs(
             T_values_Bubble[T_values_Bubble.length - 2] -
             T_values_Bubble[T_values_Bubble.length - 1]
-        ) + " degrees " + Unit_Bubble +
+        ) + " °" + Unit_Bubble +
         "\nthe vapour phase composition: y1 = " +
         y1_Bubble +
         " and y2 = " +
@@ -95,7 +95,7 @@ function calculate() {
         data: {
             labels: x_axis,
             datasets: [{
-                label: "Temperature in degrees\n" + Unit_Bubble,
+                label: "Temperature in °" + Unit_Bubble,
                 data: T_values_Bubble,
                 backgroundColor: [
                     "rgba(255, 192, 203, 1)",
