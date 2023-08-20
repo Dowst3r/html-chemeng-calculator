@@ -26,7 +26,7 @@
     font-size: large;
 }
 
-#Convert-button {
+.button {
     width: 9em;
     height: 3em;
     border-radius: 30em;
@@ -40,7 +40,7 @@
         -6px -6px 12px #ffffff;
 }
 
-#Convert-button::before {
+.button::before {
     content: '';
     width: 0;
     height: 3em;
@@ -49,12 +49,12 @@
     top: 0;
     left: 0;
     background-image: linear-gradient(to right, pink 0%, red 100%);
-    transition: .5s ease;
+    transition: .25s ease;
     display: block;
     z-index: -1;
 }
 
-#Convert-button:hover::before {
+.button:hover::before {
     width: 9em;
 }
 
