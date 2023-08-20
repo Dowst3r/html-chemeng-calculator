@@ -17,53 +17,36 @@
         margin-right: 10px;
       }
 
-      .bubble-temperature-iteration-loop {
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 50px;
-        padding-bottom: 10px;
-      }
-
-      ul li a {
+      .button {
+        width: 250px;
+        height: 3em;
+        border-radius: 30em;
+        font-size: 15px;
+        font-family: inherit;
+        border: none;
         position: relative;
-        text-align: center;
-        color: aqua;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: 6px 6px 12px #c5c5c5,
+            -6px -6px 12px #ffffff;
       }
 
-      li {
-        padding: 10px;
+      .button::before {
+        content: '';
+        width: 0;
+        height: 3em;
+        border-radius: 30em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to right, lightgreen 0%, green 100%);
+        transition: .25s ease;
+        display: block;
+        z-index: -1;
       }
 
-      .dew-temperature-iteration-loop {
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 50px;
-        padding-bottom: 10px;
-      }
-
-      .linear-interpretation {
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 50px;
-        padding-bottom: 10px;
-      }
-
-      .unit-conversion {
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 50px;
-        padding-bottom: 10px;
-      }
-
-      .code-testing {
-        padding-right: 10px;
-        padding-left: 10px;
-        padding-top: 50px;
-        padding-bottom: 10px;
-      }
-
-      .link {
-        align-self: center;
+      .button:hover::before {
+        width: 250px;
       }
     </style>
   </head>
@@ -71,7 +54,7 @@
     <h1>Intro to me and the calculator:</h1>
     <!-- This goes from 1 to 6, chose based on their importance, size can be changed with CSS! -->
     <a href="https://uk.linkedin.com/in/aidan-dowie-a126831a0"><img src="images/Grogu.png" alt="profile photo failed to load" class="profile-photo"/></a>
-    <!-- you use class to define something specific, as calling p, would result in all paragraph based things being called and so need specific names for bits to make sure they are called correctly -->
+    <!-- you use class to define groups of things, as calling p, would result in all paragraph based things being called and so need specific names for bits to make sure they are called correctly -->
     <p>
       Welcome to my website! This website can be used to calculate things that
       are commonly required in Chemcial Engineering that run the risk of human
@@ -82,13 +65,34 @@
     <!-- can bring up the command pallet (ctrl shift P) and use the wrap with Abbreviation command to use "em" to wrap a bit of text in em so you dont run into the risk of messing up -->
     <h1 class="Calculator-title">Calculators:</h1>
 
-    <ul>
-    <li><a class="link" href="bubble-temperature-iteration-loop.html">Bubble Temperature Iteration Loop</a></li>
-    <li><a class="link" href="dew-temperature-iteration-loop.html">Dew Temperature Iteration Loop</a></li>
-    <li><a class="link" href="linear-interpolation.html">Linear Interpolation</a></li>
-    <li><a class="link" href="unit-conversion.html">Unit Conversion</a></li>
-    <li><a class="link" href="code-testing.html">Code Testing Page</a></li>
-    </ul>
+    <button onclick="bubble_temperature_iteration_loop()" class="button">Bubble Temperature Iteration Loop</button>
+    <button onclick="dew_temperature_iteration_loop()" class="button">Dew Temperature Iteration Loop</button>
+    <button onclick="linear_interpolation()" class="button">Linear Interpolation</button>
+    <button onclick="unit_conversion()" class="button">Unit Conversion</button>
+    <button onclick="code_testing()" class="button">Code Testing</button>
+
+    <script>
+      function bubble_temperature_iteration_loop() {
+        window.location.href = "bubble-temperature-iteration-loop.html";
+      };
+
+      function dew_temperature_iteration_loop() {
+        window.location.href = "dew-temperature-iteration-loop.html";
+      };
+
+      function linear_interpolation() {
+        window.location.href = "linear-interpolation.html";
+      };
+
+      function unit_conversion() {
+        window.location.href = "unit-conversion.html";
+      };
+
+      function code_testing() {
+        window.location.href = "code-testing.html";
+      };
+    </script>
+    
   </body>
 </html>
 
