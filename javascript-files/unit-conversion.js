@@ -729,5 +729,80 @@ function Conversion() {
     convert("millenium1", "millennium2", val, 1, 0, 1, 0, " millenniums");
 
 
-    // Energy is to be added still, just because it takes ages to fill out the tables :(
+
+
+
+    convert("joule1", "joule2", val, 1, 0, 1, 0, "J");
+    convert("joule1", "kilojoules2", val, 1 / 1000, 0, 1, 0, "kJ");
+    convert("joule1", "calories2", val, 1 / 4.184, 0, 1, 0, " cal");
+    convert("joule1", "kilocalories2", val, 1 / 4184, 0, 1, 0, " kcal");
+    convert("joule1", "kilowatt-hour2", val, 1 / 3.6000E+6, 0, 1, 0, "kWh");
+    convert("joule1", "btu2", val, 1 / 1055.05585, 0, 1, 0, "BTU");
+    convert("joule1", "footpound2", val, 1 / 1.35581795, 0, 1, 0, " footpound");
+    convert("joule1", "electronvolt2", val, 6.2415E+18, 0, 1, 0, " eV");
+
+    convert("kilojoules1", "joule2", val, 1000, 0, 1, 0, "J");
+    convert("kilojoules1", "kilojoules2", val, 1, 0, 1, 0, "kJ");
+    convert("kilojoules1", "calories2", val, 239.005736, 0, 1, 0, " cal");
+    convert("kilojoules1", "kilocalories2", val, 1 / 4.184, 0, 1, 0, " kcal");
+    convert("kilojoules1", "kilowatt-hour2", val, 1 / 3600, 0, 1, 0, "kWh");
+    convert("kilojoules1", "btu2", val, 1 / 1.05505585, 0, 1, 0, "BTU");
+    convert("kilojoules1", "footpound2", val, 737.562148, 0, 1, 0, " footpound");
+    convert("kilojoules1", "electronvolt2", val, 6.2415E+21, 0, 1, 0, " eV");
+
+    convert("calories1", "joule2", val, 4.184, 0, 1, 0, "J");
+    convert("calories1", "kilojoules2", val, 1 / 239.005736, 0, 1, 0, "kJ");
+    convert("calories1", "calories2", val, 1, 0, 1, 0, " cal");
+    convert("calories1", "kilocalories2", val, 1 / 1000, 0, 1, 0, " kcal");
+    convert("calories1", "kilowatt-hour2", val, 1 / 860420.65, 0, 1, 0, "kWh");
+    convert("calories1", "btu2", val, 1 / 252.1644, 0, 1, 0, "BTU");
+    convert("calories1", "footpound2", val, 3.08596003, 0, 1, 0, " footpound");
+    convert("calories1", "electronvolt2", val, 2.6114E+19, 0, 1, 0, " eV");
+
+    convert("kilocalories1", "joule2", val, 4184, 0, 1, 0, "J");
+    convert("kilocalories1", "kilojoules2", val, 4.184, 0, 1, 0, "kJ");
+    convert("kilocalories1", "calories2", val, 1000, 0, 1, 0, " cal");
+    convert("kilocalories1", "kilocalories2", val, 1, 0, 1, 0, " kcal");
+    convert("kilocalories1", "kilowatt-hour2", val, 1 / 860.42065, 0, 1, 0, "kWh");
+    convert("kilocalories1", "btu2", val, 3.96566684, 0, 1, 0, "BTU");
+    convert("kilocalories1", "footpound2", val, 3085.96003, 0, 1, 0, " footpound");
+    convert("kilocalories1", "electronvolt2", val, 2.6114E+22, 0, 1, 0, " eV");
+
+    convert("kilowatt-hour1", "joule2", val, 3600000, 0, 1, 0, "J");
+    convert("kilowatt-hour1", "kilojoules2", val, 3600, 0, 1, 0, "kJ");
+    convert("kilowatt-hour1", "calories2", val, 860420.65, 0, 1, 0, " cal");
+    convert("kilowatt-hour1", "kilocalories2", val, 860.42065, 0, 1, 0, " kcal");
+    convert("kilowatt-hour1", "kilowatt-hour2", val, 1, 0, 1, 0, "kWh");
+    convert("kilowatt-hour1", "btu2", val, 3412.14164, 0, 1, 0, "BTU");
+    convert("kilowatt-hour1", "footpound2", val, 2.6552E+6, 0, 1, 0, " footpound");
+    convert("kilowatt-hour1", "electronvolt2", val, 2.2469E+25, 0, 1, 0, " eV");
+
+    convert("btu1", "joule2", val, 1055.05585, 0, 1, 0, "J");
+    convert("btu1", "kilojoules2", val, 1.05505585, 0, 1, 0, "kJ");
+    convert("btu1", "calories2", val, 252.1644, 0, 1, 0, " cal");
+    convert("btu1", "kilocalories2", val, 3.96566684, 0, 1, 0, " kcal");
+    convert("btu1", "kilowatt-hour2", val, 1 / 3412.14164, 0, 1, 0, "kWh");
+    convert("btu1", "btu2", val, 1, 0, 1, 0, "BTU");
+    convert("btu1", "footpound2", val, 778.169259, 0, 1, 0, " footpound");
+    convert("btu1", "electronvolt2", val, 6.5851E+21, 0, 1, 0, " eV");
+
+    convert("footpound1", "joule2", val, 1.35581795, 0, 1, 0, "J");
+    convert("footpound1", "kilojoules2", val, 1 / 737.562148, 0, 1, 0, "kJ");
+    convert("footpound1", "calories2", val, 1 / 3.08596003, 0, 1, 0, " cal");
+    convert("footpound1", "kilocalories2", val, 1 / 3085.96003, 0, 1, 0, " kcal");
+    convert("footpound1", "kilowatt-hour2", val, 1 / 2.6552E+6, 0, 1, 0, "kWh");
+    convert("footpound1", "btu2", val, 1 / 778.169259, 0, 1, 0, "BTU");
+    convert("footpound1", "footpound2", val, 1, 0, 1, 0, " footpound");
+    convert("footpound1", "electronvolt2", val, 8.4624E+18, 0, 1, 0, " eV");
+
+    convert("electronvolt1", "joule2", val, 1 / 6.2415E+18, 0, 1, 0, "J");
+    convert("electronvolt1", "kilojoules2", val, 1 / 6.2415E+21, 0, 1, 0, "kJ");
+    convert("electronvolt1", "calories2", val, 1 / 2.6114E+19, 0, 1, 0, " cal");
+    convert("electronvolt1", "kilocalories2", val, 1 / 2.6114E+22, 0, 1, 0, " kcal");
+    convert("electronvolt1", "kilowatt-hour2", val, 1 / 2.2469E+25, 0, 1, 0, "kWh");
+    convert("electronvolt1", "btu2", val, 1 / 6.5851E+21, 0, 1, 0, "BTU");
+    convert("electronvolt1", "footpound2", val, 1 / 8.4624E+18, 0, 1, 0, " footpound");
+    convert("electronvolt1", "electronvolt2", val, 1, 0, 1, 0, " eV");
+
+
 }
