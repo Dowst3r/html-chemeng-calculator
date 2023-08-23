@@ -59,13 +59,13 @@
 }
 
 #Selection:hover {
-    border-color: aqua;
+    border-color: green;
 }
 
 #Selection2:hover {
-    border-color: aqua;
+    border-color: green;
 }
 
 #value:hover {
-    border-color: aqua;
+    border-color: green;
 }
