@@ -38,6 +38,7 @@
             margin-top: 10px;
             max-width: 200px;
             display: inline-block;
+            text-decoration-color: red;
         }
     </style>
 </head>
@@ -51,7 +52,7 @@
         <input type="text" name="password" id="password-entry">
         <br>
         <br>
-        <button>Log In</button>
+        <button onclick="login()">Log In</button>
         <br>
         <div id="check-div"></div>
         <a href="account-making.html"><p id="create-account"><em>create account</em></p></a>
@@ -66,7 +67,11 @@
             if (input_value.includes("\\")) {
             check_div.textContent = "The character: " + banned + " is not allowed to be in your password. Chose another character";
             }
-        });    
+        });
+
+        function login() {
+
+        }
     </script>
 </body>
 </html>
