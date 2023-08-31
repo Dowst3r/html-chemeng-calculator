@@ -9,9 +9,10 @@
             background-color: teal;
         }
 
-        div {
+        #main-div {
             background-color: white;
             border-radius: 10px;
+            width: 200px;
             padding: 10px;
             display: inline-block;
             margin-left: 45%;
@@ -31,10 +32,17 @@
         #create-account {
             font-size: large;
         }
+
+        #check-div {
+            margin-left: 0%;
+            margin-top: 10px;
+            max-width: 200px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
-    <div>
+    <div id="main-div">
         <p id="log-in">Log In:</p>
         <br>
         <p><em>Username:</em></p>
@@ -45,7 +53,20 @@
         <br>
         <button>Log In</button>
         <br>
+        <div id="check-div"></div>
         <a href="account-making.html"><p id="create-account"><em>create account</em></p></a>
     </div>
+    <script>
+        var Password_entry = document.getElementById("password-entry");
+        var check_div = document.getElementById("check-div");
+        var banned = "\\";
+
+        Password_entry.addEventListener("input", function(event) {
+            var input_value = event.target.value;
+            if (input_value.includes("\\")) {
+            check_div.textContent = "The character: " + banned + " is not allowed to be in your password. Chose another character";
+            }
+        });    
+    </script>
 </body>
 </html>
