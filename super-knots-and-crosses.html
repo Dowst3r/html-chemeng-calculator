@@ -60,6 +60,16 @@
             font-size: 15px;
             cursor: pointer;
         }
+        .vertical-line {
+            margin: 10px;
+            background-color: black;
+            width: 8px;
+        }
+        .horizontal-line {
+            margin: 10px;
+            background-color: black;
+            width: 8px;
+        }
 
         .tile:hover {
             background-color: lightslategray;
@@ -83,8 +93,12 @@
     </div>
 
     <div id="game-square">
+        <div class="vertical-line" id="vertical-left"></div>
+        <div class="vertical-line" id="vertical-right"></div>
+        <div class="horizontal-line" id="horizontal-top"></div>
+        <div class="horizontal-line" id="horizontal-bottom"></div>
 
-        <section class="big-square">
+        <div class="big-square">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -94,9 +108,9 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-        </section>
+        </div>
 
-        <section class="big-square">
+        <div class="big-square">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -106,9 +120,9 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-        </section>
+        </div>
 
-        <section class="big-square">
+        <div class="big-square">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -118,9 +132,9 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-        </section>
+        </div>
 
-        <section class="big-square" id="middle-left">
+        <div class="big-square" id="middle-left">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -130,9 +144,9 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-        </section>
+        </div>
 
-        <section class="big-square">
+        <div class="big-square">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -142,9 +156,9 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-        </section>
+        </div>
 
-        <section class="big-square">
+        <div class="big-square">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -154,9 +168,9 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-        </section>
+        </div>
 
-        <section class="big-square">
+        <div class="big-square">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -166,9 +180,9 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-        </section>
+        </div>
 
-        <section class="big-square">
+        <div class="big-square">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -178,9 +192,9 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-        </section>
+        </div>
 
-        <section class="big-square">
+        <div class="big-square">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
@@ -190,7 +204,7 @@
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
-        </section>
+        </div>
 
     </div>
 </body>
