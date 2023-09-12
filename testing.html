@@ -3,22 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing</title>
+    <title>CEC - Super Knots and Crosses</title>
     <style>
-        div {
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+        /* Existing styles remain the same */
+
+        /* New styles for lines */
+        #game-square {
+            background-color: white;
+            width: 60%;
+            height: 810px;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-left: 10px;
         }
 
-        p {
-            color: white;
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Itim', cursive;
+        }
+
+        h1 {
+            margin-left: 10px;
+        }
+
+        #rules {
+            float: right;
+            background-color: white;
+            border-radius: 10px;
+            max-width: 30%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-right: 50px;
+        }
+        
+
+        body {
+            background-color: teal;
+        }
+
+        #game {
+            border: 2px solid blue;
+            min-height: 810px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: 33% 33% 33%;
+            width: 100%;
+            height: 100%;
+        }
+
+        .big-square {
+            margin: 20px;
+            float: left;
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: 33% 33% 33%;
+            min-width: 120px;
+            max-width: 120px;
+        }
+        
+        .tile {
+            min-width: 40px;
+            border: 2px solid black;
+            background-color: red;
+            min-height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .tile:hover {
+            background-color: lightslategray;
+        }
+
+        .vertical-lines {
+            position: absolute;
+            width: 8px;
+            height: 100%;
+            background-color: black;
+            left: 33%;
+            right: 33%;
+        }
+
+        .horizontal-lines {
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background-color: black;
+            top: 33%;
+            bottom: 33%;
         }
     </style>
 </head>
 <body>
-    <div><p>Stuart ur keys are in the drawer</p></div>    
+    <h1>Super Knots and Crosses:</h1>
+    <div id="rules">
+        <!-- Existing rules content -->
+        <h2>The rules:</h2>
+        <br>
+        <p>At the start of the game you can pick any of the 81 squares to place your knot or cross</p>
+        <br>
+        <p>Based on what square was initially picked, you then pick any of the 9 squares within the large square that was picked at the start</p>
+        <br>
+        <p>For example, if the middle-left square was picked, in any of the large squares, no matter what, the other player has to pick a square in the middle-left square of the large grid</p>
+        <br>
+        <p>Once a square has been won, the large square becomes either a knot or a cross, depending on which of them won</p>
+        <br>
+        <p>Then the game ends when either player gets 3 in a row </p>
+    </div>
+
+    <div id="game-square">
+        <div id="game">
+            <!-- Add vertical and horizontal lines -->
+            <div class="vertical-line" id="vertical-left"></div>
+            <div class="vertical-line" id="vertical-right"></div>
+            <div class="horizontal-line" id="horizontal-top"></div>
+            <div class="horizontal-line" id="horizontal-bottom"></div>
+
+            <!-- Replace big-squares with a grid container -->
+            <div class="grid-container">
+                <!-- Add big-squares as children of the grid container -->
+                <div class="big-square">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+
+                <div class="big-square">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+
+                <div class="big-square">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+
+                <div class="big-square">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+
+                <div class="big-square">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+
+                <div class="big-square">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+
+                <div class="big-square">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+
+                <div class="big-square">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+
+                <div class="big-square">
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+                <!-- Repeat the above structure for the remaining big-squares -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>

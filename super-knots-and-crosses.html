@@ -13,6 +13,19 @@
             margin-top: 10px;
             margin-left: 10px;
         }
+        #game {
+            border: 2px solid blue;
+            min-height: 810px;
+        }
+        .vertical-line {
+            border: 5px solid black;
+            rotate: 90deg;
+            height: 500px;
+        }
+        .horizontal-line {
+            border: 5px solid black;
+            height: 500px;
+        }
 
         * {
             padding: 0;
@@ -39,7 +52,6 @@
         }
 
         .big-square {
-            margin: 0 auto;
             margin: 20px;
             float: left;
             display: grid;
@@ -51,7 +63,7 @@
         
         .tile {
             min-width: 40px;
-            border-color: black;
+            border: 2px solid black;
             background-color: red;
             min-height: 40px;
             display: flex;
@@ -93,119 +105,121 @@
     </div>
 
     <div id="game-square">
-        <div class="vertical-line" id="vertical-left"></div>
-        <div class="vertical-line" id="vertical-right"></div>
-        <div class="horizontal-line" id="horizontal-top"></div>
-        <div class="horizontal-line" id="horizontal-bottom"></div>
+        <div id="game">
+            <div class="vertical-line" id="vertical-right"></div>
+            <div class="horizontal-line" id="horizontal-top"></div>
+            <div class="horizontal-line" id="horizontal-bottom"></div>
 
-        <div class="big-square">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
+            <div class="big-square">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="vertical-line" id="vertical-left"></div>
+
+            <div class="big-square">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square" id="middle-left">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
         </div>
-
-        <div class="big-square">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-        </div>
-
-        <div class="big-square">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-        </div>
-
-        <div class="big-square" id="middle-left">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-        </div>
-
-        <div class="big-square">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-        </div>
-
-        <div class="big-square">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-        </div>
-
-        <div class="big-square">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-        </div>
-
-        <div class="big-square">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-        </div>
-
-        <div class="big-square">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-        </div>
-
     </div>
 </body>
 </html>
