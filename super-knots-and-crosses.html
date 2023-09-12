@@ -40,19 +40,20 @@
 
         .big-square {
             margin: 0 auto;
-            margin-left: 0px;
+            margin: 20px;
             float: left;
             display: grid;
             grid-template-columns: 33% 33% 33%;
             grid-template-rows: 33% 33% 33%;
-            min-width: 90px;
-            max-width: 90px;
+            min-width: 120px;
+            max-width: 120px;
         }
         
         .tile {
-            min-width: 30px;
+            min-width: 40px;
+            border-color: black;
             background-color: red;
-            min-height: 30px;
+            min-height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -119,7 +120,7 @@
             <div class="tile"></div>
         </section>
 
-        <section class="big-square">
+        <section class="big-square" id="middle-left">
             <div class="tile"></div>
             <div class="tile"></div>
             <div class="tile"></div>
