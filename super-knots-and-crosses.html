@@ -17,15 +17,6 @@
             border: 2px solid blue;
             min-height: 810px;
         }
-        .vertical-line {
-            border: 5px solid black;
-            rotate: 90deg;
-            height: 500px;
-        }
-        .horizontal-line {
-            border: 5px solid black;
-            height: 500px;
-        }
 
         * {
             padding: 0;
@@ -53,7 +44,6 @@
 
         .big-square {
             margin: 20px;
-            float: left;
             display: grid;
             grid-template-columns: 33% 33% 33%;
             grid-template-rows: 33% 33% 33%;
@@ -72,15 +62,32 @@
             font-size: 15px;
             cursor: pointer;
         }
-        .vertical-line {
-            margin: 10px;
-            background-color: black;
-            width: 8px;
+        #top-left {
+            float: 50%;
         }
-        .horizontal-line {
-            margin: 10px;
-            background-color: black;
-            width: 8px;
+        #top-center {
+            float: 50%;
+        }
+        #top-right {
+            float: 50%;
+        }
+        #middle-left {
+            float: 50%;
+        }
+        #middle-center {
+            float: 50%;
+        }
+        #middle-right {
+            float: 50%;
+        }
+        #bottom-left {
+            float: 50%;
+        }
+        #bottom-center {
+            float: 50%;
+        }
+        #bottom-right {
+            float: 50%;
         }
 
         .tile:hover {
@@ -106,11 +113,8 @@
 
     <div id="game-square">
         <div id="game">
-            <div class="vertical-line" id="vertical-right"></div>
-            <div class="horizontal-line" id="horizontal-top"></div>
-            <div class="horizontal-line" id="horizontal-bottom"></div>
 
-            <div class="big-square">
+            <div class="big-square" id="top-left">
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -122,9 +126,7 @@
                 <div class="tile"></div>
             </div>
 
-            <div class="vertical-line" id="vertical-left"></div>
-
-            <div class="big-square">
+            <div class="big-square" id="top-center">
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -136,7 +138,7 @@
                 <div class="tile"></div>
             </div>
 
-            <div class="big-square">
+            <div class="big-square" id="top-right">
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -147,6 +149,13 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
             </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 
             <div class="big-square" id="middle-left">
                 <div class="tile"></div>
@@ -160,7 +169,7 @@
                 <div class="tile"></div>
             </div>
 
-            <div class="big-square">
+            <div class="big-square" id="middle-center">
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -172,7 +181,7 @@
                 <div class="tile"></div>
             </div>
 
-            <div class="big-square">
+            <div class="big-square" id="middle-right">
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -184,7 +193,7 @@
                 <div class="tile"></div>
             </div>
 
-            <div class="big-square">
+            <div class="big-square" id="bottom-left">
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -196,7 +205,7 @@
                 <div class="tile"></div>
             </div>
 
-            <div class="big-square">
+            <div class="big-square" id="bottom-center">
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -208,7 +217,7 @@
                 <div class="tile"></div>
             </div>
 
-            <div class="big-square">
+            <div class="big-square" id="bottom-right">
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
