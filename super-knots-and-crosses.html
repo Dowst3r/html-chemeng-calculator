@@ -7,6 +7,10 @@
     <style>
         #game-square {
             background-color: white;
+            background-image: url(images/knots\ and\ crosses.png);
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-position: center;
             width: 60%;
             height: 810px;
             border-radius: 10px;
@@ -14,14 +18,17 @@
             margin-left: 10px;
         }
         #game {
-            border: 2px solid blue;
+            border: 2px solid red;
             border-radius: 10px;
             min-height: 810px;
         }
-        #big-game-grid {
-            width: 80%;
-            margin-left: 60px;
-            background-size: cover;
+        #top-left {
+            margin-top: 70px;
+            margin-left: 170px;
+        }
+        #top-center {
+            margin-top: 0px;
+            margin-left: 350px;
         }
 
         * {
@@ -45,7 +52,7 @@
         
 
         body {
-            background-color: teal;
+            background-color: turquoise;
         }
 
         .big-square {
@@ -97,7 +104,6 @@
 
     <div id="game-square">
         <div id="game">
-        <img src="images/knots and crosses.png" alt="image failed to load" id="big-game-grid">
 
             <div class="big-square" id="top-left">
                 <div class="tile"></div>
