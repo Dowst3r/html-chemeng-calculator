@@ -3,52 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Tic-Tac-Toe</title>
   <style>
-    /* Style for the outer container */
-    #outer-container {
-      background-color: #f0f0f0;
-      padding: 20px;
-      height: fit-content;
-      width: fit-content;
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 20px;
     }
 
-    /* Style for the first inner container */
-    #inner-container-1 {
-      background-color: #d0d0d0;
-      padding: 10px;
-      margin-top: 10px;
-      height: fit-content;
-      width: fit-content;
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 3fr);
     }
 
-    /* Style for the second inner container */
-    #inner-container-2 {
-      background-color: #c0c0c0;
-      padding: 10px;
-      margin-top: 10px;
-      height: fit-content;
-      width: fit-content;
+    .cell {
+      width: 100px;
+      height: 100px;
+      border: 2px solid #ccc;
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .cell:hover {
+      background-color: red;
+    }
+
+    .player1 {
+      color: #3498db;
+    }
+
+    .player2 {
+      color: #e74c3c;
     }
   </style>
-  <title>Nested Div Containers with IDs Example</title>
 </head>
 <body>
 
-  <!-- Outer container with ID -->
-  <div id="outer-container">
-    <p>This is content inside the outer container.</p>
+<div id="ultimate-tic-tac-toe" class="board"></div>
 
-    <!-- First inner container with ID -->
-    <div id="inner-container-1">
-      <p>This is content inside the first inner container.</p>
-    </div>
+<script>
+  const ultimateBoard = document.getElementById('ultimate-tic-tac-toe');
+  let currentPlayer = 'X';
+  let winner = null;
+  let boardState = Array(9).fill(null).map(() => Array(9).fill(null));
 
-    <!-- Second inner container with ID -->
-    <div id="inner-container-2">
-      <p>This is content inside the second inner container.</p>
-    </div>
+  // Create individual cells for the board
+  for (let i = 0; i < 9; i++) {
+    const subBoard = document.createElement('div');
+    subBoard.classList.add('board');
+    ultimateBoard.appendChild(subBoard);
 
-  </div>
+    for (let j = 0; j < 9; j++) {
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+      cell.dataset.row = i;
+      cell.dataset.col = j;
+      cell.addEventListener('click', () => makeMove(i, j));
+      subBoard.appendChild(cell);
+    }
+  }
+
+  function makeMove(row, col) {
+    if (boardState[row][col] || winner) return;
+
+    boardState[row][col] = currentPlayer;
+    updateCell(row, col);
+
+    if (checkWin(row, col)) {
+      winner = currentPlayer;
+      alert(`Player ${currentPlayer} wins!`);
+    } else if (isBoardFull()) {
+      alert('It\'s a draw!');
+    } else {
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
+  }
+
+  function updateCell(row, col) {
+    const cell = ultimateBoard.children[row].children[col];
+    cell.textContent = currentPlayer;
+    cell.classList.add(currentPlayer === 'X' ? 'player1' : 'player2');
+  }
+
+  function checkWin(row, col) {
+    // Check for a win in the corresponding small board
+    return checkSmallBoardWin(row, col) || checkLargeBoardWin(row, col);
+  }
+
+  function checkSmallBoardWin(row, col) {
+    const smallBoard = boardState[row];
+    return checkLine(smallBoard, row) || checkLine(transpose(boardState)[col], col);
+  }
+
+  function checkLargeBoardWin(row, col) {
+    // Check for a win in the corresponding large board
+    return checkLine(boardState, row) || checkLine(transpose(boardState), col);
+  }
+
+  function checkLine(matrix, index) {
+    const line = matrix[index];
+    return (
+      checkEqual(line[0], line[1], line[2]) ||
+      checkEqual(line[3], line[4], line[5]) ||
+      checkEqual(line[6], line[7], line[8])
+    );
+  }
+
+  function checkEqual(a, b, c) {
+    return a === b && b === c && a !== null;
+  }
+
+  function isBoardFull() {
+    return boardState.every(row => row.every(cell => cell !== null));
+  }
+
+  function transpose(matrix) {
+    return matrix[0].map((_, i) => matrix.map(row => row[i]));
+  }
+</script>
 
 </body>
 </html>

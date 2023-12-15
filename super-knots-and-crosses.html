@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/knots and crosses.png" type="image/png">
     <title>CEC - Super Knots and Crosses</title>
     <style>
         #game-square {
@@ -21,20 +22,6 @@
             border: 2px solid red;
             border-radius: 10px;
             min-height: 810px;
-        }
-        #top-row {
-            margin-top: 0;
-            display: grid;
-            background-color: yellowgreen;
-            border-color: black;
-        }
-        .top-left {
-            margin-top: 0px;
-            margin-left: 0px;
-        }
-        .top-middle {
-            margin-top: 0px;
-            margin-left: 0px;
         }
 
         * {
@@ -55,6 +42,9 @@
             margin-top: 10px;
             margin-right: 50px;
         }
+        #title {
+            margin-left: 15px;
+        }
         
 
         body {
@@ -66,31 +56,31 @@
             display: inline-block;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-gap: 0px; /* Optional: Add gap between big-squares */
-            min-width: 120px;
-            max-width: 120px;
+            grid-gap: 0px;
+            min-width: 240px;
+            max-width: 240px;
             grid-template-columns: 33% 33% 33%;
             grid-template-rows: 33% 33% 33%;
-            min-width: 120px;
-            max-width: 120px;
+            min-width: 240px;
+            max-width: 240px;
         }
         
         .tile {
-            min-width: 40px;
-            border: 2px solid black;
-            background-color: red;
-            min-height: 40px;
+            min-width: 80px;
+            border: 2px solid white;
+            background-color: white;
+            min-height: 80px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 15px;
             cursor: pointer;
         }
-        #top-center {
-            float: top;
+
+        #top-left {
+            margin-left: 130px;
+            margin-top: 20px;
         }
-
-
 
         .tile:hover {
             background-color: lightslategray;
@@ -98,7 +88,7 @@
     </style>
 </head>
 <body>
-    <h1>Super Knots and Crosses:</h1>
+    <h1 id="title">Super Knots and Crosses:</h1>
     <div id="rules">
         <h2>The rules:</h2>
         <br>
@@ -115,7 +105,7 @@
 
     <div id="game-square">
         <div id="game">
-            <div class="top-row">
+            
             <div class="big-square" id="top-left">
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -128,106 +118,6 @@
                 <div class="tile"></div>
             </div>
 
-            <div class="big-square" id="top-center">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-
-            <div class="big-square" id="top-right">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-            </div>
-
-            <div class="middle-row">
-            <div class="big-square" id="middle-left">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-
-            <div class="big-square" id="middle-center">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-
-            <div class="big-square" id="middle-right">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-            </div>
-            
-            <div class="bottom-row">
-            <div class="big-square" id="bottom-left">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-
-            <div class="big-square" id="bottom-center">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-
-            <div class="big-square" id="bottom-right">
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-                <div class="tile"></div>
-            </div>
-            </div>
         </div>
     </div>
 </body>
