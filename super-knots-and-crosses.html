@@ -57,19 +57,19 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 0px;
-            min-width: 240px;
-            max-width: 240px;
+            min-width: 210px;
+            max-width: 210px;
             grid-template-columns: 33% 33% 33%;
             grid-template-rows: 33% 33% 33%;
-            min-width: 240px;
-            max-width: 240px;
+            min-width: 210px;
+            max-width: 210px;
         }
         
         .tile {
-            min-width: 80px;
+            min-width: 70px;
             border: 2px solid white;
-            background-color: white;
-            min-height: 80px;
+            background-color: red;
+            min-height: 70px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -77,13 +77,57 @@
             cursor: pointer;
         }
 
-        #top-left {
-            margin-left: 130px;
-            margin-top: 20px;
+        .big-squares-container {
+            display: flex;
+        }
+
+        .big-square:nth-child(1) {
+            margin-left: 145px;
+            margin-top: 40px;
+        }
+
+        .big-square:nth-child(2) {
+            margin-left: 395px;
+            margin-top: -240px;
+        }
+
+        .big-square:nth-child(3) {
+            margin-left: 645px;
+            margin-top: -240px;
+        }
+
+        .big-square:nth-child(4) {
+            margin-left: 145px;
+            margin-top: 28px;
+        }
+
+        .big-square:nth-child(5) {
+            margin-left: 395px;
+            margin-top: -240px;
+        }
+
+        .big-square:nth-child(6) {
+            margin-left: 645px;
+            margin-top: -240px;
+        }
+
+        .big-square:nth-child(7) {
+            margin-left: 145px;
+            margin-top: 28px;
+        }
+
+        .big-square:nth-child(8) {
+            margin-left: 395px;
+            margin-top: -240px;
+        }
+
+        .big-square:nth-child(9) {
+            margin-left: 645px;
+            margin-top: -240px;
         }
 
         .tile:hover {
-            background-color: lightslategray;
+            background-color: rgb(182, 187, 192);
         }
     </style>
 </head>
@@ -92,20 +136,20 @@
     <div id="rules">
         <h2>The rules:</h2>
         <br>
-        <p>At the start of the game you can pick any of the 81 squares to place your knot or cross</p>
+        <p>At the start of the game you can pick any of the 81 squares to place your knot or cross.</p>
         <br>
-        <p>Based on what square was initially picked, you then pick any of the 9 squares within the large square that was picked at the start</p>
+        <p>Based on what square was initially picked, you then pick any of the 9 squares within the large square that was picked at the start.</p>
         <br>
-        <p>For example, if the middle-left square was picked, in any of the large squares, no matter what, the other player has to pick a square in the middle-left square of the large grid</p>
+        <p>For example, if the middle-left square was picked, in any of the large squares, no matter what, the other player has to pick a square in the middle-left square of the large grid.</p>
         <br>
-        <p>Once a square has been won, the large square becomes either a knot or a cross, depending on which of them won</p>
+        <p>Once a square has been won, the large square becomes either a knot or a cross, depending on which of them won.</p>
         <br>
-        <p>Then the game ends when either player gets 3 in a row </p>
+        <p>Then the game ends when either player gets 3 in a row.</p>
     </div>
 
     <div id="game-square">
         <div id="game">
-            
+            <div class="big-square-container">            
             <div class="big-square" id="top-left">
                 <div class="tile"></div>
                 <div class="tile"></div>
@@ -116,6 +160,104 @@
                 <div class="tile"></div>
                 <div class="tile"></div>
                 <div class="tile"></div>
+            </div>
+
+            <div class="big-square" id="top-middle">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square" id="top-right">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square" id="middle-left">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square" id="middle-centre">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square" id="middle-right">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square" id="bottom-left">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square" id="bottom-centre">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
+            <div class="big-square" id="bottom-right">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+
             </div>
 
         </div>
