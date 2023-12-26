@@ -1,0 +1,145 @@
+#game-square {
+    background-color: white;
+    background-image: url(images/knots\ and\ crosses.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60%;
+    height: 800px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#game {
+    border: 2px solid white;
+    border-radius: 10px;
+    min-height: 790px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Itim', cursive;
+}
+
+h1 {
+    margin-left: 10px;
+}
+
+#rules {
+    float: right;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 30%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 50px;
+    overflow: hidden;
+}
+
+#title {
+    margin-left: 15px;
+}
+
+
+body {
+    background-color: turquoise;
+}
+
+.big-square {
+    margin: 20px;
+    display: inline-block;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    min-width: 210px;
+    max-width: 210px;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    min-width: 210px;
+    max-width: 210px;
+}
+
+.tile {
+    min-width: 70px;
+    border: 2px solid white;
+    background-color: white;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.big-squares-container {
+    display: flex;
+}
+
+.big-square:nth-child(1) {
+    margin-left: 150px;
+    margin-top: 32px;
+}
+
+.big-square:nth-child(2) {
+    margin-left: 395px;
+    margin-top: -240px;
+}
+
+.big-square:nth-child(3) {
+    margin-left: 645px;
+    margin-top: -240px;
+}
+
+.big-square:nth-child(4) {
+    margin-left: 150px;
+    margin-top: 32px;
+}
+
+.big-square:nth-child(5) {
+    margin-left: 395px;
+    margin-top: -240px;
+}
+
+.big-square:nth-child(6) {
+    margin-left: 645px;
+    margin-top: -240px;
+}
+
+.big-square:nth-child(7) {
+    margin-left: 150px;
+    margin-top: 28px;
+}
+
+.big-square:nth-child(8) {
+    margin-left: 395px;
+    margin-top: -240px;
+}
+
+.big-square:nth-child(9) {
+    margin-left: 645px;
+    margin-top: -240px;
+}
+
+.tile:hover {
+    background-color: lightskyblue;
+}
+
+#winner {
+    border: 4vmin teal;
+    left: -100vw;
+    font-family: 'Itim', cursive;
+    text-align: center;
+    line-height: 100vw;
+    font-size: 10vw;
+    overflow: hidden;
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: -100vw;
+    width: calc(100vw - 8vmin);
+    height: calc(100vh - 8vmin);
+    transition: left 1s;
+    -webkit-transition: left 1s;
+}
