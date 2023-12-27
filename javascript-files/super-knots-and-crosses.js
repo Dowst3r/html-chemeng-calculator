@@ -81,3 +81,6 @@ var _9_8 = document.getElementById('9-8');
 var _9_9 = document.getElementById('9-9');
 
 var winner_banner = document.getElementById('winner-banner');
+
+let player1 = document.getElementById('player1')
+let player2 = document.getElementById('player2')
