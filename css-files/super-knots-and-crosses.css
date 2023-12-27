@@ -38,6 +38,15 @@ h1 {
     overflow: hidden;
 }
 
+#player-naming {
+    float: right;
+    background-color: white;
+    border-radius: 10px;
+    max-width: fit-content;
+    padding: 10px;
+    margin-right: 50px;
+}
+
 #title {
     margin-left: 15px;
 }
