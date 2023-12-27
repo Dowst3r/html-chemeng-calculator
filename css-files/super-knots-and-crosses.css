@@ -39,12 +39,11 @@ h1 {
 }
 
 #player-naming {
-    float: right;
-    background-color: white;
     border-radius: 10px;
     max-width: fit-content;
     padding: 10px;
-    margin-right: 50px;
+    margin-top: 500px;
+    margin-left: 1000px;
 }
 
 #title {
