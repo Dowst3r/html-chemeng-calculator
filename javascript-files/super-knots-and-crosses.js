@@ -84,3 +84,36 @@ var winner_banner = document.getElementById('winner-banner');
 
 let player1 = document.getElementById('player1')
 let player2 = document.getElementById('player2')
+
+function win(player) {
+    if (player) {
+        winner_banner.innerHTML = player + ' won!';
+        isXTurn = true;
+        winner_banner.style.left = '0';
+        filledSquares = 0;
+
+        setTimeout(function () {
+            _1_1.innerHTML = _1_2.innerHTML = _1_3.innerHTML =
+                _1_4.innerHTML = _1_5.innerHTML = _1_6.innerHTML =
+                _1_7.innerHTML = _1_8.innerHTML = _1_9.innerHTML = _2_1.innerHTML =
+                _2_2.innerHTML = _2_3.innerHTML = _2_4.innerHTML = _2_5.innerHTML =
+                _2_6.innerHTML = _2_7.innerHTML = _2_8.innerHTML = _2_9.innerHTML =
+                _3_1.innerHTML = _3_2.innerHTML = _3_3.innerHTML = _3_4.innerHTML =
+                _3_5.innerHTML = _3_6.innerHTML = _3_7.innerHTML = _3_8.innerHTML =
+                _3_9.innerHTML = _4_1.innerHTML = _4_2.innerHTML = _4_3.innerHTML =
+                _4_4.innerHTML = _4_5.innerHTML = _4_6.innerHTML = _4_7.innerHTML =
+                _4_8.innerHTML = _4_9.innerHTML = _5_1.innerHTML = _5_2.innerHTML =
+                _5_3.innerHTML = _5_4.innerHTML = _5_5.innerHTML = _5_6.innerHTML =
+                _5_7.innerHTML = _5_8.innerHTML = _5_9.innerHTML = _6_1.innerHTML =
+                _6_2.innerHTML = _6_3.innerHTML = _6_4.innerHTML = _6_5.innerHTML =
+                _6_6.innerHTML = _6_7.innerHTML = _6_8.innerHTML = _6_9.innerHTML =
+                _7_1.innerHTML = _7_2.innerHTML = _7_3.innerHTML = _7_4.innerHTML =
+                _7_5.innerHTML = _7_6.innerHTML = _7_7.innerHTML = _7_8.innerHTML =
+                _7_9.innerHTML = _8_1.innerHTML = _8_2.innerHTML = _8_3.innerHTML =
+                _8_4.innerHTML = _8_5.innerHTML = _8_6.innerHTML = _8_7.innerHTML =
+                _8_8.innerHTML = _8_9.innerHTML = _9_1.innerHTML = _9_2.innerHTML =
+                _9_3.innerHTML = _9_4.innerHTML = _9_5.innerHTML = _9_6.innerHTML =
+                _9_7.innerHTML = _9_8.innerHTML = _9_9.innerHTML = ''; winner_banner.style.left = '-100vw';
+        }, 2000);
+    }
+}
