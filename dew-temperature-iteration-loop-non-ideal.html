@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bubble Temperature Iteration Loop Non-Ideal</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS" />
+    <link rel="icon" href="images/Thermometer2.png" type="image/png">
+    <title>CEC - Dew Temperature iteration loop Non-Ideal</title>
+    <link rel="stylesheet" type="text/css" href="css-files/dew-temperature-iteration-loop-non-ideal.css">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <h1>Dew Temperature Iteration Loop Non-Ideal Calculator:</h1>
+    <img
+      class="Dew-Antoine-Equation"
+      src="images/Antoine-Equation-Real.PNG"
+      alt="Image failed to load"
+    />
+    <p>The <em>A</em> value for the <em>first</em> Antoine Equation:</p>
+    <input type="number" id="A1-Dew" name="textbox" />
+    <p>The <em>B</em> value for the <em>first</em> Antoine Equation:</p>
+    <input type="number" id="B1-Dew" name="textbox" />
+    <p>the <em>C</em> value for the <em>first</em> Antoine Equation:</p>
+    <input type="number" id="C1-Dew" name="textbox" />
+    <p class="Second-A-Value">
+      The <em>A</em> value for the <em>second</em> Antoine Equation:
+    </p>
+    <input type="number" id="A2-Dew" name="textbox" />
+    <p>The <em>B</em> value for the <em>second</em> Antoine Equation:</p>
+    <input type="number" id="B2-Dew" name="textbox" />
+    <p>the <em>C</em> value for the <em>second</em> Antoine Equation:</p>
+    <input type="number" id="C2-Dew" name="textbox" />
+    <p class="Dew-pressure">The <em>pressure</em> of the system:</p>
+    <input type="number" id="Pressure-Dew-System" name="textbox" />
+    <p class="Vapour-moles">
+      The <em>mole fractions</em> in the <em>vapour</em> phase <em>(y1)</em>:
+    </p>
+    <input type="number" id="Vapour-Dew-Moles" name="textbox" />
+    <p class="Num-Iterations">
+      The <em>Maximum</em> amount of <em>Iterations</em> to go through:
+    </p>
+    <input type="number" id="Max-Iterations_Dew" name="textbox" />
+    <p>
+      the <em>Unit</em> of the Temperature (don't need to type degrees, just the
+      letter unit):
+    </p>
+    <input type="text" id="Unit-Dew" name="textbox" />
+    <p class="Calculate-Button"></p>
+    <button type="button" onclick="calculate()">Calculate</button>
+    <div class="Result-Container">
+      <p id="Text_Result_Dew"></p>
+    </div>
+    <div id="graphContainer">
+      <canvas id="Graph_Dew"></canvas>
+    </div>
+    <script src="javascript-files/dew-temperature-iteration-loop-non-ideal.js"></script>
+  </body>
 </html>

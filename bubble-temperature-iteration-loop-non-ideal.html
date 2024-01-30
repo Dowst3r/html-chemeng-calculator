@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dew Temperature Iteration Loop Non-Ideal</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="HTML, CSS" />
+    <link rel="icon" href="images/Thermometer2.png" type="image/png">
+    <title>CEC - Bubble Temperature iteration loop Non-Ideal</title>
+    <link rel="stylesheet" type="text/css" href="css-files/bubble-temperature-iteration-loop-non-ideal.css">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <h1>Bubble Temperature Iteration Loop Non-Ideal Calculator:</h1>
+    <img
+      class="Bubble-Antoine-Equation"
+      src="images/Antoine-Equation-Real.PNG"
+      alt="Image failed to load"
+    />
+    <p>The <em>A</em> value for the <em>first</em> Antoine Equation:</p>
+    <input type="number" id="A1-Bubble" name="textbox" />
+    <p>The <em>B</em> value for the <em>first</em> Antoine Equation:</p>
+    <input type="number" id="B1-Bubble" name="textbox" />
+    <p>the <em>C</em> value for the <em>first</em> Antoine Equation:</p>
+    <input type="number" id="C1-Bubble" name="textbox" />
+    <p class="Second-A-Value">
+      The <em>A</em> value for the <em>second</em> Antoine Equation:
+    </p>
+    <input type="number" id="A2-Bubble" name="textbox" />
+    <p>The <em>B</em> value for the <em>second</em> Antoine Equation:</p>
+    <input type="number" id="B2-Bubble" name="textbox" />
+    <p>the <em>C</em> value for the <em>second</em> Antoine Equation:</p>
+    <input type="number" id="C2-Bubble" name="textbox" />
+    <p class="Bubble-pressure">The <em>pressure</em> of the system:</p>
+    <input type="number" id="Pressure-Bubble-System" name="textbox" />
+    <p class="Liquid-moles">
+      The <em>mole fractions</em> in the <em>liquid</em> phase <em>(x1)</em>:
+    </p>
+    <input type="number" id="Liquid-Bubble-Moles" name="textbox" />
+    <p class="Num-Iterations">
+      The <em>Maximum</em> amount of <em>Iterations</em> to go through:
+    </p>
+    <input type="number" id="Max-Iterations_Bubble" name="textbox" />
+    <p>
+      the <em>Unit</em> of the Temperature (don't need to type degrees, just the
+      letter unit):
+    </p>
+    <input type="text" id="Unit-Bubble" name="textbox" />
+    <p class="Calculate-Button"></p>
+    <button type="button" onclick="calculate()">Calculate</button>
+    <div class="Result-Container">
+      <p id="Text_Result_Bubble"></p>
+    </div>
+    <div id="graphContainer">
+      <canvas id="Graph_Bubble"></canvas>
+    </div>
+    <script src="javascript-files/bubble-temperature-iteration-loop-non-ideal.js"></script>
+  </body>
 </html>
