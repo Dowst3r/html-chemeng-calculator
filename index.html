@@ -66,9 +66,11 @@
     <!-- can bring up the command pallet (ctrl shift P) and use the wrap with Abbreviation command to use "em" to wrap a bit of text in em so you dont run into the risk of messing up -->
     <h1 class="Calculator-title">Calculators:</h1>
 
-    <button onclick="bubble_temperature_iteration_loop()" class="button">Bubble Temperature Iteration Loop</button>
-    <button onclick="dew_temperature_iteration_loop()" class="button">Dew Temperature Iteration Loop</button>
+    <button onclick="bubble_temperature_iteration_loop()" class="button">Bubble Temperature Iteration Loop - ideal</button>
+    <button onclick="dew_temperature_iteration_loop()" class="button">Dew Temperature Iteration Loop - ideal</button>
     <button onclick="linear_interpolation()" class="button">Linear Interpolation</button>
+    <button onclick="bubble_temperature_iteration_loop_non_ideal()" class="button">Bubble Temperature Iteration Loop - non-ideal</button>
+    <button onclick="dew_temperature_iteration_loop_non_ideal()" class="button">Dew Temperature Iteration Loop - non-ideal</button>
     <button onclick="unit_conversion()" class="button">Unit Conversion</button>
     <button onclick="code_testing()" class="button">Code Testing</button>
 
@@ -79,6 +81,14 @@
 
       function dew_temperature_iteration_loop() {
         window.location.href = "dew-temperature-iteration-loop.html";
+      };
+
+      function bubble_temperature_iteration_loop_non_ideal() {
+        window.location.href = "bubble-temperature-iteration-loop-non-ideal.html"
+      };
+
+      function dew_temperature_iteration_loop_non_ideal() {
+        window.location.href = "dew-temperature-iteration-loop-non-ideal.html"
       };
 
       function linear_interpolation() {
