@@ -58,7 +58,7 @@ function calculate() {
         var x2_dew = (Pres_Dew * y2_Dew) / (p2_Dew * gamma2);
         var sum = x1_Dew + x2_Dew
         var check = Maths.abs(sum - 1)
-        if (check > 0.01 || check === 0) {
+        if (check >= 0.01) {
             T_values_Dew.push(avg_Dew);
             avg_Dew *= 0.999;
             // temperature guess was too large so multuplied it by 99.9% to slightly decrease the guess to try and converge
