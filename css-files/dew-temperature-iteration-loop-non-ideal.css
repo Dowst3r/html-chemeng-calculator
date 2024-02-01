@@ -12,6 +12,12 @@ em {
     width: 400px;
 }
 
+.Margules-Equation {
+    float: right;
+    margin-right: 600px;
+    width: 400px;
+}
+
 .Dew-pressure {
     padding-top: 50px;
 }
