@@ -75,7 +75,7 @@ function calculate() {
         T_values_Bubble[T_values_Bubble.length - 1] +
         " °" +
         Unit_Bubble +
-        "the difference between the 2 final temperature values: " +
+        " the difference between the 2 final temperature values: " +
         Math.abs(
             T_values_Bubble[T_values_Bubble.length - 2] -
             T_values_Bubble[T_values_Bubble.length - 1]
