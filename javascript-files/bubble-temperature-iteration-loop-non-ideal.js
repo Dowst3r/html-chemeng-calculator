@@ -1,6 +1,8 @@
 var graph = null;
 let T_values_Bubble = [];
 
+// graph is just a straight line down... not good
+
 function calculate() {
     let temperature_Bubble = [];
     let T_values_Bubble = [];
