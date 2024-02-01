@@ -70,61 +70,58 @@ function calculate() {
             // converged on the correct temperature
         }
     }
-}
+    var output_Bubble =
+        "The graph converges to a temperature of " +
+        T_values_Bubble[T_values_Bubble.length - 1] +
+        " °" +
+        Unit_Bubble +
+        "the difference between the 2 final temperature values: " +
+        Math.abs(
+            T_values_Bubble[T_values_Bubble.length - 2] -
+            T_values_Bubble[T_values_Bubble.length - 1]
+        ) + " °" + Unit_Bubble +
+        "\nthe vapour phase composition: y1 = " +
+        y1_Bubble +
+        " and y2 = " +
+        y2_Bubble;
 
-// dont change below (much as not fully checked for any required updates) just change above
-
-var output_Bubble =
-    "The graph converges to a temperature of " +
-    T_values_Bubble[T_values_Bubble.length - 1] +
-    " °" +
-    Unit_Bubble +
-    "the difference between the 2 final temperature values: " +
-    Math.abs(
-        T_values_Bubble[T_values_Bubble.length - 2] -
-        T_values_Bubble[T_values_Bubble.length - 1]
-    ) + " °" + Unit_Bubble +
-    "\nthe vapour phase composition: y1 = " +
-    y1_Bubble +
-    " and y2 = " +
-    y2_Bubble;
-
-const x_axis = Array.from(
-    { length: T_values_Bubble.length },
-    (_, i) => i + 1
-);
-const ctx = document.getElementById("Graph_Bubble").getContext("2d");
-if (graph) {
-    graph.clear();
-    graph.destroy();
-}
-graph = new Chart(ctx, {
-    type: "line",
-    data: {
-        labels: x_axis,
-        datasets: [{
-            label: "Temperature in °" + Unit_Bubble,
-            data: T_values_Bubble,
-            backgroundColor: [
-                "rgba(255, 192, 203, 1)"
-            ],
-            borderColor: "#FFC0CB"
-        }]
-    },
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: "Temperature values through the iteration loops",
+    const x_axis = Array.from(
+        { length: T_values_Bubble.length },
+        (_, i) => i + 1
+    );
+    const ctx = document.getElementById("Graph_Bubble").getContext("2d");
+    if (graph) {
+        graph.clear();
+        graph.destroy();
+    }
+    graph = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: x_axis,
+            datasets: [{
+                label: "Temperature in °" + Unit_Bubble,
+                data: T_values_Bubble,
+                backgroundColor: [
+                    "rgba(255, 192, 203, 1)"
+                ],
+                borderColor: "#FFC0CB"
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Temperature values through the iteration loops",
+                },
+            },
+            legend: {
+                display: false,
+                position: "bottom",
+                name: "Temperatures",
+                text: "Temperature Chart",
             },
         },
-        legend: {
-            display: false,
-            position: "bottom",
-            name: "Temperatures",
-            text: "Temperature Chart",
-        },
-    },
-});
-document.getElementById("Text_Result_Bubble").innerHTML = output_Bubble;
-document.getElementById("Graph_Bubble").innerHTML = graph
+    });
+    document.getElementById("Text_Result_Bubble").innerHTML = output_Bubble;
+    document.getElementById("Graph_Bubble").innerHTML = graph
+};
