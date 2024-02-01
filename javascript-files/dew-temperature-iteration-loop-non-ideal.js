@@ -26,13 +26,12 @@ function calculate() {
     let Unit_Dew = document.getElementById("Unit-Dew").value;
     var Pres_Dew = parseFloat(document.getElementById("Pressure-Dew-System").value);
     var y1_Dew = parseFloat(document.getElementById("Vapour-Dew-Moles").value);
-    var Max_Iterations_Dew = parseFloat(document.getElementById("Max-Iterations_Dew").value);
+    var tolerance = parseFloat(document.getElementById("Tolerance_Dew").value);
 
     A_Dew = [A1_Dew, A2_Dew];
     B_Dew = [B1_Dew, B2_Dew];
     C_Dew = [C1_Dew, C2_Dew];
 
-    var iteration_Dew = 0;
     keep_looping_Dew = true;
     var total_Dew = 0;
     var avg_Dew = 0;
@@ -54,40 +53,22 @@ function calculate() {
     while (keep_looping_Dew) {
         var p1_Dew = Math.exp(A_Dew[0] - B_Dew[0] / (avg_Dew + C_Dew[0]));
         var p2_Dew = Math.exp(A_Dew[1] - B_Dew[1] / (avg_Dew + C_Dew[1]));
-        var x1_dew = (Pres_Dew * y1_Dew) / (p1_Dew * gamma1);
-        var x2_dew = (Pres_Dew * y2_Dew) / (p2_Dew * gamma2);
+        var x1_Dew = (Pres_Dew * y1_Dew) / (p1_Dew * gamma1);
+        var x2_Dew = (Pres_Dew * y2_Dew) / (p2_Dew * gamma2);
         var sum = x1_Dew + x2_Dew
         var check = Maths.abs(sum - 1)
-        if (check >= 0.01) {
-            T_values_Dew.push(avg_Dew);
+        T_values_Dew.push(avg_Dew);
+        if (check >= tolerance) {
             avg_Dew *= 0.999;
             // temperature guess was too large so multuplied it by 99.9% to slightly decrease the guess to try and converge
         } else if (check < 0) {
-            T_values_Dew.push(avg_Dew);
             avg_Dew *= 1.001;
             // temperature guess was too small so multilpied it by 100.1% to slightly increase the guess to try and converge
         } else {
-            T_values_Dew.push(avg_Dew);
             keep_looping_Dew = false;
             // converged on the correct temperature
         }
     }
-
-    // old code below will be using as a reference to write the code above
-
-    var T_new_Dew = B_Dew[0] / (A_Dew[0] - Math.log(p1_new_Dew)) - C_Dew[0];
-    T_values_Dew.push(T_new_Dew);
-    var avg_Dew = T_new_Dew;
-
-    if (iteration_Dew < Max_Iterations_Dew) {
-        iteration_Dew++;
-        T_new_Dew_Array.push(T_new_Dew);
-    } else {
-        keep_looping_Dew = false;
-        var x1_Dew = (y1_Dew * Pres_Dew) / p1_Dew;
-        var x2_Dew = 1 - x1_Dew;
-    }
-    // keep the curley bracket below!!!
 }
 
 // dont change below (much as not fully checked for any required updates) just change above
@@ -98,8 +79,6 @@ var output_Dew =
     " °" +
     Unit_Dew +
     " after " +
-    iteration_Dew +
-    " loops\n" +
     "the difference between the 2 final temperature values: " +
     Math.abs(
         T_values_Dew[T_values_Dew.length - 2] -
