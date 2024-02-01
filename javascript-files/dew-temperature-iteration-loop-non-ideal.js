@@ -65,7 +65,7 @@ function calculate() {
             T_values_Dew.push(avg_Dew);
             avg_Dew *= 1.001;
             // temperature guess was too small so multilpied it by 100.1% to slightly increase the guess to try and converge
-        } else (0.01 > Maths.abs(sum - 1) > 0); {
+        } else if (0.01 > Maths.abs(sum - 1)); {
             T_values_Dew.push(avg_Dew);
             keep_looping_Dew = false;
             // converged on the correct temperature
@@ -87,6 +87,8 @@ function calculate() {
         var x2_Dew = 1 - x1_Dew;
     }
 }
+
+// dont change below (much as not fully checked for any required updates) just change above
 
 var output_Dew =
     "The graph converges to a temperature of " +
