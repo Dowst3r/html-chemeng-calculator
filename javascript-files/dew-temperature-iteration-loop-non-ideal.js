@@ -65,7 +65,7 @@ function calculate() {
             T_values_Dew.push(avg_Dew);
             avg_Dew *= 1.001;
             // temperature guess was too small so multilpied it by 100.1% to slightly increase the guess to try and converge
-        } else if (0.01 > Maths.abs(sum - 1)); {
+        } else {
             T_values_Dew.push(avg_Dew);
             keep_looping_Dew = false;
             // converged on the correct temperature
