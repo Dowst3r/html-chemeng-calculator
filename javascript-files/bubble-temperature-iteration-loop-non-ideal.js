@@ -56,7 +56,7 @@ function calculate() {
         var y1_Bubble = (x1_Bubble * gamma1 * p1_Bubble) / (Pres_Bubble);
         var y2_Bubble = (x2_Bubble * gamma2 * p2_Bubble) / (Pres_Bubble);
         var sum = y1_Bubble + y2_Bubble
-        var check = Maths.abs(sum - 1)
+        var check = Math.abs(sum - 1)
         T_values_Bubble.push(avg_Bubble);
         if (check >= tolerance) {
             avg_Bubble *= 0.999;
