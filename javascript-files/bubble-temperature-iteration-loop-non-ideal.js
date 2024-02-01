@@ -1,4 +1,5 @@
 var graph = null;
+let T_values_Bubble = [];
 
 function calculate() {
     let temperature_Bubble = [];
