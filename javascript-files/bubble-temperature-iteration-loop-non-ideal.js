@@ -39,7 +39,7 @@ function calculate() {
     var x2_Bubble = 1 - x1_Bubble;
     var RHS1 = Math.pow(x2_Bubble, 2) * (Margules_12 + 2 * x1_Bubble * (Margules_21 - Margules_12));
     var gamma1 = Math.exp(RHS1);
-    var RHS2 = math.pow(x1_Bubble, 2) * (Margules_21 + 2 * x2_Bubble * (Margules_12 - Margules_21));
+    var RHS2 = Math.pow(x1_Bubble, 2) * (Margules_21 + 2 * x2_Bubble * (Margules_12 - Margules_21));
     var gamma2 = Math.exp(RHS2);
 
     for (var i = 0; i < 2; i++) {
