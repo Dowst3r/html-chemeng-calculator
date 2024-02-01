@@ -57,11 +57,12 @@ function calculate() {
         var x1_dew = (Pres_Dew * y1_Dew) / (p1_Dew * gamma1);
         var x2_dew = (Pres_Dew * y2_Dew) / (p2_Dew * gamma2);
         var sum = x1_Dew + x2_Dew
-        if (Math.abs(sum - 1) > 0.01 || Math.abs(sum - 0.01) === 0) {
+        var check = Maths.abs(sum - 1)
+        if (check > 0.01 || check === 0) {
             T_values_Dew.push(avg_Dew);
             avg_Dew *= 0.999;
             // temperature guess was too large so multuplied it by 99.9% to slightly decrease the guess to try and converge
-        } else if (Math.abs(sum - 1) < 0) {
+        } else if (check < 0) {
             T_values_Dew.push(avg_Dew);
             avg_Dew *= 1.001;
             // temperature guess was too small so multilpied it by 100.1% to slightly increase the guess to try and converge
@@ -72,7 +73,7 @@ function calculate() {
         }
     }
 
-    // old code below while be using as a reference to write the code above
+    // old code below will be using as a reference to write the code above
 
     var T_new_Dew = B_Dew[0] / (A_Dew[0] - Math.log(p1_new_Dew)) - C_Dew[0];
     T_values_Dew.push(T_new_Dew);
