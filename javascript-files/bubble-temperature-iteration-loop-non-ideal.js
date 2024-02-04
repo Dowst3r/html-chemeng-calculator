@@ -85,7 +85,7 @@ function calculate() {
         "\nthe vapour phase composition: y1 = " +
         y1_Bubble +
         " and y2 = " +
-        y2_Bubble + "usually take results to 2 decimal places as not 100% accurate!";
+        y2_Bubble + " usually take results to 2 decimal places as not 100% accurate!";
 
     const x_axis = Array.from(
         { length: T_values_Bubble.length },
