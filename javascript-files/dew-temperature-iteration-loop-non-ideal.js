@@ -1,7 +1,10 @@
 var graph = null;
+let T_values_Dew = [];
+
+// graph is just a straight line down... not good
 
 function calculate() {
-    let temperature_dew = [];
+    let temperature_Dew = [];
     let T_values_Dew = [];
     let T_new_Dew_Array = [];
     let A_Dew = [];
@@ -11,7 +14,7 @@ function calculate() {
     A_Dew.splice(0, A_Dew.length);
     B_Dew.splice(0, B_Dew.length);
     C_Dew.splice(0, C_Dew.length);
-    temperature_dew.splice(0, temperature_dew.length);
+    temperature_Dew.splice(0, temperature_Dew.length);
     T_values_Dew.splice(0, T_values_Dew.length);
     T_new_Dew_Array.splice(0, T_new_Dew_Array.length);
 
@@ -25,7 +28,7 @@ function calculate() {
     var Margules_21 = parseFloat(document.getElementById("Margules-constant-21").value);
     let Unit_Dew = document.getElementById("Unit-Dew").value;
     var Pres_Dew = parseFloat(document.getElementById("Pressure-Dew-System").value);
-    var y1_Dew = parseFloat(document.getElementById("Vapour-Dew-Moles").value);
+    var y1_Dew = parseFloat(document.getElementById("vapour-Dew-Moles").value);
     var tolerance = parseFloat(document.getElementById("Tolerance_Dew").value);
 
     A_Dew = [A1_Dew, A2_Dew];
@@ -39,24 +42,25 @@ function calculate() {
     var y2_Dew = 1 - y1_Dew;
     var RHS1 = Math.pow(y2_Dew, 2) * (Margules_12 + 2 * y1_Dew * (Margules_21 - Margules_12));
     var gamma1 = Math.exp(RHS1);
-    var RHS2 = math.pow(y1_Dew, 2) * (Margules_21 + 2 * y2_Dew * (Margules_12 - Margules_21));
+    var RHS2 = Math.pow(y1_Dew, 2) * (Margules_21 + 2 * y2_Dew * (Margules_12 - Margules_21));
     var gamma2 = Math.exp(RHS2);
 
     for (var i = 0; i < 2; i++) {
         var T_Dew = B_Dew[i] / (A_Dew[i] - Math.log(Pres_Dew)) - C_Dew[i];
         var total_Dew = total_Dew + T_Dew;
-        temperature_dew.push(T_Dew);
+        temperature_Dew.push(T_Dew);
     }
-    var sum = temperature_dew[0] + temperature_dew[1];
+    var sum = temperature_Dew[0] + temperature_Dew[1];
     var avg_Dew = sum / 2;
 
     while (keep_looping_Dew) {
         var p1_Dew = Math.exp(A_Dew[0] - B_Dew[0] / (avg_Dew + C_Dew[0]));
         var p2_Dew = Math.exp(A_Dew[1] - B_Dew[1] / (avg_Dew + C_Dew[1]));
-        var x1_Dew = (Pres_Dew * y1_Dew) / (p1_Dew * gamma1);
-        var x2_Dew = (Pres_Dew * y2_Dew) / (p2_Dew * gamma2);
-        var sum = x1_Dew + x2_Dew
-        var check = Maths.abs(sum - 1)
+        // alter bit below!
+        var y1_Dew = (x1_Dew * gamma1 * p1_Dew) / (Pres_Dew);
+        var y2_Dew = (x2_Dew * gamma2 * p2_Dew) / (Pres_Dew);
+        var sum = y1_Dew + y2_Dew;
+        var check = Math.abs(sum - 1);
         T_values_Dew.push(avg_Dew);
         if (check >= tolerance) {
             avg_Dew *= 0.999;
@@ -69,62 +73,58 @@ function calculate() {
             // converged on the correct temperature
         }
     }
-}
+    var output_Dew =
+        "The graph converges to a temperature of " +
+        T_values_Dew[T_values_Dew.length - 1] +
+        " °" +
+        Unit_Dew +
+        " the difference between the 2 final temperature values: " +
+        Math.abs(
+            T_values_Dew[T_values_Dew.length - 2] -
+            T_values_Dew[T_values_Dew.length - 1]
+        ) + " °" + Unit_Dew +
+        "\nthe liquid phase composition: x1 = " +
+        x1_Dew +
+        " and x2 = " +
+        x2_Dew + " usually take results to 2 decimal places as not 100% accurate!";
 
-// dont change below (much as not fully checked for any required updates) just change above
-
-var output_Dew =
-    "The graph converges to a temperature of " +
-    T_values_Dew[T_values_Dew.length - 1] +
-    " °" +
-    Unit_Dew +
-    " after " +
-    "the difference between the 2 final temperature values: " +
-    Math.abs(
-        T_values_Dew[T_values_Dew.length - 2] -
-        T_values_Dew[T_values_Dew.length - 1]
-    ) + " °" + Unit_Dew +
-    "\nthe liquid phase composition: x1 = " +
-    x1_Dew +
-    " and x2 = " +
-    x2_Dew;
-
-const x_axis = Array.from(
-    { length: T_values_Dew.length },
-    (_, i) => i + 1
-);
-const ctx = document.getElementById("Graph_Dew").getContext("2d");
-if (graph) {
-    graph.clear();
-    graph.destroy();
-}
-graph = new Chart(ctx, {
-    type: "line",
-    data: {
-        labels: x_axis,
-        datasets: [{
-            label: "Temperature in °" + Unit_Dew,
-            data: T_values_Dew,
-            backgroundColor: [
-                "rgba(255, 192, 203, 1)"
-            ],
-            borderColor: "#FFC0CB"
-        }]
-    },
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: "Temperature values through the iteration loops",
+    const x_axis = Array.from(
+        { length: T_values_Dew.length },
+        (_, i) => i + 1
+    );
+    const ctx = document.getElementById("Graph_Dew").getContext("2d");
+    if (graph) {
+        graph.clear();
+        graph.destroy();
+    }
+    graph = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: x_axis,
+            datasets: [{
+                label: "Temperature in °" + Unit_Dew,
+                data: T_values_Dew,
+                backgroundColor: [
+                    "rgba(255, 192, 203, 1)"
+                ],
+                borderColor: "#FFC0CB"
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Temperature values through the iteration loops",
+                },
+            },
+            legend: {
+                display: false,
+                position: "bottom",
+                name: "Temperatures",
+                text: "Temperature Chart",
             },
         },
-        legend: {
-            display: false,
-            position: "bottom",
-            name: "Temperatures",
-            text: "Temperature Chart",
-        },
-    },
-});
-document.getElementById("Text_Result_Dew").innerHTML = output_Dew;
-document.getElementById("Graph_Dew").innerHTML = graph
+    });
+    document.getElementById("Text_Result_Dew").innerHTML = output_Dew;
+    document.getElementById("Graph_Dew").innerHTML = graph
+};
