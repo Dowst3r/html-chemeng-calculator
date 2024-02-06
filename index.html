@@ -19,7 +19,8 @@
       }
 
       .button {
-        width: 250px;
+        margin: 15px;
+        width: 300px;
         height: 3em;
         border-radius: 30em;
         font-size: 15px;
@@ -47,7 +48,11 @@
       }
 
       .button:hover::before {
-        width: 250px;
+        width: 300px;
+      }
+
+      .button-container {
+        display: grid;
       }
     </style>
   </head>
@@ -65,7 +70,7 @@
     </p>
     <!-- can bring up the command pallet (ctrl shift P) and use the wrap with Abbreviation command to use "em" to wrap a bit of text in em so you dont run into the risk of messing up -->
     <h1 class="Calculator-title">Calculators:</h1>
-
+    <div class="button-container">
     <button onclick="bubble_temperature_iteration_loop()" class="button">Bubble Temperature Iteration Loop - ideal</button>
     <button onclick="dew_temperature_iteration_loop()" class="button">Dew Temperature Iteration Loop - ideal</button>
     <button onclick="linear_interpolation()" class="button">Linear Interpolation</button>
@@ -73,6 +78,7 @@
     <button onclick="dew_temperature_iteration_loop_non_ideal()" class="button">Dew Temperature Iteration Loop - non-ideal</button>
     <button onclick="unit_conversion()" class="button">Unit Conversion</button>
     <button onclick="code_testing()" class="button">Code Testing</button>
+    </div>
 
     <script>
       function bubble_temperature_iteration_loop() {
